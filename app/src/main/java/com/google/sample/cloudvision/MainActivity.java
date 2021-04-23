@@ -24,12 +24,12 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.content.FileProvider;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.NonNull;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.core.content.FileProvider;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -49,6 +49,8 @@ import com.google.api.services.vision.v1.model.BatchAnnotateImagesResponse;
 import com.google.api.services.vision.v1.model.EntityAnnotation;
 import com.google.api.services.vision.v1.model.Feature;
 import com.google.api.services.vision.v1.model.Image;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -56,11 +58,10 @@ import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 
 public class MainActivity extends AppCompatActivity {
-    private static final String CLOUD_VISION_API_KEY = "api키";
+    private static final String CLOUD_VISION_API_KEY = "AIzaSyACzok1A-dJyAe-gec30mFw9dq68g2CAb4";
     public static final String FILE_NAME = "temp.jpg";
     private static final String ANDROID_CERT_HEADER = "X-Android-Cert";
     private static final String ANDROID_PACKAGE_HEADER = "X-Android-Package";
@@ -83,48 +84,37 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(view -> {
+        fab.setOnClickListener(view -> {/*
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
             builder
                     .setMessage(R.string.dialog_select_prompt)
                     .setPositiveButton(R.string.dialog_select_gallery, (dialog, which) -> startGalleryChooser())
                     .setNegativeButton(R.string.dialog_select_camera, (dialog, which) -> startCamera());
-            builder.create().show();
+            builder.create().show();*/
+            startGalleryChooser();
         });
 
         mImageDetails = findViewById(R.id.image_details);
         mMainImage = findViewById(R.id.main_image);
+
+
+
     }
 
-    public void startGalleryChooser() {
+
+    public void startGalleryChooser() {/*
         if (PermissionUtils.requestPermission(this, GALLERY_PERMISSIONS_REQUEST, Manifest.permission.READ_EXTERNAL_STORAGE)) {
             Intent intent = new Intent();
             intent.setType("image/*");
             intent.setAction(Intent.ACTION_GET_CONTENT);
             startActivityForResult(Intent.createChooser(intent, "Select a photo"),
                     GALLERY_IMAGE_REQUEST);
-        }
+        }*/
+        CropImage.activity(null).setGuidelines(CropImageView.Guidelines.ON).start(this);
     }
 
-    public void startCamera() {
-        if (PermissionUtils.requestPermission(
-                this,
-                CAMERA_PERMISSIONS_REQUEST,
-                Manifest.permission.READ_EXTERNAL_STORAGE,
-                Manifest.permission.CAMERA)) {
-            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            Uri photoUri = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() + ".provider", getCameraFile());
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
-            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-            startActivityForResult(intent, CAMERA_IMAGE_REQUEST);
-        }
-    }
 
-    public File getCameraFile() {
-        File dir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        return new File(dir, FILE_NAME);
-    }
-
+/*
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -135,18 +125,30 @@ public class MainActivity extends AppCompatActivity {
             Uri photoUri = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() + ".provider", getCameraFile());
             uploadImage(photoUri);
         }
+    }*/
+public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+
+    if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+        CropImage.ActivityResult result = CropImage.getActivityResult(data);
+        if (resultCode == RESULT_OK) {
+            Uri resultUri = result.getUri();
+            uploadImage(resultUri);
+        } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+            Toast.makeText(this, "에러가 발생했습니다. 다시 시도해주세요.", Toast.LENGTH_LONG).show();
+
+        }
     }
+}
+
+
+
 
     @Override
     public void onRequestPermissionsResult(
             int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
-            case CAMERA_PERMISSIONS_REQUEST:
-                if (PermissionUtils.permissionGranted(requestCode, CAMERA_PERMISSIONS_REQUEST, grantResults)) {
-                    startCamera();
-                }
-                break;
             case GALLERY_PERMISSIONS_REQUEST:
                 if (PermissionUtils.permissionGranted(requestCode, GALLERY_PERMISSIONS_REQUEST, grantResults)) {
                     startGalleryChooser();
@@ -274,7 +276,14 @@ public class MainActivity extends AppCompatActivity {
             MainActivity activity = mActivityWeakReference.get();
             if (activity != null && !activity.isFinishing()) {
                 TextView imageDetail = activity.findViewById(R.id.image_details);
-                imageDetail.setText(result);
+                String[] array = result.split(",");
+                StringBuilder result2 = new StringBuilder();
+                for(int i =0;i<array.length;i++){
+                    array[i]=array[i].replaceAll("(\r\n|\r|\n|\n\r)", " ");
+                    array[i]=array[i].replaceAll(" ","");
+                    result2.append(array[i]+"\n");
+                }
+                imageDetail.setText(result2);
             }
         }
     }

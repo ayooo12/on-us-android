@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     buildToolsVersion "27.0.3"
 
     defaultConfig {
@@ -17,7 +17,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         buildTypes.each {
-            it.buildConfigField 'String', 'API_KEY', '"api키"'
+            it.buildConfigField 'String', 'API_KEY', '"AIzaSyACzok1A-dJyAe-gec30mFw9dq68g2CAb4"'
         }
     }
     compileOptions {
@@ -27,11 +27,13 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:27.0.2'
-    compile 'com.android.support:design:27.0.2'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    //noinspection GradleCompatible
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
     compile 'com.google.api-client:google-api-client-android:1.23.0' exclude module: 'httpclient'
     compile 'com.google.http-client:google-http-client-gson:1.23.0' exclude module: 'httpclient'
-    compile 'com.google.apis:google-api-services-vision:v1-rev369-1.23.0'
+    implementation 'com.google.apis:google-api-services-vision:v1-rev369-1.23.0'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
 }
