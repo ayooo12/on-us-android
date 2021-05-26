@@ -12,4 +12,11 @@
     <string name="image_picker_error">Something is wrong with that image. Pick a different one please.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--componentDlg, 경고/출처 문구-->
+    <string name="warning1">성분의 함량,배합 방식, 개인별 특성에 따라 다르게 적용될 수 있습니다.</string>
+    <string name="reference1">배합한도: 국제향료협회(IFRA)</string>
+    <string name="reference2">배합 목적,배합 금지,기능성 성분:식품의약품 안전처</string>
+    <string name="reference3">알레르기성,피부자극성,호흡기 과민성 성분,유발 정도:GHS, Safety data sheets</string>
+
 </resources>
