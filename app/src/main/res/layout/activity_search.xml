@@ -4,103 +4,110 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:backgroundTint="#FFFFFF"
-    android:foregroundTint="#FFFFFF"
+    android:background="@drawable/color_background"
     android:orientation="vertical"
     tools:context=".Search">
 
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#5CADE3"
-        android:orientation="vertical">
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
-            tools:layout_editor_absoluteX="140dp"
-            tools:layout_editor_absoluteY="2dp"
-            tools:srcCompat="@tools:sample/avatars" />
-
-        <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:backgroundTint="#FFFFFF"
-            android:drawableTint="#FFFFFF"
-            android:ems="10"
-            android:hint="제품명, 브랜드명을 입력하세요."
-            android:inputType="textPersonName" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="20dp"
+        android:text="검색"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="성분 검색" />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="성분 사전" />
+            android:background="@drawable/left_btn_search"
+            android:text="성분검색"
+            android:textColor="#06DFD2"
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/right_btn_search"
+            android:text="제품검색"
+            android:textColor="#ffffff"
+            android:textSize="16dp" />
+
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
+    <LinearLayout
+        android:id="@+id/search_fragment_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:ems="10"
-        android:hint="성분명을 입력하세요."
-        android:inputType="textPersonName" />
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="52dp"
+        android:orientation="horizontal"
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:background="#0B0707"
-        android:backgroundTint="#BCBCBC"
-        android:gravity="center"
-        android:text="성분 정보"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        android:textStyle="bold" />
+        >
 
-    <ScrollView
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#FFFFFF"
+            android:ems="10"
+            android:hint="성분명을 입력해주세요"
+            android:textColorHint="#FFFFFF"
+            android:textSize="16sp" />
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="0.4dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00507E6F"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            app:srcCompat="@mipmap/ic_search_icon_foreground" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp">
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="52dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center"
-                android:gravity="center"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-        </LinearLayout>
-    </ScrollView>
+            android:text="최근 검색 성분"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp" />
+    </LinearLayout>
 
 </LinearLayout>
