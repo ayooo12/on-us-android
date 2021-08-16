@@ -3,14 +3,34 @@ package com.google.sample.cloudvision;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import java.util.HashMap;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.FieldMap;
+import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public class ComponentDlg_Fragment extends DialogFragment {
+
+    TextView componetName;
 
     public ComponentDlg_Fragment() {}
 
@@ -31,6 +51,9 @@ public class ComponentDlg_Fragment extends DialogFragment {
                              Bundle savedInstanceState) {
 
         View v=inflater.inflate(R.layout.fragment_component_dlg_, container, false);
+
+        componetName= v.findViewById(R.id.componetName);
+
         return v;
     }
 
@@ -45,4 +68,6 @@ public class ComponentDlg_Fragment extends DialogFragment {
 
         super.onResume();
     }
+
+
 }
