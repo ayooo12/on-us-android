@@ -77,7 +77,7 @@
         android:id="@+id/button"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_margin="20"
+        android:layout_margin="20dp"
         android:backgroundTint="#0CE5A7"
         android:text="선택한 성분정보 알아보기"
         android:textColor="#FFFFFF"
