@@ -3,6 +3,7 @@ package com.google.sample.cloudvision;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -23,14 +24,15 @@ import retrofit2.http.Query;
 
 public class MainActivity3 extends AppCompatActivity {
 
-    private TextView textView4;
+    TextView tv[] = new TextView[4];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
-        textView4=findViewById(R.id.textView4);
+        tv[0] = (TextView)findViewById(R.id.tv1);
+        tv[1] = (TextView)findViewById(R.id.tv2);
 
         Retrofit.Builder builder = new Retrofit.Builder();
         builder.baseUrl("http://3.36.163.80:8080");
@@ -52,10 +54,16 @@ public class MainActivity3 extends AppCompatActivity {
                     Log.d("TEST", "성공성공");
                     Log.d("TEST", data.get(0).getName());
 
-                    String str = data.get(0).getName() + "\n" + data.get(0).getType() + "\n"
-                            + data.get(1).getName() + "\n" + data.get(1).getType() + "\n";
 
-                    textView4.setText(str);
+                    tv[0].setText(data.get(0).getName());
+                    tv[1].setText(data.get(1).getName());
+
+                    for(int i=0;i<data.size();i++){
+                        if(data.get(i).getType().equals("H")){
+                            tv[i].setBackgroundColor(Color.RED);
+                        }else tv[i].setBackgroundColor(Color.GREEN);
+
+                    }
 
                 }
             }
