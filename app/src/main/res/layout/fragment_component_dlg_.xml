@@ -6,105 +6,150 @@
     android:orientation="vertical"
     tools:context=".ComponentDlg_Fragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="성분 정보"
-        android:layout_marginTop="69px"
-        android:layout_marginLeft="75px"
-        android:layout_marginBottom="28px"
-        android:textSize="20sp"/>
+    <LinearLayout
+        android:layout_width="370dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@drawable/one_gray_ine"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/pinkedge" />
 
-    <TextView
-        android:id="@+id/componetName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10px"
-        android:text="성분명"
-        android:textSize="27sp"
-        android:textStyle="bold" />
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="300dp"
+            android:background="@drawable/delete"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="370dp"
-        android:layout_height="80dp"
-        android:orientation="vertical"
-        android:layout_marginTop="5dp"
-        android:layout_gravity="center"
-        android:background="@drawable/rectangle130">
+        android:layout_height="110dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp"
+            android:orientation="vertical">
 
             <TextView
+                android:id="@+id/componetName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="배합 목적: "
+                android:layout_marginTop="10dp"
+                android:text="성분명"
+                android:textSize="27sp"
                 android:textStyle="bold" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="배합 목적 데이터가 들어갑니다." />
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/pinkdot">
+                </ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="유해성"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="20dp">
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="배합 한도: "
-                android:textStyle="bold" />
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:orientation="horizontal">
 
-            <TextView
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="배합 목적: "
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="배합 목적 데이터" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="배합 한도 데이터가 들어갑니다." />
+                android:layout_marginLeft="20dp"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="배합 한도: "
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="배합 한도 데이터" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="배합 금지: "
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="배합 금지 데이터"/>
+
+            </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="20dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="배합 금지: "
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="배합 금지 데이터가 들어갑니다." />
-
-        </LinearLayout>
     </LinearLayout>
 
 
     <LinearLayout
         android:layout_width="370dp"
-        android:layout_height="95dp"
+        android:layout_height="110dp"
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
@@ -161,7 +206,7 @@
 
     <LinearLayout
         android:layout_width="370dp"
-        android:layout_height="95dp"
+        android:layout_height="110dp"
         android:layout_gravity="center"
         android:layout_marginBottom="5dp">
 
@@ -216,7 +261,7 @@
 
     <LinearLayout
         android:layout_width="370dp"
-        android:layout_height="95dp"
+        android:layout_height="110dp"
         android:layout_gravity="center"
         android:layout_marginBottom="5dp">
 
@@ -271,7 +316,7 @@
 
     <LinearLayout
         android:layout_width="370dp"
-        android:layout_height="95dp"
+        android:layout_height="110dp"
         android:layout_gravity="center"
         android:layout_marginBottom="5dp">
 
@@ -324,47 +369,7 @@
         android:background="#F7F7F7"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/warning"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="19dp"
-            android:text="@string/warning1"
-            android:textSize="11sp"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="19dp"
-            android:text="출처"
-            android:textSize="11sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="19dp"
-            android:textSize="11sp"
-            android:text="@string/reference1" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="19dp"
-            android:textSize="11sp"
-            android:text="@string/reference2" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="19dp"
-            android:textSize="11sp"
-            android:text="@string/reference3" />
 
     </LinearLayout>
 
