@@ -69,53 +69,42 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#F3F3F3"
-            android:orientation="vertical" >
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:stretchColumns="0, 1, 2, 3">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
 
-            <TableRow>
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/chem_item_1"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textSize="18sp"
-                    android:text="성분입니다"
-                    android:id="@+id/ing0"
-                    android:visibility="invisible" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textSize="18sp"
-                    android:text="성분"
-                    android:id="@+id/ing1"
-                    android:visibility="invisible"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textSize="18sp"
-                    android:text="성분ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ"
-                    android:id="@+id/ing2"
+                    android:text="TextView"
+                    android:layout_margin = "5dp"
                     />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textSize="18sp"
-                    android:text="성분ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ"
-                    android:id="@+id/ing3"
-                    android:visibility="invisible"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textSize="18sp"
-                    android:text="성분"
-                    android:id="@+id/ing4"
-                    android:visibility="invisible"/>
 
+                <TextView
+                    android:id="@+id/chem_item_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:layout_margin = "5dp"/>
+
+                <TextView
+                    android:id="@+id/chem_item_3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:layout_margin = "5dp"/>
+                <TextView
+                    android:id="@+id/chem_item_4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="dkfdkfeifdljfwpfjdkjfei"
+                    android:layout_margin = "5dp"
+                    />
             </TableRow>
-
 
 
 

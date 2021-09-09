@@ -37,9 +37,16 @@ public class Content_Camera_Result extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera_result);
 
+        for(int j=0; j<ing.length; j++){
+            int getID = getResources().getIdentifier("chem_item_"+(j+1),"id",getPackageName());
+            ing[j] = (TextView)findViewById(getID);
+            ing[j].setText(String.valueOf(j));
+        }
+
+        /*
         ing[0] = (TextView)findViewById(R.id.ing0);
         ing[1] = (TextView)findViewById(R.id.ing1);
-        ing[2] = (TextView)findViewById(R.id.ing1);
+        ing[2] = (TextView)findViewById(R.id.ing1);*/
 
         Retrofit.Builder builder = new Retrofit.Builder();
         builder.baseUrl("http://3.36.163.80:8080");
@@ -49,7 +56,7 @@ public class Content_Camera_Result extends AppCompatActivity {
 
         RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
 
-        ingfull = "리날룬,리날룰,리난눈,트리클로산";
+        ingfull = "리날룬,리날룰,리난눈";
 
 
 
