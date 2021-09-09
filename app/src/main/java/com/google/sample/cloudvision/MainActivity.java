@@ -61,7 +61,7 @@ import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
-    private static final String CLOUD_VISION_API_KEY = "AIzaSyACzok1A-dJyAe-gec30mFw9dq68g2CAb4";
+    private static final String CLOUD_VISION_API_KEY = "AIzaSyDNWaGqcaH4crSV5xGurV272SzwQZ24n8U";
     public static final String FILE_NAME = "temp.jpg";
     private static final String ANDROID_CERT_HEADER = "X-Android-Cert";
     private static final String ANDROID_PACKAGE_HEADER = "X-Android-Package";
@@ -284,6 +284,10 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
                     result2.append(array[i]+"\n");
                 }
                 imageDetail.setText(result2);
+
+                //Intent intent = new Intent(this,Camera_result);
+
+
             }
         }
     }
