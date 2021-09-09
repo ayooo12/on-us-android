@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/color_background"
+    android:color="#FFFFFF"
     android:orientation="vertical"
     tools:context=".Search">
 
@@ -24,7 +24,7 @@
         android:layout_marginLeft="52dp"
         android:layout_marginTop="20dp"
         android:text="검색"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -43,7 +43,7 @@
             android:layout_weight="1"
             android:background="@drawable/left_btn_search"
             android:text="성분검색"
-            android:textColor="#06DFD2"
+            android:textColor="#1EE4A5"
             android:textSize="16dp" />
 
         <Button
@@ -74,10 +74,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="#FFFFFF"
+            android:backgroundTint="#01DA95"
             android:ems="10"
             android:hint="성분명을 입력해주세요"
-            android:textColorHint="#FFFFFF"
+            android:textColorHint="#C7C7C7"
             android:textSize="16sp" />
 
         <ImageButton
@@ -106,7 +106,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="최근 검색 성분"
-            android:textColor="#FFFFFF"
+            android:textColor="#616161"
             android:textSize="10sp" />
     </LinearLayout>
 
