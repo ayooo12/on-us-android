@@ -4,14 +4,14 @@ import com.google.gson.annotations.SerializedName;
 
 public class StringPost {
 
-    @SerializedName("componensts")
-    private String componensts;
+    @SerializedName("names")
+    private String names;
 
-    public String getName() {
-        return componensts;
+    public String getSliceNames() {
+        return names;
     }
-    public void setName(String name){
-        this.componensts = componensts;
+    public void setSliceNames(String name){
+        this.names = names;
     }
 
 }

@@ -19,6 +19,7 @@ package com.google.sample.cloudvision;
 import android.Manifest;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -57,7 +58,19 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.FieldMap;
+import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -83,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(view -> {/*
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -96,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
 
         mImageDetails = findViewById(R.id.image_details);
         mMainImage = findViewById(R.id.main_image);
-
 
 
     }
@@ -140,8 +153,6 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
         }
     }
 }
-
-
 
 
     @Override
@@ -276,14 +287,19 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
             MainActivity activity = mActivityWeakReference.get();
             if (activity != null && !activity.isFinishing()) {
                 TextView imageDetail = activity.findViewById(R.id.image_details);
+
+                //인식된 문자열 반점(,) 단위로 나눠준다.
                 String[] array = result.split(",");
-                StringBuilder result2 = new StringBuilder();
-                for(int i =0;i<array.length;i++){
-                    array[i]=array[i].replaceAll("(\r\n|\r|\n|\n\r)", " ");
-                    array[i]=array[i].replaceAll(" ","");
-                    result2.append(array[i]+"\n");
-                }
-                imageDetail.setText(result2);
+//                StringBuilder result2 = new StringBuilder();
+//                for(int i =0;i<array.length;i++){
+//                    array[i]=array[i].replaceAll("(\r\n|\r|\n|\n\r)", " ");
+//                    array[i]=array[i].replaceAll(" ","");
+//                    result2.append(array[i]+"\n");
+//                }
+
+                //카메라로 찍고 인식된 성분들 나열
+                imageDetail.setText(result);
+
 
                 //Intent intent = new Intent(this,Camera_result);
 
@@ -336,4 +352,5 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
         }
         return message;
     }
+
 }
