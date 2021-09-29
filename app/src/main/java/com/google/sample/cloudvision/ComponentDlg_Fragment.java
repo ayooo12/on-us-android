@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.HashMap;
@@ -31,6 +32,7 @@ import retrofit2.http.Query;
 public class ComponentDlg_Fragment extends DialogFragment {
 
     TextView componetName;
+    ImageView questionMark;
 
     public ComponentDlg_Fragment() {}
 
@@ -42,8 +44,16 @@ public class ComponentDlg_Fragment extends DialogFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-        }
+
+        //물음표 버튼 누르면 '성분 분류 구분표' 팝
+        questionMark = getDialog().findViewById(R.id.questionMark);
+        questionMark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cpt_classification_dlg cptDialog = new cpt_classification_dlg();
+                cptDialog.show(getParentFragmentManager(),"show");
+            }
+        });
     }
 
     @Override
