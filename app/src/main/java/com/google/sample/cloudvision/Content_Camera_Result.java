@@ -3,13 +3,17 @@ package com.google.sample.cloudvision;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.app.AlertDialog;
 
 import java.util.HashMap;
 import java.util.List;
@@ -41,6 +45,15 @@ public class Content_Camera_Result extends AppCompatActivity {
             int getID = getResources().getIdentifier("chem_item_"+(j+1),"id",getPackageName());
             ing[j] = (TextView)findViewById(getID);
             ing[j].setText(String.valueOf(j));
+            //버튼 클릭
+            ing[j].setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getApplicationContext(), Popup_ing.class);
+                    startActivity(intent);
+
+                }
+            });
         }
 
         /*
