@@ -49,8 +49,8 @@ public class Content_Camera_Result extends AppCompatActivity {
             ing[j].setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(getApplicationContext(), Popup_ing.class);
-                    startActivity(intent);
+                    Popup_ing p = Popup_ing.getInstance();
+                    p.show(getSupportFragmentManager(), Popup_ing.TAG_EVENT_DIALOG);
 
                 }
             });
