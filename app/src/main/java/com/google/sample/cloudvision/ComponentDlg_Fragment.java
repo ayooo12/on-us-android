@@ -33,27 +33,32 @@ public class ComponentDlg_Fragment extends DialogFragment {
 
     TextView componetName;
     ImageView questionMark;
+    ImageView back;
+    static String componentNameData;
 
-    public ComponentDlg_Fragment() {}
+    public ComponentDlg_Fragment(String componentNameD) {
 
-    public static ComponentDlg_Fragment newInstance(String param1, String param2) {
-        ComponentDlg_Fragment cptDlg = new ComponentDlg_Fragment();
-        return cptDlg;
+        //성분명 클릭시 이름 받아오기
+        componentNameData = componentNameD;
+
+        Log.d(componentNameData,"cptname");
     }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //물음표 버튼 누르면 '성분 분류 구분표' 팝
-        questionMark = getDialog().findViewById(R.id.questionMark);
-        questionMark.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cpt_classification_dlg cptDialog = new cpt_classification_dlg();
-                cptDialog.show(getParentFragmentManager(),"show");
-            }
-        });
+
+//        //물음표 버튼 누르면 '성분 분류 구분표' 팝
+//        questionMark = getDialog().findViewById(R.id.questionMark);
+//        questionMark.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                cpt_classification_dlg cptDialog = new cpt_classification_dlg();
+//                cptDialog.show(getParentFragmentManager(),"show");
+//            }
+//        });
     }
 
     @Override
@@ -62,7 +67,19 @@ public class ComponentDlg_Fragment extends DialogFragment {
 
         View v=inflater.inflate(R.layout.fragment_component_dlg_, container, false);
 
+        //성분명 가져와서 TextView 변경하기
         componetName= v.findViewById(R.id.componetName);
+        componetName.setText(componentNameData);
+
+
+        //x 버튼 누르면 사라지
+        back = v.findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dismiss();
+            }
+        });
 
         return v;
     }
