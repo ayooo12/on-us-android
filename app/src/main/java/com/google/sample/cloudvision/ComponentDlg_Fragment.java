@@ -31,18 +31,17 @@ import retrofit2.http.Query;
 
 public class ComponentDlg_Fragment extends DialogFragment {
 
-    TextView componetName;
-    ImageView questionMark;
-    ImageView back;
-    static String componentNameData;
+
+    TextView componetName; //제일 상단의 '성분명' TextView
+    ImageView questionMark; //'호흡기 과민성분' TextView 옆에 있는 물음표 아이콘
+    ImageView back; //X 버튼(뒤로가기 버튼)
+    static String componentNameData; //이전 페이지에서 성분명 받아오는 변수
     String componame;
 
     public ComponentDlg_Fragment(String componentNameD) {
 
         //성분명 클릭시 이름 받아오기
         componentNameData = componentNameD;
-
-        Log.d(componentNameData,"cptname");
     }
 
 
@@ -60,9 +59,6 @@ public class ComponentDlg_Fragment extends DialogFragment {
 //                cptDialog.show(getParentFragmentManager(),"show");
 //            }
 //        });
-
-
-
 
 
         Retrofit.Builder builder = new Retrofit.Builder();
