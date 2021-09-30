@@ -59,7 +59,60 @@ public class ComponentDlg_Fragment extends DialogFragment {
 //                cptDialog.show(getParentFragmentManager(),"show");
 //            }
 //        });
+
+
+
+        /*
+
+        Retrofit.Builder builder = new Retrofit.Builder();
+        builder.baseUrl("http://3.36.163.80:8080");
+        builder.addConverterFactory(GsonConverterFactory.create());
+        Retrofit retrofit = builder
+                .build();
+
+        RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
+
+
+
+        retrofitAPI.getfrags("리날룰").enqueue(new Callback<List<frag>>() {
+            @Override
+            public void onResponse(@NonNull Call<List<frag>> call,
+                                   @NonNull Response<List<frag>> response) {
+                if(response.isSuccessful()) {
+
+                    List<frag> data = response.body();
+                    Log.d("TEST","성공성공");
+                    Log.d("TEST", data.get(0).getghsClass());
+
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(Call<List<frag>> call, Throwable t) {
+                t.printStackTrace();
+                Log.d("TEST","실패");;
+            }
+
+
+        });
+*/
+
+
     }
+
+    /*
+    public interface RetrofitAPI{
+        @GET("/findGhsTest?")
+        Call<List<frag>> getfrags(@Query("ingreName") String name);
+
+        @FormUrlEncoded
+        @POST("/posts")
+        Call<frag> postData(@FieldMap HashMap<String, Object> param);
+    }
+*/
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
