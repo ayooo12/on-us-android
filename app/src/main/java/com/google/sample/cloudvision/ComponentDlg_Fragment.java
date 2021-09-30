@@ -35,6 +35,7 @@ public class ComponentDlg_Fragment extends DialogFragment {
     ImageView questionMark;
     ImageView back;
     static String componentNameData;
+    String componame;
 
     public ComponentDlg_Fragment(String componentNameD) {
 
@@ -62,7 +63,7 @@ public class ComponentDlg_Fragment extends DialogFragment {
 
 
 
-        /*
+
 
         Retrofit.Builder builder = new Retrofit.Builder();
         builder.baseUrl("http://3.36.163.80:8080");
@@ -74,7 +75,7 @@ public class ComponentDlg_Fragment extends DialogFragment {
 
 
 
-        retrofitAPI.getfrags("리날룰").enqueue(new Callback<List<frag>>() {
+        retrofitAPI.getfrags("트리클로산").enqueue(new Callback<List<frag>>() {
             @Override
             public void onResponse(@NonNull Call<List<frag>> call,
                                    @NonNull Response<List<frag>> response) {
@@ -83,6 +84,10 @@ public class ComponentDlg_Fragment extends DialogFragment {
                     List<frag> data = response.body();
                     Log.d("TEST","성공성공");
                     Log.d("TEST", data.get(0).getghsClass());
+
+
+                    componentNameData = data.get(0).getcategory();
+                    componetName.setText(componentNameData);
 
                 }
 
@@ -97,12 +102,11 @@ public class ComponentDlg_Fragment extends DialogFragment {
 
 
         });
-*/
+
 
 
     }
 
-    /*
     public interface RetrofitAPI{
         @GET("/findGhsTest?")
         Call<List<frag>> getfrags(@Query("ingreName") String name);
@@ -111,12 +115,12 @@ public class ComponentDlg_Fragment extends DialogFragment {
         @POST("/posts")
         Call<frag> postData(@FieldMap HashMap<String, Object> param);
     }
-*/
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
 
         View v=inflater.inflate(R.layout.fragment_component_dlg_, container, false);
 
