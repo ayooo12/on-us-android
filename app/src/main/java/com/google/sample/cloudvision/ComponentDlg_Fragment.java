@@ -86,8 +86,8 @@ public class ComponentDlg_Fragment extends DialogFragment {
                     Log.d("TEST", data.get(0).getghsClass());
 
 
-                    componentNameData = data.get(0).getcategory();
-                    componetName.setText(componentNameData);
+                    //componentNameData = data.get(0).getcategory();
+                    //componetName.setText(componentNameData);
 
                 }
 
