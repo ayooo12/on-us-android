@@ -86,8 +86,6 @@ public class ComponentDlg_Fragment extends DialogFragment {
                     //componetName.setText(componentNameData);
 
                 }
-
-
             }
 
             @Override
@@ -95,12 +93,7 @@ public class ComponentDlg_Fragment extends DialogFragment {
                 t.printStackTrace();
                 Log.d("TEST","실패");;
             }
-
-
         });
-
-
-
     }
 
     public interface RetrofitAPI{
@@ -125,7 +118,7 @@ public class ComponentDlg_Fragment extends DialogFragment {
         componetName.setText(componentNameData);
 
 
-        //x 버튼 누르면 사라지
+        //x 버튼 누르면 사라지게 하기
         back = v.findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,6 +141,4 @@ public class ComponentDlg_Fragment extends DialogFragment {
 
         super.onResume();
     }
-
-
 }
