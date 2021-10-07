@@ -1,6 +1,5 @@
 package com.google.sample.cloudvision;
 
-import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
@@ -52,7 +51,6 @@ public class ComponentDlg_Fragment extends DialogFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
 
 //        //물음표 버튼 누르면 '성분 분류 구분표' 팝

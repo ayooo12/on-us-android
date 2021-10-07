@@ -41,22 +41,14 @@ public class Content_Camera_Result extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera_result);
 
+
         for(int j=0; j<ing.length; j++){
             int getID = getResources().getIdentifier("chem_item_"+(j+1),"id",getPackageName());
             ing[j] = (TextView)findViewById(getID);
             ing[j].setText(String.valueOf(j));
             //버튼 클릭
-            String finalJ = String.valueOf(j);
-            ing[j].setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View view) {
-                    //custom dialog 띄우는 방식
-                    //dialog 띄울때 성분명 같이 보내기
-                    ComponentDlg_Fragment cptDlg = new ComponentDlg_Fragment(finalJ);
-                    cptDlg.show(getSupportFragmentManager(),"show");
-                }
-            });
         }
+
 
         /*
         ing[0] = (TextView)findViewById(R.id.ing0);
@@ -89,6 +81,16 @@ public class Content_Camera_Result extends AppCompatActivity {
                     for(int i=0;i<data.size();i++){
                         ing[i].setText(data.get(i).getName());
                         ing[i].setVisibility(View.VISIBLE);
+                        String finalJ = data.get(i).getName();
+                        ing[i].setOnClickListener(new View.OnClickListener(){
+                            @Override
+                            public void onClick(View view) {
+                                //custom dialog 띄우는 방식
+                                //dialog 띄울때 성분명 같이 보내기
+                                ComponentDlg_Fragment cptDlg = new ComponentDlg_Fragment(finalJ);
+                                cptDlg.show(getSupportFragmentManager(),"show");
+                            }
+                        });
                     }
 
 
@@ -99,8 +101,6 @@ public class Content_Camera_Result extends AppCompatActivity {
 
                     }
                 }
-
-
             }
 
             @Override
@@ -108,11 +108,7 @@ public class Content_Camera_Result extends AppCompatActivity {
                 t.printStackTrace();
                 Log.d("TEST","실패");;
             }
-
-
         });
-
-
     }
 
     public interface RetrofitAPI{
@@ -123,8 +119,5 @@ public class Content_Camera_Result extends AppCompatActivity {
         @POST("/posts")
         Call<Post> postData(@FieldMap HashMap<String, Object> param);
     }
-
-
-
 }
 
