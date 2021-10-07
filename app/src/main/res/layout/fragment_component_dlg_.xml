@@ -191,7 +191,7 @@
                         android:text="호흡기 과민성 성분"
                         android:textSize="15sp"
                         android:textStyle="bold"
-                        android:visibility="visible" />
+                        android:visibility="invisible" />
 
                     <ImageView
                         android:id="@+id/questionMark"
@@ -209,12 +209,13 @@
                     android:layout_marginLeft="20dp">
 
                     <TextView
+                        android:id="@+id/Tv0"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:text="유발 수준: "
                         android:textSize="13sp"
-                        android:visibility="visible" />
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/ingreGrade0"
@@ -224,7 +225,7 @@
                         android:text=" * 등급"
                         android:textSize="13sp"
                         android:textStyle="normal"
-                        android:visibility="visible" />
+                        android:visibility="invisible" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -272,7 +273,7 @@
                     android:text="알레르기성 성분"
                     android:textSize="15sp"
                     android:textStyle="bold"
-                    android:visibility="visible" />
+                    android:visibility="invisible" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -280,12 +281,13 @@
                     android:layout_marginLeft="20dp">
 
                     <TextView
+                        android:id="@+id/Tv1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:text="유발 수준: "
                         android:textSize="13sp"
-                        android:visibility="visible" />
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/ingreGrade1"
@@ -295,7 +297,7 @@
                         android:text=" * 등급"
                         android:textSize="13sp"
                         android:textStyle="normal"
-                        android:visibility="visible" />
+                        android:visibility="invisible" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -343,7 +345,8 @@
                     android:layout_marginTop="20dp"
                     android:text="피부 자극성 성분"
                     android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -351,11 +354,13 @@
                     android:layout_marginLeft="20dp">
 
                     <TextView
+                        android:id="@+id/Tv2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:text="유발 수준: "
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/ingreGrade2"
@@ -364,7 +369,8 @@
                         android:layout_marginTop="5dp"
                         android:text=" * 등급"
                         android:textSize="13sp"
-                        android:textStyle="normal" />
+                        android:textStyle="normal"
+                        android:visibility="invisible" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -412,7 +418,8 @@
                     android:layout_marginTop="20dp"
                     android:text="기능성 성분 여부"
                     android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -420,11 +427,13 @@
                     android:layout_marginLeft="20dp">
 
                     <TextView
+                        android:id="@+id/Tv3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:text="유발 수준: "
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:visibility="invisible" />
 
                     <TextView
                         android:id="@+id/ingreGrade3"
@@ -433,7 +442,8 @@
                         android:layout_marginTop="5dp"
                         android:text=" * 등급"
                         android:textSize="13sp"
-                        android:textStyle="normal" />
+                        android:textStyle="normal"
+                        android:visibility="invisible" />
 
                 </LinearLayout>
             </LinearLayout>

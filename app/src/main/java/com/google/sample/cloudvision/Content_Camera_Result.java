@@ -34,7 +34,7 @@ import retrofit2.http.Query;
 public class Content_Camera_Result extends AppCompatActivity {
     TextView ing[] = new TextView[4];
 
-    String ingfull = "리날룰";
+    String ingfull = "트리클로산";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +63,6 @@ public class Content_Camera_Result extends AppCompatActivity {
 
         RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
 
-        ingfull = "리날룬,리날룰,리난눈";
 
 
 

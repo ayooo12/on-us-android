@@ -40,6 +40,7 @@ public class ComponentDlg_Fragment extends DialogFragment {
 
     TextView ingreName[] = new TextView[4]; //팝업창 기능성이름 텍스트뷰
     TextView ingreGrade[] = new TextView[4]; //팝업창 기능성등급 텍스트뷰
+    TextView Tv[] = new TextView[4]; //팝업창 유발수준 글씨
 
     public ComponentDlg_Fragment(String componentNameD) {
 
@@ -74,7 +75,7 @@ public class ComponentDlg_Fragment extends DialogFragment {
 
 
 
-        retrofitAPI.getfrags("트리클로산").enqueue(new Callback<List<frag>>() {
+        retrofitAPI.getfrags(componentNameData).enqueue(new Callback<List<frag>>() {
             @Override
             public void onResponse(@NonNull Call<List<frag>> call,
                                    @NonNull Response<List<frag>> response) {
@@ -92,11 +93,8 @@ public class ComponentDlg_Fragment extends DialogFragment {
                         ingreName[i].setVisibility(View.VISIBLE);
                         ingreGrade[i].setText(data.get(i).getghsClass());
                         ingreGrade[i].setVisibility(View.VISIBLE);
+                        Tv[i].setVisibility(View.VISIBLE);
                     }
-
-
-
-
                 }
 
 
@@ -147,6 +145,11 @@ public class ComponentDlg_Fragment extends DialogFragment {
         ingreGrade[1] = v.findViewById(R.id.ingreGrade1);
         ingreGrade[2] = v.findViewById(R.id.ingreGrade2);
         ingreGrade[3] = v.findViewById(R.id.ingreGrade3);
+        Tv[0] = v.findViewById(R.id.Tv0);
+        Tv[1] = v.findViewById(R.id.Tv1);
+        Tv[2] = v.findViewById(R.id.Tv2);
+        Tv[3] = v.findViewById(R.id.Tv3);
+
 
         //x 버튼 누르면 사라지
         back = v.findViewById(R.id.back);
