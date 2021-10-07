@@ -162,9 +162,11 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/gradeCheck1"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp" />
+                    android:id="@+id/gradeCheck0"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp" />
 
                 <ImageView
                     android:layout_width="90dp"
@@ -249,7 +251,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/gradeCheck2"
+                    android:id="@+id/gradeCheck1"
                     android:layout_width="90dp"
                     android:layout_height="90dp" />
 
@@ -321,7 +323,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/gradeCheck3"
+                    android:id="@+id/gradeCheck2"
                     android:layout_width="90dp"
                     android:layout_height="90dp" />
 
@@ -394,7 +396,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/gradeCheck4"
+                    android:id="@+id/gradeCheck3"
                     android:layout_width="90dp"
                     android:layout_height="90dp" />
 

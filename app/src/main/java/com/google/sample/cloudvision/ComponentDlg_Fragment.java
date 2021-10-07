@@ -38,9 +38,14 @@ public class ComponentDlg_Fragment extends DialogFragment {
     static String componentNameData; //이전 페이지에서 성분명 받아오는 변수
 
 
+
+
+    String IG="";
+
     TextView ingreName[] = new TextView[4]; //팝업창 기능성이름 텍스트뷰
     TextView ingreGrade[] = new TextView[4]; //팝업창 기능성등급 텍스트뷰
     TextView Tv[] = new TextView[4]; //팝업창 유발수준 글씨
+    ImageView gradeCheck[] = new ImageView[4]; //성분등급 이미지지
 
     public ComponentDlg_Fragment(String componentNameD) {
 
@@ -91,9 +96,12 @@ public class ComponentDlg_Fragment extends DialogFragment {
                     for(int i=0;i<data.size();i++){
                         ingreName[i].setText(data.get(i).getcategory());
                         ingreName[i].setVisibility(View.VISIBLE);
+                        String a = data.get(i).getcategory();
+                        String b = data.get(i).getghsClass();
                         ingreGrade[i].setText(data.get(i).getghsClass());
                         ingreGrade[i].setVisibility(View.VISIBLE);
                         Tv[i].setVisibility(View.VISIBLE);
+                        SelectPic(a,b,gradeCheck[i]);
                     }
                 }
 
@@ -149,6 +157,7 @@ public class ComponentDlg_Fragment extends DialogFragment {
         Tv[1] = v.findViewById(R.id.Tv1);
         Tv[2] = v.findViewById(R.id.Tv2);
         Tv[3] = v.findViewById(R.id.Tv3);
+        gradeCheck[0] = v.findViewById(R.id.gradeCheck0);
 
 
         //x 버튼 누르면 사라지
@@ -174,6 +183,28 @@ public class ComponentDlg_Fragment extends DialogFragment {
 
         super.onResume();
     }
+
+
+    public void SelectPic(String IN, String IG,ImageView IV){ //IN = 기능성 이름 IG = 등급
+        switch (IN) {
+            case "급성독성": if(IG.equals("1")){
+                IV.setImageResource(R.drawable.ic_0_1);
+            }
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
