@@ -187,10 +187,17 @@ public class ComponentDlg_Fragment extends DialogFragment {
 
     public void SelectPic(String IN, String IG,ImageView IV){ //IN = 기능성 이름 IG = 등급
         switch (IN) {
-            case "급성독성": if(IG.equals("1")){
-                IV.setImageResource(R.drawable.ic_0_1);
-            }
-        }
+            case "급성독성": if(IG.equals("1")) IV.setImageResource(R.drawable.ic_4_1);
+                else if(IG.equals("2")) IV.setImageResource(R.drawable.ic_4_2_orange);
+                else if(IG.equals("3")) IV.setImageResource(R.drawable.ic_4_3);
+                else if(IG.equals("4")) IV.setImageResource(R.drawable.ic_4_4);
+
+            case "피부 부식성": if(IG.equals("1A")) IV.setImageResource(R.drawable.ic_3_1a);
+                else if(IG.equals("1B")) IV.setImageResource(R.drawable.ic_3_1b);
+                else if(IG.equals("1C")) IV.setImageResource(R.drawable.ic_3_1c);
+
+            case "피부 자극성": if(IG.equals("2")) IV.setImageResource(R.drawable.ic_0_2);
+
 
     }
 
