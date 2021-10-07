@@ -1,5 +1,6 @@
 package com.google.sample.cloudvision;
 
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
@@ -36,7 +37,10 @@ public class ComponentDlg_Fragment extends DialogFragment {
     ImageView questionMark; //'호흡기 과민성분' TextView 옆에 있는 물음표 아이콘
     ImageView back; //X 버튼(뒤로가기 버튼)
     static String componentNameData; //이전 페이지에서 성분명 받아오는 변수
-    String componame;
+
+
+    TextView ingreName[] = new TextView[4]; //팝업창 기능성이름 텍스트뷰
+    TextView ingreGrade[] = new TextView[4]; //팝업창 기능성등급 텍스트뷰
 
     public ComponentDlg_Fragment(String componentNameD) {
 
@@ -48,6 +52,7 @@ public class ComponentDlg_Fragment extends DialogFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
 
 //        //물음표 버튼 누르면 '성분 분류 구분표' 팝
@@ -82,8 +87,17 @@ public class ComponentDlg_Fragment extends DialogFragment {
                     Log.d("TEST", data.get(0).getghsClass());
 
 
-                    componentNameData = data.get(0).getcategory();
-                    componetName.setText(componentNameData);
+
+                    //기능성 성분 이름이랑 등급 변경
+                    for(int i=0;i<data.size();i++){
+                        ingreName[i].setText(data.get(i).getcategory());
+                        ingreName[i].setVisibility(View.VISIBLE);
+                        ingreGrade[i].setText(data.get(i).getghsClass());
+                        ingreGrade[i].setVisibility(View.VISIBLE);
+                    }
+
+
+
 
                 }
 
@@ -124,6 +138,17 @@ public class ComponentDlg_Fragment extends DialogFragment {
         componetName= v.findViewById(R.id.componetName);
         componetName.setText(componentNameData);
 
+
+
+        //기능성 성분 연결
+        ingreName[0] = v.findViewById(R.id.ingreName0);
+        ingreName[1] = v.findViewById(R.id.ingreName1);
+        ingreName[2] = v.findViewById(R.id.ingreName2);
+        ingreName[3] = v.findViewById(R.id.ingreName3);
+        ingreGrade[0] = v.findViewById(R.id.ingreGrade0);
+        ingreGrade[1] = v.findViewById(R.id.ingreGrade1);
+        ingreGrade[2] = v.findViewById(R.id.ingreGrade2);
+        ingreGrade[3] = v.findViewById(R.id.ingreGrade3);
 
         //x 버튼 누르면 사라지
         back = v.findViewById(R.id.back);
