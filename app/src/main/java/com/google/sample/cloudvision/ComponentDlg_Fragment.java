@@ -37,9 +37,6 @@ public class ComponentDlg_Fragment extends DialogFragment {
     ImageView back; //X 버튼(뒤로가기 버튼)
     static String componentNameData; //이전 페이지에서 성분명 받아오는 변수
 
-
-
-
     String IG="";
 
     TextView ingreName[] = new TextView[4]; //팝업창 기능성이름 텍스트뷰
@@ -52,7 +49,6 @@ public class ComponentDlg_Fragment extends DialogFragment {
         //성분명 클릭시 이름 받아오기
         componentNameData = componentNameD;
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -78,8 +74,6 @@ public class ComponentDlg_Fragment extends DialogFragment {
 
         RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
 
-
-
         retrofitAPI.getfrags(componentNameData).enqueue(new Callback<List<frag>>() {
             @Override
             public void onResponse(@NonNull Call<List<frag>> call,
@@ -89,8 +83,6 @@ public class ComponentDlg_Fragment extends DialogFragment {
                     List<frag> data = response.body();
                     Log.d("TEST","성공성공");
                     Log.d("TEST", data.get(0).getghsClass());
-
-
 
                     //기능성 성분 이름이랑 등급 변경
                     for(int i=0;i<data.size();i++){
@@ -104,21 +96,13 @@ public class ComponentDlg_Fragment extends DialogFragment {
                         SelectPic(a,b,gradeCheck[i]);
                     }
                 }
-
-
             }
-
             @Override
             public void onFailure(Call<List<frag>> call, Throwable t) {
                 t.printStackTrace();
-                Log.d("TEST","실패");;
+                Log.d("TEST", "실패");
             }
-
-
         });
-
-
-
     }
 
     public interface RetrofitAPI{
@@ -135,14 +119,11 @@ public class ComponentDlg_Fragment extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
         View v=inflater.inflate(R.layout.fragment_component_dlg_, container, false);
 
         //성분명 가져와서 TextView 변경하기
         componetName= v.findViewById(R.id.componetName);
         componetName.setText(componentNameData);
-
-
 
         //기능성 성분 연결
         ingreName[0] = v.findViewById(R.id.ingreName0);
@@ -158,7 +139,6 @@ public class ComponentDlg_Fragment extends DialogFragment {
         Tv[2] = v.findViewById(R.id.Tv2);
         Tv[3] = v.findViewById(R.id.Tv3);
         gradeCheck[0] = v.findViewById(R.id.gradeCheck0);
-
 
         //x 버튼 누르면 사라지
         back = v.findViewById(R.id.back);
@@ -184,7 +164,6 @@ public class ComponentDlg_Fragment extends DialogFragment {
         super.onResume();
     }
 
-
     public void SelectPic(String IN, String IG,ImageView IV) { //IN = 기능성 이름 IG = 등급
         switch (IN) {
             case "급성독성":
@@ -201,13 +180,19 @@ public class ComponentDlg_Fragment extends DialogFragment {
             case "피부 자극성":
                 if (IG.equals("2")) IV.setImageResource(R.drawable.ic_0_2);
 
+            case "특정표적 장기독성 (1회)":
+                if (IG.equals("1")) IV.setImageResource(R.drawable.ic_3_1);
+                else if (IG.equals("2")) IV.setImageResource(R.drawable.ic_3_2_orange);
+                else if (IG.equals("3")) IV.setImageResource(R.drawable.ic_3_3);
+
+            case "특정표적 장기독성 (반복)":
+                if (IG.equals("1")) IV.setImageResource(R.drawable.ic_2_1);
+                else if (IG.equals("2")) IV.setImageResource(R.drawable.ic_2_2);
+
+            case "흡인 유해성":
+                if (IG.equals("1")) IV.setImageResource(R.drawable.ic_2_1);
+                else if (IG.equals("2")) IV.setImageResource(R.drawable.ic_2_2);
 
         }
-
-
     }
-
-
-
-
 }
