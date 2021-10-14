@@ -193,6 +193,37 @@ public class ComponentDlg_Fragment extends DialogFragment {
                 if (IG.equals("1")) IV.setImageResource(R.drawable.ic_2_1);
                 else if (IG.equals("2")) IV.setImageResource(R.drawable.ic_2_2);
 
+            case "심한 눈 손상성":
+                if (IG.equals("1")) IV.setImageResource(R.drawable.ic_0_1);
+
+            case "눈 자극성":
+                if (IG.equals("2A")) IV.setImageResource(R.drawable.ic_2_2a);
+                else if (IG.equals("1B")) IV.setImageResource(R.drawable.ic_2_1b);
+
+            case "호흡기 과민성":
+                if (IG.equals("1A")) IV.setImageResource(R.drawable.ic_2_1a);
+                else if (IG.equals("1B")) IV.setImageResource(R.drawable.ic_2_1b);
+
+            case "피부 과민성":
+                if (IG.equals("1A")) IV.setImageResource(R.drawable.ic_2_1a);
+                else if (IG.equals("1B")) IV.setImageResource(R.drawable.ic_2_1b);
+
+            case "생식세포 변이원성":
+                if (IG.equals("1A")) IV.setImageResource(R.drawable.ic_3_1a);
+                else if (IG.equals("1B")) IV.setImageResource(R.drawable.ic_3_1b);
+                else if (IG.equals("2")) IV.setImageResource(R.drawable.ic_3_2_yellow);
+
+            case "발암성":
+                if (IG.equals("1A")) IV.setImageResource(R.drawable.ic_3_1a);
+                else if (IG.equals("1B")) IV.setImageResource(R.drawable.ic_3_1b);
+                else if (IG.equals("2")) IV.setImageResource(R.drawable.ic_3_2_yellow);
+
+            case "생식독성":
+                if (IG.equals("1A")) IV.setImageResource(R.drawable.ic_4_1a);
+                else if (IG.equals("1B")) IV.setImageResource(R.drawable.ic_4_1b);
+                else if (IG.equals("2")) IV.setImageResource(R.drawable.ic_2_2);
+                else if (IG.equals("수유독성")) IV.setImageResource(R.drawable.ic_suyu);
+
         }
     }
 }
