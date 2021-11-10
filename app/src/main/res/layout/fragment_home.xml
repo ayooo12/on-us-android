@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="5dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="#FFFFFF"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="32dp"
+            android:background="@drawable/green_logo"
+            android:layout_marginLeft="170dp"
+            android:layout_marginTop="5dp"
+            >
+        </ImageView>
+
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="27dp"
+            android:background="@drawable/ic_mypage"
+            android:layout_marginLeft="145dp"
+            android:layout_marginTop="5dp"
+            >
+        </ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#65F4F4F4"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="350dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/home_icon3_background"
+            android:elevation="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="40dp"
+                android:text="전성분 촬영"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="75dp"
+                android:text="직접 찍어 알아보는 내 제품의 성분"
+                android:textColor="#4E4E4E"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="180dp"
+                android:background="@drawable/ic_home_camera">
+            </ImageView>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="350dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/home_icon3_background"
+            android:elevation="20dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="105dp"
+                android:layout_height="125dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="34dp"
+                android:background="@drawable/ic_home_green_component"></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="240dp"
+                android:layout_marginTop="40dp"
+                android:text="성분 검색"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="205dp"
+                android:layout_marginTop="75dp"
+                android:text="기능성,유해성 등의 성분 정보 알아보기"
+                android:textColor="#4E4E4E"
+                android:textSize="15sp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="350dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/home_icon3_background"
+            android:elevation="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="40dp"
+                android:text="제품 검색"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="75dp"
+                android:text="내가 사용하는 제품 성분 알아보"
+                android:textColor="#4E4E4E"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="149dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="195dp"
+                android:background="@drawable/ic_home_researh_product">
+
+            </ImageView>
+
+        </FrameLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
