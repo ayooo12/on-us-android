@@ -163,6 +163,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="앱 버전"
+                    android:textSize="13sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -171,6 +172,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
                     android:text="문의하기"
+                    android:textSize="13sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -179,6 +181,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="공지사항"
+                    android:textSize="13sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
