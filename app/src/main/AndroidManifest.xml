@@ -15,18 +15,28 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Mypage"></activity>
+        <activity android:name=".Mypage">
+
+        </activity>
         <activity
             android:name=".home_activity_navigation"
             android:exported="true" />
         <activity android:name=".Search" />
         <activity android:name=".MainActivity2" />
-        <activity android:name=".Content_Camera_Result">
+        <activity android:name=".BookmarkActivity">
+
+        </activity>
+        <activity android:name=".BookmarkPrdActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+
+        <activity android:name=".Content_Camera_Result">
+
         </activity>
         <activity
             android:name=".MainActivity"
