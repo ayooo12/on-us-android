@@ -36,10 +36,22 @@ public class Content_Camera_Result extends AppCompatActivity {
 
     String ingfull = "트리클로산";
 
+    TextView chem_item_1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera_result);
+
+        chem_item_1=findViewById(R.id.chem_item_1);
+        chem_item_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //성분명 변수로 보내야함.
+                ComponentDlg_Fragment cptDlg_fragment = new ComponentDlg_Fragment("리모넨");
+                cptDlg_fragment.show(getSupportFragmentManager(),"show");
+            }
+        });
 
 
         for(int j=0; j<ing.length; j++){

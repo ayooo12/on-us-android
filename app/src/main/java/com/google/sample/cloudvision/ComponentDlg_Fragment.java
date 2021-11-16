@@ -50,21 +50,10 @@ public class ComponentDlg_Fragment extends DialogFragment {
         componentNameData = componentNameD;
     }
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-//        //물음표 버튼 누르면 '성분 분류 구분표' 팝
-//        questionMark = getDialog().findViewById(R.id.questionMark);
-//        questionMark.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                cpt_classification_dlg cptDialog = new cpt_classification_dlg();
-//                cptDialog.show(getParentFragmentManager(),"show");
-//            }
-//        });
-
 
         Retrofit.Builder builder = new Retrofit.Builder();
         builder.baseUrl("http://3.36.163.80:8080");
@@ -146,6 +135,17 @@ public class ComponentDlg_Fragment extends DialogFragment {
             @Override
             public void onClick(View view) {
                 dismiss();
+            }
+        });
+
+
+        //물음표 버튼 누르면 '성분 분류 구분표' 팝업
+        questionMark = v.findViewById(R.id.questionMark);
+        questionMark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cpt_classification_dlg cptDialog = new cpt_classification_dlg();
+                cptDialog.show(getParentFragmentManager(),"show");
             }
         });
 
