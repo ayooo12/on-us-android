@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -18,16 +19,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 
 public class home_activity_navigation extends AppCompatActivity {
-    ViewPager2 viewPager;
-
+    ViewPager viewPager;
     Menu menu;
+    MainPagerAdapter mpadapter = new MainPagerAdapter(getSupportFragmentManager());
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_navigation);
-
-        MainPagerAdapter mpadapter = new MainPagerAdapter(this,4);
 
         viewPager = findViewById(R.id.main_viewPager);
 
@@ -83,7 +83,7 @@ public class home_activity_navigation extends AppCompatActivity {
             }
         });
 
-        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -105,37 +105,38 @@ public class home_activity_navigation extends AppCompatActivity {
     }
 
     //어댑터 안에서 각각의 아이템(프라그먼트 페이지들)을 데이터로서 관리한다
-    class MainPagerAdapter extends FragmentStateAdapter {
+    class MainPagerAdapter extends FragmentStatePagerAdapter {
         ArrayList<Fragment> items = new ArrayList<Fragment>();
 
-        public MainPagerAdapter(FragmentActivity fa, int count){
-            super(fa);
-
+        public MainPagerAdapter(FragmentManager fm){
+            super(fm);
         }
 
         public void addItem(Fragment item) {
             items.add(item);
         }
 
+
+
+        @Override
+        public Fragment getItem(int position) {
+            return items.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return items.size();
+        }
+
+//        @NonNull
 //        @Override
-//        public Fragment getItem(int position) {
-//            return items.get(position);
+//        public Fragment createFragment(int position) {
+//            return null;
 //        }
 //
 //        @Override
-//        public int getCount() {
-//            return items.size();
+//        public int getItemCount() {
+//            return 0;
 //        }
-
-        @NonNull
-        @Override
-        public Fragment createFragment(int position) {
-            return null;
-        }
-
-        @Override
-        public int getItemCount() {
-            return 0;
-        }
     }
 }

@@ -18,7 +18,11 @@
         <activity
             android:name=".home_activity_navigation"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
         <activity android:name=".Search_component_Activity" />
@@ -31,12 +35,6 @@
         </activity>
 
         <activity android:name=".Content_Camera_Result">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity
