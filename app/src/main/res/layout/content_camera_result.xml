@@ -9,7 +9,7 @@
     android:backgroundTint="#FFFFFF"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.google.sample.cloudvision.MainActivity"
+    tools:context="com.google.sample.cloudvision.Camera_activity"
     tools:showIn="@layout/activity_camera_result">
 
 

@@ -9,9 +9,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
-public class cpt_classification_dlg extends DialogFragment {
+public class component_classification_dlg extends DialogFragment {
 
-    public cpt_classification_dlg(){}
+    public component_classification_dlg(){}
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

@@ -4,7 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".home_activity_navigation">
+
+     <androidx.viewpager2.widget.ViewPager2
+         android:id="@+id/main_viewPager"
+         android:layout_width="match_parent"
+         android:layout_height="740dp"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

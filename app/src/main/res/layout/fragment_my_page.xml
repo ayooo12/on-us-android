@@ -8,7 +8,7 @@
     android:background="#FFFFFF"
     android:backgroundTint="#FFFFFF"
     android:orientation="vertical"
-    tools:context=".Mypage">
+    tools:context=".Mypage_Activity">
 
     <LinearLayout
         android:layout_width="match_parent"

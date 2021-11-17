@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:color="#FFFFFF"
     android:orientation="vertical"
-    tools:context=".Search">
+    tools:context=".Search_component_Activity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -44,9 +44,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/left_btn_search"
+            android:background="@drawable/left_btn_search_no"
             android:text="성분검색"
-            android:textColor="#1EE4A5"
+            android:textColor="#ffffff"
             android:textSize="16dp" />
 
         <Button
@@ -54,9 +54,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/right_btn_search_no"
+            android:background="@drawable/right_btn_search"
             android:text="제품검색"
-            android:textColor="#ffffff"
+            android:textColor="#1EE4A5"
             android:textSize="16dp" />
 
     </LinearLayout>
@@ -80,7 +80,7 @@
             android:backgroundTint="#01DA95"
             android:ems="10"
             android:drawableRight="@drawable/drawble_ic_input_search"
-            android:hint="성분명을 입력해주세요"
+            android:hint="제품명을 입력해주세요"
             android:textColorHint="#C7C7C7"
             android:textSize="16sp" />
 

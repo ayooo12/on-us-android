@@ -3,14 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@drawable/cpt_classitication_table_background"
-    tools:context=".cpt_classification_dlg">
+    tools:context=".component_classification_dlg">
 
 
-<ImageView
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="성분 분류 기준표"
+        android:layout_marginTop="50dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        >
+    </TextView>
+
+
+    <ImageView
         android:layout_width="300dp"
         android:layout_height="450dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="3dp"
         android:layout_gravity="center|center_horizontal"
         android:src="@drawable/component_classfication_table">
 
