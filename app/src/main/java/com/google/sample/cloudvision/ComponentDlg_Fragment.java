@@ -126,6 +126,9 @@ public class ComponentDlg_Fragment extends DialogFragment {
         Tv[2] = v.findViewById(R.id.Tv2);
         Tv[3] = v.findViewById(R.id.Tv3);
         gradeCheck[0] = v.findViewById(R.id.gradeCheck0);
+        gradeCheck[1] = v.findViewById(R.id.gradeCheck1);
+        gradeCheck[2] = v.findViewById(R.id.gradeCheck2);
+        gradeCheck[3] = v.findViewById(R.id.gradeCheck3);
 
         //x 버튼 누르면 사라지
         back = v.findViewById(R.id.back);
