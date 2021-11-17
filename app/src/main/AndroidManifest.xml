@@ -25,7 +25,6 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".Search_component_Activity" />
         <activity android:name=".MainActivity2" />
         <activity android:name=".BookmarkActivity">
 
