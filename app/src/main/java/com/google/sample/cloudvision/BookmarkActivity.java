@@ -37,7 +37,7 @@ public class BookmarkActivity extends AppCompatActivity {
             public void onItemClick(AdapterView parent, View v, int position, long id){
                 Toast.makeText(getApplicationContext(),
                         myAdapter.getItem(position).getIngName(),
-                        Toast.LENGTH_LONG).show();
+                        Toast.LENGTH_SHORT).show();
             }
 
         });
