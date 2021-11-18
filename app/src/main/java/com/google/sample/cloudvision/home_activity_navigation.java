@@ -40,8 +40,9 @@ public class home_activity_navigation extends AppCompatActivity {
 
         //뷰 페이저의 2번째 페이지='제품/성분 검색'
         //페이지 프라그먼트로 바꿔야 붙이기 가능
-//        Search_component_Activity search_component_activity = new Search_component_Activity();
-//        mpadapter.addItem(search_component_activity);
+        Search_Fragment search_fragment = new Search_Fragment();
+        mpadapter.addItem(search_fragment);
+
         //뷰 페이저의 3번째 페이지='카메라 촬영'
         Camera_Fragment camera_fragment2 = new Camera_Fragment();
         mpadapter.addItem(camera_fragment2);
