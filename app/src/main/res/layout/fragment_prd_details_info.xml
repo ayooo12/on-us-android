@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".Prd_details_info_Fragment">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -172,43 +174,43 @@
                 android:gravity="center"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginTop="25dp">
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="30dp"
-                android:src="@drawable/prd_details_icon"/>
-            <FrameLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="97dp"
-                android:layout_marginLeft="3dp"
-                android:layout_marginRight="30dp"
-                android:background="@drawable/prd_details_round">
-                <TextView
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="25dp">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/prd_details_icon"/>
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="15dp"
-                    android:text="공통유해성분"
-                    android:textSize="15dp"
-                    android:textColor="#000000"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:text="부틸렌글라이콜, 소듐클로라이드, 소듐살리실레이트,
+                    android:layout_height="97dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/prd_details_round">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:text="공통유해성분"
+                        android:textSize="15dp"
+                        android:textColor="#000000"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:text="부틸렌글라이콜, 소듐클로라이드, 소듐살리실레이트,
 셀룰로오스, 암모늄라우릴설페이트, 올리브오일"
-                    android:textSize="10dp"
-                    android:textColor="#3B3B3B"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"/>
-            </FrameLayout>
-        </LinearLayout>
+                        android:textSize="10dp"
+                        android:textColor="#3B3B3B"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"/>
+                </FrameLayout>
+            </LinearLayout>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="53dp"
