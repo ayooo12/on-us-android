@@ -46,14 +46,18 @@ public class home_activity_navigation extends AppCompatActivity {
         //뷰 페이저의 3번째 페이지='카메라 촬영'
         Camera_Fragment camera_fragment2 = new Camera_Fragment();
         mpadapter.addItem(camera_fragment2);
-
+/*
         //뷰 페이저의 3번째 페이지='카메라 촬영'
         Camera_Fragment camera_fragment = new Camera_Fragment();
-        mpadapter.addItem(camera_fragment);
-
+        mpadapter.addItem(camera_fragment);*/
+/*
         //뷰 페이저의 4번째 페이지='마이페이지'
         MyPage_Fragment myPage_fragment = new MyPage_Fragment();
-        mpadapter.addItem(myPage_fragment);
+        mpadapter.addItem(myPage_fragment);*/
+
+        //뷰 페이저의 4번째 페이지='마이페이지'
+        Prd_details_info_Fragment Prd_details_info_Fragment = new Prd_details_info_Fragment();
+        mpadapter.addItem(Prd_details_info_Fragment);
 
         viewPager.setAdapter(mpadapter);
 

@@ -162,18 +162,18 @@
                 android:textColor="#000000"
                 android:textStyle="bold"
                 android:gravity="center"/>
+
             <TextView
+                android:id="@+id/all_Ing"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="정제수, 리모넨, 리날룰, 멘톨, 페녹시에탄올, 살리실릭애씨드,
-부틸렌글라이콜, 소듐클로라이드, 소듐살리실레이트, 셀룰로오스,
-암모늄라우릴설페이트, 올리브오일, 에틸 벤젠, PHMG 포스페이트"
-                android:textSize="10dp"
-                android:textColor="#3B3B3B"
-                android:gravity="center"
+                android:layout_height="39dp"
                 android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="25dp"
+                android:gravity="center"
+                android:text="정제수, 리모넨, 리날룰, 멘톨, 페녹시에탄올, 살리실릭애씨드, 부틸렌글라이콜, 소듐클로라이드, 소듐살리실레이트, 셀룰로오스, 암모늄라우릴설페이트, 올리브오일"
+                android:textColor="#3B3B3B"
+                android:textSize="10dp" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
