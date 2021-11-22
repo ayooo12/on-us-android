@@ -72,7 +72,7 @@ public class Prd_details_info_Fragment extends Fragment {
                         aIng.append(", ");
                         if(data.get(i).getType().equals("H")){
                             bIng.append(data.get(i).getName());
-                            //bad_Ing.setText(bIng);
+                            bad_Ing.setText(bIng);
                             bIng.append(", ");
                         }
                     }
@@ -94,7 +94,7 @@ public class Prd_details_info_Fragment extends Fragment {
                     List<frag> data = response.body();
                     Log.d("TEST","성공성공");
                     Log.d("TEST", data.get(0).getghsClass());
-                    bad_Ing.setText(data.get(0).getghsClass());
+                    //bad_Ing.setText(data.get(0).getghsClass());
 
                 }
             }
