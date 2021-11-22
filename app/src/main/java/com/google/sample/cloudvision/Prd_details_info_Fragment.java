@@ -36,7 +36,9 @@ import retrofit2.http.Query;
 public class Prd_details_info_Fragment extends Fragment {
 
     TextView all_Ing;
+    TextView bad_Ing;
     StringBuilder aIng = new StringBuilder( "" );
+    StringBuilder bIng = new StringBuilder( "" );
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,11 +65,16 @@ public class Prd_details_info_Fragment extends Fragment {
                     Log.d("TEST","성공성공");
                     Log.d("TEST", data.get(0).getName());
 
-                    //기능성 성분 이름이랑 등급 변경
+                    //전성부 가져오고 전성분에서 유해성분 추출
                     for(int i=0;i<data.size();i++){
                         aIng.append(data.get(i).getName());
                         all_Ing.setText(aIng);
                         aIng.append(", ");
+                        if(data.get(i).getType().equals("H")){
+                            bIng.append(data.get(i).getName());
+                            //bad_Ing.setText(bIng);
+                            bIng.append(", ");
+                        }
                     }
                 }
             }
@@ -77,9 +84,32 @@ public class Prd_details_info_Fragment extends Fragment {
                 Log.d("TEST", "실패");
             }
         });
+
+        retrofitAPI.getfrags("트리클로산").enqueue(new Callback<List<frag>>() {
+            @Override
+            public void onResponse(@NonNull Call<List<frag>> call,
+                                   @NonNull Response<List<frag>> response) {
+                if(response.isSuccessful()) {
+
+                    List<frag> data = response.body();
+                    Log.d("TEST","성공성공");
+                    Log.d("TEST", data.get(0).getghsClass());
+                    bad_Ing.setText(data.get(0).getghsClass());
+
+                }
+            }
+            @Override
+            public void onFailure(Call<List<frag>> call, Throwable t) {
+                t.printStackTrace();
+                Log.d("TEST", "실패");
+            }
+        });
+
     }
 
     public interface RetrofitAPI{
+        @GET("/findGhsTest?")
+        Call<List<frag>> getfrags(@Query("ingreName") String name);
         @GET("/findIngreListTest?")
         Call<List<aIngre>> getaIngre(@Query("productName") String name);
 
@@ -87,6 +117,7 @@ public class Prd_details_info_Fragment extends Fragment {
         @POST("/posts")
         Call<Func> postData(@FieldMap HashMap<String, Object> param);
     }
+
 
 
     public Prd_details_info_Fragment() {
@@ -108,6 +139,7 @@ public class Prd_details_info_Fragment extends Fragment {
         // Inflate the layout for this fragment
         View v=inflater.inflate(R.layout.fragment_prd_details_info, container, false);
         all_Ing = v.findViewById(R.id.all_Ing);
+        bad_Ing = v.findViewById(R.id.bad_Ing);
 
         return v;
     }

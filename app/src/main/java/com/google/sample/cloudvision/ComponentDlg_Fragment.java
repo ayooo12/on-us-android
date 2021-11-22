@@ -173,12 +173,12 @@ public class ComponentDlg_Fragment extends DialogFragment {
                 else if (IG.equals("3")) IV.setImageResource(R.drawable.ic_4_3);
                 else if (IG.equals("4")) IV.setImageResource(R.drawable.ic_4_4);
 
-            case "피부 부식성":
+            case "피부부식성":
                 if (IG.equals("1A")) IV.setImageResource(R.drawable.ic_3_1a);
                 else if (IG.equals("1B")) IV.setImageResource(R.drawable.ic_3_1b);
                 else if (IG.equals("1C")) IV.setImageResource(R.drawable.ic_3_1c);
 
-            case "피부 자극성":
+            case "피부자극성":
                 if (IG.equals("2")) IV.setImageResource(R.drawable.ic_0_2);
 
             case "특정표적 장기독성 (1회)":

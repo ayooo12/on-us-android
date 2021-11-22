@@ -199,16 +199,18 @@
                         android:textSize="15dp"
                         android:textColor="#000000"
                         android:textStyle="bold"/>
+
                     <TextView
+                        android:id="@+id/bad_Ing"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
                         android:layout_marginTop="50dp"
+                        android:layout_marginRight="15dp"
                         android:text="부틸렌글라이콜, 소듐클로라이드, 소듐살리실레이트,
 셀룰로오스, 암모늄라우릴설페이트, 올리브오일"
-                        android:textSize="10dp"
                         android:textColor="#3B3B3B"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="15dp"/>
+                        android:textSize="10dp" />
                 </FrameLayout>
             </LinearLayout>
             <Button
