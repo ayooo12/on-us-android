@@ -1,49 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="5dp"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:background="#FFFFFF"
-        android:layout_gravity="center">
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_width="56dp"
+            android:id="@+id/imageView3"
+            android:layout_width="0dp"
             android:layout_height="32dp"
-            android:background="@drawable/green_logo"
+            android:layout_marginStart="170dp"
             android:layout_marginLeft="170dp"
             android:layout_marginTop="5dp"
-            >
-        </ImageView>
+            android:layout_marginEnd="145dp"
+            android:layout_marginRight="145dp"
+            android:background="@drawable/green_logo"
+            android:scaleType="centerInside"
+            app:layout_constraintEnd_toStartOf="@+id/imageView5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
 
         <ImageView
-            android:layout_width="26dp"
-            android:layout_height="27dp"
-            android:background="@drawable/ic_mypage"
-            android:layout_marginLeft="145dp"
+            android:id="@+id/imageView5"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
             android:layout_marginTop="5dp"
-            >
-        </ImageView>
-    </LinearLayout>
+            android:layout_marginEnd="14dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginBottom="5dp"
+            android:scaleType="centerInside"
+            android:background="@drawable/ic_mypage"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="parent"></ImageView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="#65F4F4F4"
-        android:orientation="vertical">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
         <FrameLayout
-            android:layout_width="350dp"
-            android:layout_height="160dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="60dp"
+            android:id="@+id/frameLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_marginTop="25dp"
             android:background="@drawable/home_icon3_background"
             android:elevation="20dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -67,20 +93,24 @@
             <ImageView
                 android:layout_width="160dp"
                 android:layout_height="120dp"
-                android:layout_marginTop="50dp"
                 android:layout_marginLeft="180dp"
-                android:background="@drawable/ic_home_camera">
-            </ImageView>
+                android:layout_marginTop="50dp"
+                android:background="@drawable/ic_home_camera"></ImageView>
         </FrameLayout>
 
         <FrameLayout
-            android:layout_width="350dp"
-            android:layout_height="160dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
+            android:id="@+id/frameLayout3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="81dp"
             android:background="@drawable/home_icon3_background"
             android:elevation="20dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/frameLayout4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout2">
 
             <ImageView
                 android:layout_width="105dp"
@@ -111,13 +141,19 @@
         </FrameLayout>
 
         <FrameLayout
-            android:layout_width="350dp"
-            android:layout_height="160dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
+            android:id="@+id/frameLayout4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="70dp"
             android:background="@drawable/home_icon3_background"
             android:elevation="20dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout3">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -134,21 +170,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="75dp"
-                android:text="내가 사용하는 제품 성분 알아보"
+                android:text="내가 사용하는 제품 성분 알아보기"
                 android:textColor="#4E4E4E"
                 android:textSize="15sp" />
 
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="149dp"
-                android:layout_marginTop="15dp"
                 android:layout_marginLeft="195dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/ic_home_researh_product">
 
             </ImageView>
 
         </FrameLayout>
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
