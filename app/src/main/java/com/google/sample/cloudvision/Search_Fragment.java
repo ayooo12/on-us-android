@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 import androidx.fragment.app.Fragment;
 
@@ -22,16 +24,29 @@ public class Search_Fragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        if (getArguments() != null) {
-//            mParam1 = getArguments().getString(ARG_PARAM1);
-//            mParam2 = getArguments().getString(ARG_PARAM2);
-//        }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search_ing, container, false);
+        // 반환할 view 변수
+        View returnView;
+        View v = inflater.inflate(R.layout.fragment_search_ing, container, false);
+
+
+        // 제품검색 버튼 클릭시 레이아웃 변경
+        Button button4 = v.findViewById(R.id.button4);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                View v2 = inflater.inflate(R.layout.fragment_search_prd, container, false);
+            }
+        });
+
+
+
+        return v;
     }
 }
