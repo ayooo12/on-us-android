@@ -13,15 +13,21 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
 public class home_activity_navigation extends AppCompatActivity {
-    ViewPager viewPager;
+    static ViewPager viewPager;
     Menu menu;
     MainPagerAdapter mpadapter = new MainPagerAdapter(getSupportFragmentManager());
+    FragmentManager manager;
+
+    Search_Fragment search_fragment; //Home_Fragment 참조변수
+
 
 
     @Override
@@ -29,6 +35,7 @@ public class home_activity_navigation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_navigation);
 
+        //fragment 레이아웃들 올라오는 공간
         viewPager = findViewById(R.id.main_viewPager);
 
         //캐싱을 해놓을 프래그먼트 개수
@@ -46,21 +53,10 @@ public class home_activity_navigation extends AppCompatActivity {
         //뷰 페이저의 3번째 페이지='카메라 촬영'
         Camera_Fragment camera_fragment2 = new Camera_Fragment();
         mpadapter.addItem(camera_fragment2);
-/*
-        //뷰 페이저의 3번째 페이지='카메라 촬영'
-        Camera_Fragment camera_fragment = new Camera_Fragment();
-        mpadapter.addItem(camera_fragment);*/
-/*
+
         //뷰 페이저의 4번째 페이지='마이페이지'
         MyPage_Fragment myPage_fragment = new MyPage_Fragment();
-        mpadapter.addItem(myPage_fragment);*/
-
-        //뷰 페이저의 4번째 페이지='마이페이지'
-       // Prd_details_info_Fragment Prd_details_info_Fragment = new Prd_details_info_Fragment();
-       // mpadapter.addItem(Prd_details_info_Fragment);
-
-        MyYoso Myyoso = new MyYoso();
-        mpadapter.addItem(Myyoso);
+        mpadapter.addItem(myPage_fragment);
 
         viewPager.setAdapter(mpadapter);
 
