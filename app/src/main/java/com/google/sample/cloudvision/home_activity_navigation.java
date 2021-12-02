@@ -56,8 +56,11 @@ public class home_activity_navigation extends AppCompatActivity {
         mpadapter.addItem(myPage_fragment);*/
 
         //뷰 페이저의 4번째 페이지='마이페이지'
-        Prd_details_info_Fragment Prd_details_info_Fragment = new Prd_details_info_Fragment();
-        mpadapter.addItem(Prd_details_info_Fragment);
+       // Prd_details_info_Fragment Prd_details_info_Fragment = new Prd_details_info_Fragment();
+       // mpadapter.addItem(Prd_details_info_Fragment);
+
+        MyYoso Myyoso = new MyYoso();
+        mpadapter.addItem(Myyoso);
 
         viewPager.setAdapter(mpadapter);
 

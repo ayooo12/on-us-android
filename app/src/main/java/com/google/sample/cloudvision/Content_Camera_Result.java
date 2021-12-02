@@ -34,7 +34,7 @@ import retrofit2.http.Query;
 public class Content_Camera_Result extends AppCompatActivity {
     TextView ing[] = new TextView[4];
 
-    String ingfull = "트리클로산";
+    String ingfull = "트리클로산,리날룰";
 
     TextView chem_item_1;
 
