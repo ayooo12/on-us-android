@@ -36,17 +36,6 @@ public class Search_ing_fragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_search_ing, container, false);
 
-
-        // 제품검색 버튼 클릭시 레이아웃 변경
-//        Button button4 = v.findViewById(R.id.button4);
-//        button4.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                FragmentTransaction mFragmentTransaction = getChildFragmentManager().beginTransaction();
-//
-//            }
-//        });
-
         return v;
     }
 }

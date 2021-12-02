@@ -27,12 +27,12 @@
             android:layout_marginRight="145dp"
             android:background="@drawable/green_logo"
             android:scaleType="centerInside"
-            app:layout_constraintEnd_toStartOf="@+id/imageView5"
+            app:layout_constraintEnd_toStartOf="@+id/goto_mypage"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"></ImageView>
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/goto_mypage"
             android:layout_width="0dp"
             android:layout_height="32dp"
             android:layout_marginTop="5dp"
@@ -59,7 +59,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
         <FrameLayout
-            android:id="@+id/frameLayout2"
+            android:id="@+id/frameLayout_camera"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -69,7 +69,8 @@
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            android:clickable="true">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -99,7 +100,7 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/frameLayout3"
+            android:id="@+id/frameLayout_search_ing"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -107,10 +108,10 @@
             android:background="@drawable/home_icon3_background"
             android:elevation="20dp"
             android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@+id/frameLayout4"
+            app:layout_constraintBottom_toTopOf="@+id/frameLayout_search_prd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/frameLayout2">
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout_camera">
 
             <ImageView
                 android:layout_width="105dp"
@@ -141,7 +142,7 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/frameLayout4"
+            android:id="@+id/frameLayout_search_prd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -153,7 +154,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/frameLayout3">
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout_search_ing">
 
             <TextView
                 android:layout_width="wrap_content"

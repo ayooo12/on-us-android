@@ -18,7 +18,7 @@ public class Search_Fragment extends Fragment {
     }
 
 
-    public static Search_Fragment newInstance(String param1, String param2) {
+    public static Search_Fragment newInstance() {
         Search_Fragment fragment = new Search_Fragment();
 
         return fragment;
@@ -36,7 +36,6 @@ public class Search_Fragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_search, container, false);
 
-
         Button button3, button4;
         button3 = (Button) v.findViewById(R.id.button3);
         button3.setOnClickListener(this::onClick);
@@ -44,17 +43,43 @@ public class Search_Fragment extends Fragment {
         button4 = (Button) v.findViewById(R.id.button4);
         button4.setOnClickListener(this::onClick);
 
+//        if (getArguments() != null)
+//        {
+//            String what_page_is = getArguments().getString("what_page_is"); // Home_Fragment 받아온 값 넣기
+//
+//            if (what_page_is.equals("ingredients")){
+//                onClick(button4);
+//
+//            }
+//        }
+
         return v;
     }
 
-
+        //클릭한 버튼에따라 색 변함
         public void onClick(View view){
+            setButtonColor(view.getId());
+        }
+
+
+        // fragmnet 내부의 fragment layout 변경
+        private void setChildFragment(Fragment child) {
+            FragmentTransaction childFt = getChildFragmentManager().beginTransaction();
+
+            if (!child.isAdded()) {
+                childFt.replace(R.id.child_fragment_container, child);
+                childFt.addToBackStack(null);
+                childFt.commit();
+            }
+        }
+
+        public void setButtonColor(int id){
 
             Button button3 = getView().findViewById(R.id.button3);
             Button button4 = getView().findViewById(R.id.button4);
 
             Fragment fg;
-            switch (view.getId()) {
+            switch (id) {
 
                 // 성분검색 버튼 클릭시,
                 case R.id.button3:
@@ -85,18 +110,5 @@ public class Search_Fragment extends Fragment {
                     break;
             }
         }
-
-
-        // fragmnet 내부의 fragment layout 변경
-        private void setChildFragment(Fragment child) {
-            FragmentTransaction childFt = getChildFragmentManager().beginTransaction();
-
-            if (!child.isAdded()) {
-                childFt.replace(R.id.child_fragment_container, child);
-                childFt.addToBackStack(null);
-                childFt.commit();
-            }
-        }
-
     }
 
