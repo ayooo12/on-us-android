@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,145 +13,286 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+            <!--            <TextView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="50dp"-->
+            <!--                android:text="유해성분"-->
+            <!--                android:textSize="20dp"-->
+            <!--                android:textColor="#000000"-->
+            <!--                android:textStyle="bold"-->
+            <!--                android:gravity="center"/>-->
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:orientation="horizontal"-->
+            <!--                android:layout_marginTop="25dp">-->
+            <!--                <ImageView-->
+            <!--                    android:layout_width="35dp"-->
+            <!--                    android:layout_height="65dp"-->
+            <!--                    android:src="@drawable/bad_water_1"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:layout_marginLeft="70dp"/>-->
+            <!--                <ImageView-->
+            <!--                    android:layout_width="35dp"-->
+            <!--                    android:layout_height="65dp"-->
+            <!--                    android:src="@drawable/bad_water_1"-->
+            <!--                    android:layout_weight="1"/>-->
+            <!--                <ImageView-->
+            <!--                    android:layout_width="35dp"-->
+            <!--                    android:layout_height="65dp"-->
+            <!--                    android:src="@drawable/bad_water_1"-->
+            <!--                    android:layout_weight="1"/>-->
+            <!--                <ImageView-->
+            <!--                    android:layout_width="35dp"-->
+            <!--                    android:layout_height="65dp"-->
+            <!--                    android:src="@drawable/bad_water_1"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:layout_marginRight="70dp"/>-->
+            <!--            </LinearLayout>-->
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:orientation="horizontal"-->
+            <!--                android:layout_marginTop="14dp">-->
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:text="생식독성"-->
+            <!--                    android:textColor="#FF7979"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:layout_marginLeft="70dp"-->
+            <!--                    android:gravity="center"/>-->
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:text="알레르기"-->
+            <!--                    android:textColor="#FF7979"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:gravity="center"/>-->
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:text="호흡기"-->
+            <!--                    android:textColor="#FF7979"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:gravity="center"/>-->
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:text="피부자극"-->
+            <!--                    android:textColor="#FF7979"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:layout_marginRight="70dp"-->
+            <!--                    android:gravity="center"/>-->
+            <!--            </LinearLayout>-->
+
+            <!--            <TextView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="70dp"-->
+            <!--                android:text="기능성성분"-->
+            <!--                android:textSize="20dp"-->
+            <!--                android:textColor="#000000"-->
+            <!--                android:textStyle="bold"-->
+            <!--                android:gravity="center"/>-->
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:orientation="horizontal"-->
+            <!--                android:layout_marginTop="25dp">-->
+            <!--                <ImageView-->
+            <!--                    android:layout_width="35dp"-->
+            <!--                    android:layout_height="65dp"-->
+            <!--                    android:src="@drawable/good_water_1"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:layout_marginLeft="70dp"/>-->
+            <!--                <ImageView-->
+            <!--                    android:layout_width="35dp"-->
+            <!--                    android:layout_height="65dp"-->
+            <!--                    android:src="@drawable/good_water_1"-->
+            <!--                    android:layout_weight="1"/>-->
+            <!--                <ImageView-->
+            <!--                    android:layout_width="35dp"-->
+            <!--                    android:layout_height="65dp"-->
+            <!--                    android:src="@drawable/good_water_1"-->
+            <!--                    android:layout_weight="1"/>-->
+            <!--                <ImageView-->
+            <!--                    android:layout_width="35dp"-->
+            <!--                    android:layout_height="65dp"-->
+            <!--                    android:src="@drawable/good_water_1"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:layout_marginRight="70dp"/>-->
+            <!--            </LinearLayout>-->
+            <!--            <View-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="1dp"-->
+            <!--                android:background="#D6D6D6"-->
+            <!--                android:layout_marginTop="30dp"-->
+            <!--                android:layout_marginLeft="10dp"-->
+            <!--                android:layout_marginRight="10dp"/>-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:text="유해성분"
-                android:textSize="20dp"
-                android:textColor="#000000"
-                android:textStyle="bold"
-                android:gravity="center"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginTop="25dp">
-                <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="65dp"
-                    android:src="@drawable/bad_water_1"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="70dp"/>
-                <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="65dp"
-                    android:src="@drawable/bad_water_1"
-                    android:layout_weight="1"/>
-                <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="65dp"
-                    android:src="@drawable/bad_water_1"
-                    android:layout_weight="1"/>
-                <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="65dp"
-                    android:src="@drawable/bad_water_1"
-                    android:layout_weight="1"
-                    android:layout_marginRight="70dp"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginTop="14dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="생식독성"
-                    android:textColor="#FF7979"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="70dp"
-                    android:gravity="center"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="알레르기"
-                    android:textColor="#FF7979"
-                    android:layout_weight="1"
-                    android:gravity="center"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="호흡기"
-                    android:textColor="#FF7979"
-                    android:layout_weight="1"
-                    android:gravity="center"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="피부자극"
-                    android:textColor="#FF7979"
-                    android:layout_weight="1"
-                    android:layout_marginRight="70dp"
-                    android:gravity="center"/>
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="70dp"
-                android:text="기능성성분"
-                android:textSize="20dp"
-                android:textColor="#000000"
-                android:textStyle="bold"
-                android:gravity="center"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginTop="25dp">
-                <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="65dp"
-                    android:src="@drawable/good_water_1"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="70dp"/>
-                <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="65dp"
-                    android:src="@drawable/good_water_1"
-                    android:layout_weight="1"/>
-                <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="65dp"
-                    android:src="@drawable/good_water_1"
-                    android:layout_weight="1"/>
-                <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="65dp"
-                    android:src="@drawable/good_water_1"
-                    android:layout_weight="1"
-                    android:layout_marginRight="70dp"/>
-            </LinearLayout>
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:background="#D6D6D6"
                 android:layout_marginTop="30dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
                 android:text="성분상세"
                 android:textSize="20dp"
                 android:textColor="#000000"
                 android:textStyle="bold"
                 android:gravity="center"/>
-            <ImageView
-                android:layout_width="wrap_content"
+            <FrameLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/prd_details_memo"
+                android:background="#F8F8F8"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"/>
+                android:layout_marginRight="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="13dp"
+                    android:layout_marginLeft="13dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="15dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="생식 독성"
+                            android:textSize="13dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#D6D6D6"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"/>
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="리모넨 >"
+                            android:textColor="#333333"
+                            android:textSize="13dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="알레르기성"
+                            android:textSize="13dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#D6D6D6"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="리모넨, 멘톨 >"
+                            android:textColor="#333333"
+                            android:textSize="13dp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="호흡기 과민성"
+                            android:textSize="13dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#D6D6D6"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="리모넨 >"
+                            android:textColor="#333333"
+                            android:textSize="13dp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="15dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="피부 자극성"
+                            android:textSize="13dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#D6D6D6"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="리모넨, 멘톨, 리날룰 >"
+                            android:textColor="#333333"
+                            android:textSize="13dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
 
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
                 android:background="#D6D6D6"
+                android:layout_marginTop="25dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"/>
             <TextView
@@ -191,7 +333,6 @@
                     android:layout_marginRight="30dp"
                     android:background="@drawable/prd_details_round">
                     <TextView
-                        android:id="@+id/all_ing"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="15dp"
@@ -200,27 +341,19 @@
                         android:textSize="15dp"
                         android:textColor="#000000"
                         android:textStyle="bold"/>
-
                     <TextView
-                        android:id="@+id/bad_Ing"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
                         android:layout_marginTop="50dp"
-                        android:layout_marginRight="15dp"
                         android:text="부틸렌글라이콜, 소듐클로라이드, 소듐살리실레이트,
 셀룰로오스, 암모늄라우릴설페이트, 올리브오일"
+                        android:textSize="10dp"
                         android:textColor="#3B3B3B"
-                        android:textSize="10dp" />
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"/>
                 </FrameLayout>
             </LinearLayout>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="53dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:background="@drawable/prd_details_button"/>
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
