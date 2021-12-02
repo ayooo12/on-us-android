@@ -46,6 +46,7 @@ public class home_activity_navigation extends AppCompatActivity {
         mpadapter.addItem(home_fragment);
 
         //뷰 페이저의 2번째 페이지='제품/성분 검색'
+        //페이지 프라그먼트로 바꿔야 붙이기 가능
         Search_Fragment search_fragment = new Search_Fragment();
         mpadapter.addItem(search_fragment);
 
@@ -104,6 +105,7 @@ public class home_activity_navigation extends AppCompatActivity {
 
             }
         });
+
     }
 
     //어댑터 안에서 각각의 아이템(프라그먼트 페이지들)을 데이터로서 관리한다
@@ -130,6 +132,15 @@ public class home_activity_navigation extends AppCompatActivity {
             return items.size();
         }
 
-
+//        @NonNull
+//        @Override
+//        public Fragment createFragment(int position) {
+//            return null;
+//        }
+//
+//        @Override
+//        public int getItemCount() {
+//            return 0;
+//        }
     }
 }
