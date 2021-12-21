@@ -44,9 +44,6 @@ public class Prd_details_info_Fragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-
-
         Retrofit.Builder builder = new Retrofit.Builder();
         builder.baseUrl("http://3.36.163.80:8080");
         builder.addConverterFactory(GsonConverterFactory.create());
@@ -118,8 +115,6 @@ public class Prd_details_info_Fragment extends Fragment {
         Call<Func> postData(@FieldMap HashMap<String, Object> param);
     }
 
-
-
     public Prd_details_info_Fragment() {
         // Required empty public constructor
     }
@@ -139,7 +134,9 @@ public class Prd_details_info_Fragment extends Fragment {
         // Inflate the layout for this fragment
         View v=inflater.inflate(R.layout.fragment_prd_details_info, container, false);
         all_Ing = v.findViewById(R.id.all_Ing);
-        bad_Ing = v.findViewById(R.id.bad_Ing);
+
+        //이거 오류나서 주석처리함.
+//        bad_Ing = v.findViewById(R.id.bad_Ing);
 
         return v;
     }
