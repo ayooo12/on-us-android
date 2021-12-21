@@ -53,15 +53,15 @@ public class Search_prd_fragment extends Fragment {
             public void onResponse(Call<List<Search_product>> call, Response<List<Search_product>> response) {
                 if(response.isSuccessful()){
                     List<Search_product> data = response.body();
-                    Log.d("검색기능","구현 완료");
-                    Log.d("검색기능",data.get(0).getName());
+                    Log.d("제품검색기능","구현 완료");
+                    Log.d("제검색기능",data.get(0).getName());
                 }
             }
 
             @Override
             public void onFailure(Call<List<Search_product>> call, Throwable t) {
                 t.printStackTrace();
-                Log.d("검색기능","실패");
+                Log.d("제품검색기능","실패");
             }
         });
     }
@@ -76,7 +76,6 @@ public class Search_prd_fragment extends Fragment {
         @FormUrlEncoded
         @POST("/posts")
         Call<Func> postData(@FieldMap HashMap<String, Object> param);
-
     }
 
 
