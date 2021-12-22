@@ -52,5 +52,20 @@
             android:text="최근 검색 성분"
             android:textColor="#616161"
             android:textSize="10sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="13dp">
+
+            <!-- 최근 검색 성분 나열 -->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ing_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
     </LinearLayout>
 </LinearLayout>

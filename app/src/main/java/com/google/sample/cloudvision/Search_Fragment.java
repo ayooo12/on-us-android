@@ -13,10 +13,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 public class Search_Fragment extends Fragment {
+    //제품, 성분 검색 버튼 누르면 화면 다르게 보여주는 페이지
+
     public Search_Fragment() {
         // Required empty public constructor
     }
-
 
     public static Search_Fragment newInstance() {
         Search_Fragment fragment = new Search_Fragment();

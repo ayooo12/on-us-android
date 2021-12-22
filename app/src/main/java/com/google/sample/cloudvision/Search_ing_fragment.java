@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -28,6 +30,9 @@ import retrofit2.http.Query;
 
 public class Search_ing_fragment extends Fragment {
 
+    public static search_ing_adapter adapter=new search_ing_adapter();
+
+    // 성분 검색 페이지
 
     public Search_ing_fragment() {
         // Required empty public constructor
@@ -57,6 +62,14 @@ public class Search_ing_fragment extends Fragment {
                     List<Search_ingredients> data = response.body();
                     Log.d("성분검색기능","구현 완료");
                     Log.d("성분검색기능",data.get(0).getName());
+
+                    //모든 이름 받아와서 리싸이클러뷰에 추가하고, 리스트 형태로 보여준다.
+                    for (int i =0; i<data.size(); i++){
+                        String name=data.get(i).getName();
+                        // 안맞아 제품은 따로 이미지 변경해야함.
+                        search_ing_recyvlerview item3 = new search_ing_recyvlerview(name,R.drawable.right_ing);
+                        adapter.addItem(item3);
+                    }
                 }
             }
 
@@ -90,6 +103,20 @@ public class Search_ing_fragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_search_ing, container, false);
+
+        // 임시로 성분 리스트 만들어봄
+        search_ing_recyvlerview item1 = new search_ing_recyvlerview("리날룰",R.drawable.right_ing);
+        search_ing_recyvlerview item2 = new search_ing_recyvlerview("트리머시기",R.drawable.wrong_ing);
+
+        //임실 데이터 추가해봄
+        adapter.addItem(item1);
+        adapter.addItem(item2);
+
+        RecyclerView recyclerView=v.findViewById(R.id.ing_recyclerview);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        adapter.notifyDataSetChanged();
+        recyclerView.setAdapter(adapter);
 
         return v;
     }

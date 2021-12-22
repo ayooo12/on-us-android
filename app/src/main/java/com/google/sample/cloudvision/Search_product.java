@@ -4,6 +4,8 @@ import com.google.gson.annotations.SerializedName;
 
 public class Search_product {
 
+    // 성분 검색 객체
+
     @SerializedName("id")
     private String id;
 

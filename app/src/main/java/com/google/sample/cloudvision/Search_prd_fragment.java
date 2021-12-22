@@ -27,6 +27,8 @@ import retrofit2.http.Query;
 
 public class Search_prd_fragment extends Fragment {
 
+    // 제품 검색 페이지
+
     public Search_prd_fragment() {
         // Required empty public constructor
     }
