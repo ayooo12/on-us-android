@@ -57,7 +57,7 @@ import java.util.List;
 
 
 public class Camera_activity extends AppCompatActivity {
-    private static final String CLOUD_VISION_API_KEY = "AIzaSyDNWaGqcaH4crSV5xGurV272SzwQZ24n8U";
+    private static final String CLOUD_VISION_API_KEY = "AIzaSyACQtqAXSi_Um1frC8-nyqS2mTY_1pqZeE";
     public static final String FILE_NAME = "temp.jpg";
     private static final String ANDROID_CERT_HEADER = "X-Android-Cert";
     private static final String ANDROID_PACKAGE_HEADER = "X-Android-Package";
@@ -69,8 +69,12 @@ public class Camera_activity extends AppCompatActivity {
     public static final int CAMERA_PERMISSIONS_REQUEST = 2;
     public static final int CAMERA_IMAGE_REQUEST = 3;
 
+    public  String resulttext;
+
+
     private TextView mImageDetails;
     private ImageView mMainImage;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -241,7 +245,7 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
         return annotateRequest;
     }
 
-    private static class LableDetectionTask extends AsyncTask<Object, Void, String> {
+    private class LableDetectionTask extends AsyncTask<Object, Void, String> {
         private final WeakReference<Camera_activity> mActivityWeakReference;
         private Vision.Images.Annotate mRequest;
 
@@ -273,23 +277,34 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
                 //인식된 문자열 반점(,) 단위로 나눠준다.
                 String[] array = result.split(",");
-//                StringBuilder result2 = new StringBuilder();
-//                for(int i =0;i<array.length;i++){
-//                    array[i]=array[i].replaceAll("(\r\n|\r|\n|\n\r)", " ");
-//                    array[i]=array[i].replaceAll(" ","");
-//                    result2.append(array[i]+"\n");
-//                }
+                //StringBuilder result2 = new StringBuilder();
+             /*for(int i =0;i<array.length;i++){
+                    array[i]=array[i].replaceAll("(\r\n|\r|\n|\n\r)", " ");
+                   array[i]=array[i].replaceAll(" ","");
+
+                }*/
+                result=result.replaceAll("\\s", "");
 
                 //카메라로 찍고 인식된 성분들 나열
                 imageDetail.setText(result);
+                resulttext = result.toString();
+
+                ChangePage();
 
 
-                //Intent intent = new Intent(this,Camera_result);
 
 
             }
         }
     }
+
+    protected void ChangePage(){
+        Intent intent = new Intent(this, Content_Camera_Result.class);
+        intent.putExtra("resulttext",resulttext);
+        startActivity(intent);
+    }
+
+
 
     private void callCloudVision(final Bitmap bitmap) {
         // Switch text to loading
@@ -325,7 +340,7 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
         return Bitmap.createScaledBitmap(bitmap, resizedWidth, resizedHeight, false);
     }
 
-    private static String convertResponseToString(BatchAnnotateImagesResponse response) {
+    private String convertResponseToString(BatchAnnotateImagesResponse response) {
         String message = "I found these things:\n\n";
         List<EntityAnnotation> labels = response.getResponses().get(0).getTextAnnotations();
         if (labels != null) {

@@ -64,7 +64,7 @@ public class ComponentDlg2_Fragment extends DialogFragment {
 
 
         Retrofit.Builder builder = new Retrofit.Builder();
-        builder.baseUrl("http://3.36.163.80:8080");
+        builder.baseUrl("http://3.34.218.223:8080");
         builder.addConverterFactory(GsonConverterFactory.create());
         Retrofit retrofit = builder
                 .build();
@@ -79,7 +79,7 @@ public class ComponentDlg2_Fragment extends DialogFragment {
 
                     List<Func> data = response.body();
                     Log.d("TEST","성공성공");
-                    Log.d("TEST", data.get(0).getElement());
+                    //Log.d("TEST", data.get(0).getElement());
 
                     //기능성 성분 이름이랑 등급 변경
                     for(int i=0;i<data.size();i++){

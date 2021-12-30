@@ -34,7 +34,8 @@ import retrofit2.http.Query;
 public class Content_Camera_Result extends AppCompatActivity {
     TextView ing[] = new TextView[4];
 
-    String ingfull = "트리클로산,리날룰";
+    String ingfull;
+
 
     TextView chem_item_1;
 
@@ -43,13 +44,17 @@ public class Content_Camera_Result extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera_result);
 
+        Intent intent = getIntent();
+       ingfull = intent.getStringExtra("resulttext");
+
+
         chem_item_1=findViewById(R.id.chem_item_1);
         chem_item_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //성분명 변수로 보내야함.
-                ComponentDlg_Fragment cptDlg_fragment = new ComponentDlg_Fragment("리모넨");
-                cptDlg_fragment.show(getSupportFragmentManager(),"show");
+                //ComponentDlg_Fragment cptDlg_fragment = new ComponentDlg_Fragment("리모넨");
+                //cptDlg_fragment.show(getSupportFragmentManager(),"show");
             }
         });
 
@@ -62,13 +67,14 @@ public class Content_Camera_Result extends AppCompatActivity {
         }
 
 
+
         /*
         ing[0] = (TextView)findViewById(R.id.ing0);
         ing[1] = (TextView)findViewById(R.id.ing1);
         ing[2] = (TextView)findViewById(R.id.ing1);*/
 
         Retrofit.Builder builder = new Retrofit.Builder();
-        builder.baseUrl("http://3.36.163.80:8080");
+        builder.baseUrl("http://3.34.218.223:8080");
         builder.addConverterFactory(GsonConverterFactory.create());
         Retrofit retrofit = builder
                 .build();
@@ -86,7 +92,7 @@ public class Content_Camera_Result extends AppCompatActivity {
 
                     List<Post> data = response.body();
                     Log.d("TEST","성공성공");
-                    Log.d("TEST", data.get(0).getName());
+                    //Log.d("TEST", data.get(0).getName());
 
 
                     for(int i=0;i<data.size();i++){
@@ -98,9 +104,17 @@ public class Content_Camera_Result extends AppCompatActivity {
                             public void onClick(View view) {
                                 //custom dialog 띄우는 방식
                                 //dialog 띄울때 성분명 같이 보내기
-                                ComponentDlg_Fragment cptDlg = new ComponentDlg_Fragment(finalJ);
-                                cptDlg.show(getSupportFragmentManager(),"show");
-                            }
+                                for (int i = 0; i < data.size(); i++) {
+                                    if (data.get(i).getType().equals("H")) {
+                                        ComponentDlg_Fragment cptDlg = new ComponentDlg_Fragment(finalJ);
+                                        cptDlg.show(getSupportFragmentManager(), "show");
+                                    } else {
+                                        ComponentDlg2_Fragment cptDlg2 = new ComponentDlg2_Fragment(finalJ);
+                                        cptDlg2.show(getSupportFragmentManager(), "show");
+                                    }
+
+                                }
+                                }
                         });
                     }
 
@@ -120,6 +134,9 @@ public class Content_Camera_Result extends AppCompatActivity {
                 Log.d("TEST","실패");;
             }
         });
+
+
+
     }
 
     public interface RetrofitAPI{
