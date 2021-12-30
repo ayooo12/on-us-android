@@ -68,7 +68,7 @@ public class Content_Camera_Result extends AppCompatActivity {
         ing[2] = (TextView)findViewById(R.id.ing1);*/
 
         Retrofit.Builder builder = new Retrofit.Builder();
-        builder.baseUrl("http://3.36.163.80:8080");
+        builder.baseUrl("http://3.34.218.223:8080");
         builder.addConverterFactory(GsonConverterFactory.create());
         Retrofit retrofit = builder
                 .build();
