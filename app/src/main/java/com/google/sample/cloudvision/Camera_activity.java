@@ -97,8 +97,6 @@ public class Camera_activity extends AppCompatActivity {
 
         mImageDetails = findViewById(R.id.image_details);
         mMainImage = findViewById(R.id.main_image);
-
-
     }
 
 
