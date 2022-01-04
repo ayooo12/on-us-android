@@ -78,10 +78,8 @@ public class Search_ing_fragment extends Fragment {
 
                 t.printStackTrace();
                 Log.d("성분검색기능","실패");
-
             }
         });
-
     }
 
     public interface RetrofitAPI {
@@ -104,13 +102,13 @@ public class Search_ing_fragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_search_ing, container, false);
 
-        // 임시로 성분 리스트 만들어봄
-        search_ing_recyvlerview item1 = new search_ing_recyvlerview("리날룰",R.drawable.right_ing);
-        search_ing_recyvlerview item2 = new search_ing_recyvlerview("트리머시기",R.drawable.wrong_ing);
-
-        //임실 데이터 추가해봄
-        adapter.addItem(item1);
-        adapter.addItem(item2);
+//        // 임시로 성분 리스트 만들어봄
+//        search_ing_recyvlerview item1 = new search_ing_recyvlerview("리날룰",R.drawable.right_ing);
+//        search_ing_recyvlerview item2 = new search_ing_recyvlerview("트리머시기",R.drawable.wrong_ing);
+//
+//        //임실 데이터 추가해봄
+//        adapter.addItem(item1);
+//        adapter.addItem(item2);
 
         RecyclerView recyclerView=v.findViewById(R.id.ing_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
