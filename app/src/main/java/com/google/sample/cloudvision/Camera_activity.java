@@ -16,6 +16,7 @@
 
 package com.google.sample.cloudvision;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -97,6 +98,7 @@ public class Camera_activity extends AppCompatActivity {
 
         mImageDetails = findViewById(R.id.image_details);
         mMainImage = findViewById(R.id.main_image);
+
     }
 
 
