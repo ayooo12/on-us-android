@@ -1,82 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:text="검색"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#FFFFFF"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo"
+                android:baselineAlignBottom="false"
+                android:layout_gravity = "center"
+                android:layout_weight="1"/>
+        </androidx.appcompat.widget.Toolbar>
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent">
 
-        android:layout_marginTop="20dp"
-        android:layout_margin="20dp"
-        app:layout_constraintEnd_toEndOf="@id/child_fragment_container"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        >
-
-        <Button
-            android:id="@+id/button3"
+        <TextView
+            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/left_btn_search"
-            android:clickable="true"
-            android:text="성분검색"
-            android:textColor="#1EE4A5"
-            android:textSize="16dp" />
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="80dp"
+            android:text="검색"
+            android:textColor="#616161"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/right_btn_search_no"
-            android:clickable="true"
-            android:text="제품검색"
-            android:textColor="#ffffff"
-            android:textSize="16dp" />
+            android:layout_margin="20dp"
+            android:layout_below="@+id/textView3"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/left_btn_search"
+                android:clickable="true"
+                android:text="성분검색"
+                android:textColor="#1EE4A5"
+                android:textSize="16dp" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/right_btn_search_no"
+                android:clickable="true"
+                android:text="제품검색"
+                android:textColor="#ffffff"
+                android:textSize="16dp" />
+        </LinearLayout>
+        <FrameLayout
+            android:id="@+id/child_fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/linearLayout2">
+        </FrameLayout>
+
+    </RelativeLayout>
 
 
-    <FrameLayout
-        android:id="@+id/child_fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="170dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
-    </FrameLayout>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

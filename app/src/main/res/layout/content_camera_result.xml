@@ -2,193 +2,202 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:backgroundTint="#FFFFFF"
-    android:orientation="vertical"
+    android:background="#ffffff"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.google.sample.cloudvision.Camera_activity"
     tools:showIn="@layout/activity_camera_result">
 
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="성분명을 터치해주세요"
-        android:textAlignment="center"
-        android:textColor="#707070"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="280dp"
-        android:layout_marginTop="60dp"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/reddot" />
-
-        <TextView
-            android:id="@+id/tv2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="0dp"
-            android:text="유해성"
-            android:textColor="#BEBEBE" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_margin="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/bluedot" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="기능성"
-            android:textColor="#BEBEBE" />
-    </LinearLayout>
-
     <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="360dp"
-        android:layout_height="360dp"
-        android:layout_gravity="center"
-        android:layout_margin="20dp"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:background="#F3F3F3">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="성분명을 터치해주세요"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+                android:textColor="#707070"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
 
-        <TableLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:orientation="vertical"
-            android:stretchColumns="0, 1, 2, 3">
+            <LinearLayout
+                android:id="@+id/yumu"
+                android:layout_gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:orientation="horizontal">
 
-            <TableRow
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/reddot" />
+
+                <TextView
+                    android:id="@+id/tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:text="유해성"
+                    android:textColor="#BEBEBE" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_margin="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/bluedot" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="기능성"
+                    android:textColor="#BEBEBE"/>
+            </LinearLayout>
+            <ScrollView
+                android:id="@+id/scrollView2"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/yumu"
+                android:layout_width="wrap_content"
+                android:layout_height="400dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/camera_result_content_round">
+
+                <TableLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="vertical"
+                    android:stretchColumns="0, 1, 2, 3">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center">
+
+                        <TextView
+                            android:id="@+id/chem_item_1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="TextView"
+                            android:textColor="#4C4C4C" />
+
+                        <TextView
+                            android:id="@+id/chem_item_2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="TextView"
+                            android:textColor="#4C4C4C" />
+
+                        <TextView
+                            android:id="@+id/chem_item_3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="TextView"
+                            android:textColor="#4C4C4C" />
+
+                        <TextView
+                            android:id="@+id/chem_item_4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="성분명이 길게 들어갈때"
+                            android:textColor="#4C4C4C" />
+                    </TableRow>
+                </TableLayout>
+            </ScrollView>
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center">
+                android:background="#FFFFFF"
+                android:layout_gravity="bottom"
+                android:backgroundTint="#F7F7F7">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:text="성분의 함량, 배합 방식, 개인별 특성에 따라 다르게 적용될 수 있습니다."
+                        android:textColor="#7A7A7A"
+                        android:textSize="10sp" />
 
-                <TextView
-                    android:id="@+id/chem_item_1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="TextView"
-                    android:textColor="#4C4C4C" />
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:text="출처"
+                        android:textColor="#7A7A7A"
+                        android:textSize="11sp" />
 
-                <TextView
-                    android:id="@+id/chem_item_2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="TextView"
-                    android:textColor="#4C4C4C" />
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:text="배합 한도: 국제향료협회(IFRA)"
+                        android:textColor="#7A7A7A"
+                        android:textSize="10sp" />
 
-                <TextView
-                    android:id="@+id/chem_item_3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="TextView"
-                    android:textColor="#4C4C4C" />
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:text="배합 목적, 배합 금지, 기능성 성분: 식품의약품 안전처"
+                        android:textColor="#7A7A7A"
+                        android:textSize="10sp" />
 
-                <TextView
-                    android:id="@+id/chem_item_4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="성분명이 길게 들어갈때"
-                    android:textColor="#4C4C4C" />
-            </TableRow>
-
-
-        </TableLayout>
-
-
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="15dp"
+                        android:text="알레르기성, 피부자극성, 호흡기 과민성 성분, 유발 정도 : GHS, Saftey data sheets"
+                        android:textColor="#7A7A7A"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
     </ScrollView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FFFFFF"
-        android:backgroundTint="#EDEDED"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:text="성분의 함량, 배합 방식, 개인별 특성에 따라 다르게 적용될 수 있습니다."
-            android:textColor="#7A7A7A"
-            android:textSize="10sp" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="5dp"
-            android:text="출처"
-            android:textColor="#7A7A7A"
-            android:textSize="11sp" />
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginRight="20dp"
-            android:text="배합 한도: 국제향료협회(IFRA)"
-            android:textColor="#7A7A7A"
-            android:textSize="10sp" />
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginRight="20dp"
-            android:text="배합 목적, 배합 금지, 기능성 성분: 식품의약품 안전처"
-            android:textColor="#7A7A7A"
-            android:textSize="10sp" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginRight="20dp"
-            android:text="알레르기성, 피부자극성, 호흡기 과민성 성분, 유발 정도 : GHS, Saftey data sheets"
-            android:textColor="#7A7A7A"
-            android:textSize="10sp" />
-    </LinearLayout>
-
 </LinearLayout>

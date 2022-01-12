@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:color="#FFFFFF"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     android:orientation="vertical"
     tools:context=".Search_Fragment">
 
@@ -15,9 +17,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
         android:orientation="horizontal"
+
         >
 
         <EditText
@@ -26,11 +29,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="#01DA95"
-            android:drawableRight="@drawable/drawble_ic_input_search"
             android:ems="10"
             android:hint="제품명을 입력해주세요"
             android:textColorHint="#C7C7C7"
             android:textSize="16sp" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawble_ic_input_search"
+            android:layout_gravity="center"/>
 
     </LinearLayout>
 
