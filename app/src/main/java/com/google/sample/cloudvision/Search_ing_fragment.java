@@ -57,9 +57,9 @@ public class Search_ing_fragment extends Fragment {
         Search_ing_fragment.RetrofitAPI retrofitAPI = retrofit.create(Search_ing_fragment.RetrofitAPI.class);
 
         // 검색창에 입력한 내용 문자열로 받아놓기
-        // onCreate 하면 검색한 내용 없어서 오류날듯..
-        EditText search_ing_editText = getView().findViewById(R.id.search_ing_editText);
-        String editText1_str = String.valueOf(search_ing_editText.getText());
+        // onCreate 하면 검색한 내용 없어서 오류날듯.. 돋보기 모양 아이콘에 기능 추가하면 될듯?
+        EditText search_ing_editText = getActivity().findViewById(R.id.search_ing_editText);
+//        String editText1_str = String.valueOf(search_ing_editText.getText());
 
         // getName('리') 부분에 검색창에 작성한 editText 내용 들어가야함
         retrofitAPI.getName("리").enqueue(new Callback<List<Search_ingredients>>() {

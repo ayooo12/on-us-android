@@ -51,18 +51,6 @@ public class Search_Fragment extends Fragment {
         button4 = (Button) v.findViewById(R.id.button4);
         button4.setOnClickListener(this::onClick);
 
-//
-//        // Home_fragment 버튼에 따른 내부 프라그먼트 보여주기
-//        if (sendData == 1) {
-//            Fragment choose_fg = Search_prd_fragment.newInstance();
-//            setChildFragment(choose_fg);
-//        } else {
-//            Log.d("send", String.valueOf(sendData));
-//
-//            Fragment start_fg = Search_ing_fragment.newInstance();
-//            setChildFragment(start_fg);
-//        }
-
 
         //-----------------작성한 사람이 지워도 되면 지워줘~~
 //        if (getArguments() != null)
@@ -135,7 +123,6 @@ public class Search_Fragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-
 
         // Home_fragment 버튼에 따른 내부 프라그먼트 보여주기
         if (sendData == 1) {
