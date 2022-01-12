@@ -1,6 +1,7 @@
 package com.google.sample.cloudvision;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -10,6 +11,7 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -108,6 +110,13 @@ public class home_activity_navigation extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+
+
     //어댑터 안에서 각각의 아이템(프라그먼트 페이지들)을 데이터로서 관리한다
     class MainPagerAdapter extends FragmentStatePagerAdapter {
         ArrayList<Fragment> items = new ArrayList<Fragment>();
@@ -120,8 +129,6 @@ public class home_activity_navigation extends AppCompatActivity {
             items.add(item);
         }
 
-
-
         @Override
         public Fragment getItem(int position) {
             return items.get(position);
@@ -132,15 +139,5 @@ public class home_activity_navigation extends AppCompatActivity {
             return items.size();
         }
 
-//        @NonNull
-//        @Override
-//        public Fragment createFragment(int position) {
-//            return null;
-//        }
-//
-//        @Override
-//        public int getItemCount() {
-//            return 0;
-//        }
     }
 }

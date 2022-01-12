@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import java.util.HashMap;
 import java.util.List;
@@ -55,7 +56,12 @@ public class Search_ing_fragment extends Fragment {
 
         Search_ing_fragment.RetrofitAPI retrofitAPI = retrofit.create(Search_ing_fragment.RetrofitAPI.class);
 
-        retrofitAPI.getName("리").enqueue(new Callback<List<Search_ingredients>>() {
+        // 검색창에 입력한 내용 문자열로 받아놓기
+        EditText editText1 = getView().findViewById(R.id.editText1);
+        String editText1_str = String.valueOf(editText1.getText());
+
+        // getName('리') 부분에 검색창에 작성한 editText 내용 들어가야함
+        retrofitAPI.getName(editText1_str).enqueue(new Callback<List<Search_ingredients>>() {
             @Override
             public void onResponse(Call<List<Search_ingredients>> call, Response<List<Search_ingredients>> response) {
                 if(response.isSuccessful()){
@@ -82,6 +88,15 @@ public class Search_ing_fragment extends Fragment {
             }
         });
 
+//        // 임시로 성분 리스트 만들어봄
+//        search_ing_recyvlerview item1 = new search_ing_recyvlerview("리날룰",R.drawable.right_ing);
+//        search_ing_recyvlerview item2 = new search_ing_recyvlerview("트리머시기",R.drawable.wrong_ing);
+//
+//        //임실 데이터 추가해봄
+//        adapter.addItem(item1);
+//        adapter.addItem(item2);
+
+
     }
 
     public interface RetrofitAPI {
@@ -103,14 +118,6 @@ public class Search_ing_fragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_search_ing, container, false);
-
-        // 임시로 성분 리스트 만들어봄
-        search_ing_recyvlerview item1 = new search_ing_recyvlerview("리날룰",R.drawable.right_ing);
-        search_ing_recyvlerview item2 = new search_ing_recyvlerview("트리머시기",R.drawable.wrong_ing);
-
-        //임실 데이터 추가해봄
-        adapter.addItem(item1);
-        adapter.addItem(item2);
 
         RecyclerView recyclerView=v.findViewById(R.id.ing_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
