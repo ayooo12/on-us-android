@@ -87,9 +87,9 @@ public class Search_prd_fragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_search_prd, container, false);
 
-        EditText editText1 = v.findViewById(R.id.editText1);
-        String productname = String.valueOf(editText1.getText());
-
+        // 검색 창에서 text 뽑아옴
+        EditText search_prd_editText = v.findViewById(R.id.search_prd_editText);
+        String search_prd_editText_str = String.valueOf(search_prd_editText.getText());
 
         return v;
     }
