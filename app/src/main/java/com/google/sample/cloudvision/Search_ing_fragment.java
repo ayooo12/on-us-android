@@ -62,6 +62,8 @@ public class Search_ing_fragment extends Fragment {
 //        String editText1_str = String.valueOf(search_ing_editText.getText());
 
         // getName('리') 부분에 검색창에 작성한 editText 내용 들어가야함
+        // 검색 내용 없음에 대한 예외처리 필요
+
         retrofitAPI.getName("리").enqueue(new Callback<List<Search_ingredients>>() {
             @Override
             public void onResponse(Call<List<Search_ingredients>> call, Response<List<Search_ingredients>> response) {
