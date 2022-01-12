@@ -34,7 +34,7 @@ import retrofit2.http.Query;
 public class Content_Camera_Result extends AppCompatActivity {
     TextView ing[] = new TextView[4];
 
-    String ingfull;
+    String ingfull="";
 
 
     TextView chem_item_1;
@@ -99,21 +99,24 @@ public class Content_Camera_Result extends AppCompatActivity {
                         ing[i].setText(data.get(i).getName());
                         ing[i].setVisibility(View.VISIBLE);
                         String finalJ = data.get(i).getName();
+                        int finalI = i;
                         ing[i].setOnClickListener(new View.OnClickListener(){
                             @Override
                             public void onClick(View view) {
                                 //custom dialog 띄우는 방식
                                 //dialog 띄울때 성분명 같이 보내기
-                                for (int i = 0; i < data.size(); i++) {
-                                    if (data.get(i).getType().equals("H")) {
+
+                                    if (data.get(finalI).getType().equals("H")) {
                                         ComponentDlg_Fragment cptDlg = new ComponentDlg_Fragment(finalJ);
                                         cptDlg.show(getSupportFragmentManager(), "show");
-                                    } else {
+                                    } else if(data.get(finalI).getType().equals("F")){
                                         ComponentDlg2_Fragment cptDlg2 = new ComponentDlg2_Fragment(finalJ);
                                         cptDlg2.show(getSupportFragmentManager(), "show");
+                                    }else{
+
                                     }
 
-                                }
+
                                 }
                         });
                     }
@@ -121,8 +124,8 @@ public class Content_Camera_Result extends AppCompatActivity {
 
                     for(int i=0;i<data.size();i++){
                         if(data.get(i).getType().equals("H")){
-                            ing[i].setBackgroundColor(Color.RED);
-                        }else ing[i].setBackgroundColor(Color.GREEN);
+                            ing[i].setBackgroundColor(Color.parseColor("#FF7979"));
+                        }else ing[i].setBackgroundColor(Color.parseColor("#3CB9FF"));
 
                     }
                 }

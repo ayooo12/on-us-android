@@ -75,8 +75,8 @@ public class ComponentDlg_Fragment extends DialogFragment {
                     for(int i=0;i<data.size();i++){
                         ingreName[i].setText(data.get(i).getcategory());
                         ingreName[i].setVisibility(View.VISIBLE);
-                        String a = data.get(i).getcategory();
-                        String b = data.get(i).getghsClass();
+                        String a = data.get(i).getcategory().toString();
+                        String b = data.get(i).getghsClass().toString();
                         ingreGrade[i].setText(data.get(i).getghsClass());
                         ingreGrade[i].setVisibility(View.VISIBLE);
                         Tv[i].setVisibility(View.VISIBLE);
@@ -172,59 +172,59 @@ public class ComponentDlg_Fragment extends DialogFragment {
                 else if (IG.equals("2")) IV.setImageResource(R.drawable.ic_4_2_orange);
                 else if (IG.equals("3")) IV.setImageResource(R.drawable.ic_4_3);
                 else if (IG.equals("4")) IV.setImageResource(R.drawable.ic_4_4);
-
+                break;
             case "피부부식성":
                 if (IG.equals("1A")) IV.setImageResource(R.drawable.ic_3_1a);
                 else if (IG.equals("1B")) IV.setImageResource(R.drawable.ic_3_1b);
                 else if (IG.equals("1C")) IV.setImageResource(R.drawable.ic_3_1c);
-
+                break;
             case "피부자극성":
                 if (IG.equals("2")) IV.setImageResource(R.drawable.ic_0_2);
-
+                break;
             case "특정표적 장기독성 (1회)":
                 if (IG.equals("1")) IV.setImageResource(R.drawable.ic_3_1);
                 else if (IG.equals("2")) IV.setImageResource(R.drawable.ic_3_2_orange);
                 else if (IG.equals("3")) IV.setImageResource(R.drawable.ic_3_3);
-
+                break;
             case "특정표적 장기독성 (반복)":
                 if (IG.equals("1")) IV.setImageResource(R.drawable.ic_2_1);
                 else if (IG.equals("2")) IV.setImageResource(R.drawable.ic_2_2);
-
+                break;
             case "흡인 유해성":
                 if (IG.equals("1")) IV.setImageResource(R.drawable.ic_2_1);
                 else if (IG.equals("2")) IV.setImageResource(R.drawable.ic_2_2);
-
-            case "심한 눈 손상성":
+                break;
+            case "눈손상성":
                 if (IG.equals("1")) IV.setImageResource(R.drawable.ic_0_1);
-
+                break;
             case "눈 자극성":
                 if (IG.equals("2A")) IV.setImageResource(R.drawable.ic_2_2a);
                 else if (IG.equals("1B")) IV.setImageResource(R.drawable.ic_2_1b);
-
+                break;
             case "호흡기 과민성":
                 if (IG.equals("1A")) IV.setImageResource(R.drawable.ic_2_1a);
                 else if (IG.equals("1B")) IV.setImageResource(R.drawable.ic_2_1b);
-
+                break;
             case "피부 과민성":
                 if (IG.equals("1A")) IV.setImageResource(R.drawable.ic_2_1a);
                 else if (IG.equals("1B")) IV.setImageResource(R.drawable.ic_2_1b);
-
+                break;
             case "생식세포 변이원성":
                 if (IG.equals("1A")) IV.setImageResource(R.drawable.ic_3_1a);
                 else if (IG.equals("1B")) IV.setImageResource(R.drawable.ic_3_1b);
                 else if (IG.equals("2")) IV.setImageResource(R.drawable.ic_3_2_yellow);
-
+                break;
             case "발암성":
                 if (IG.equals("1A")) IV.setImageResource(R.drawable.ic_3_1a);
                 else if (IG.equals("1B")) IV.setImageResource(R.drawable.ic_3_1b);
                 else if (IG.equals("2")) IV.setImageResource(R.drawable.ic_3_2_yellow);
-
+                break;
             case "생식독성":
                 if (IG.equals("1A")) IV.setImageResource(R.drawable.ic_4_1a);
                 else if (IG.equals("1B")) IV.setImageResource(R.drawable.ic_4_1b);
                 else if (IG.equals("2")) IV.setImageResource(R.drawable.ic_2_2);
                 else if (IG.equals("수유독성")) IV.setImageResource(R.drawable.ic_suyu);
-
+                break;
         }
     }
 }
