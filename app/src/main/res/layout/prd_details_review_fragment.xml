@@ -63,12 +63,14 @@
             </LinearLayout>
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="25dp"/>
+                android:layout_height="10dp"/>
             <LinearLayout
                 android:id="@+id/linearLayout3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -138,7 +140,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:layout_marginTop="15dp"
+                android:layout_margin="15dp"
                 android:text="피부가 심각하게 뒤집어져서 이 제품으로 바꿔봤는데 나쁘지 않습니다. 다만 끈적이는 느낌이 별로여서 별 하나 뺐습니다. 리모넨 성분이 들어가 있어서 그런지 향이 정말 좋습니다. 그런데 알레르기가 있는 건지 자꾸 간지럽네요. 더 알아보..."
                 android:textSize="15dp" />
         </LinearLayout>

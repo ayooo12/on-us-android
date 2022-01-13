@@ -78,7 +78,9 @@ public class home_activity_navigation extends AppCompatActivity {
                         return true;
 
                     case R.id.tab3:
-                        viewPager.setCurrentItem(2);
+                        startActivity(new Intent(getApplicationContext()
+                                ,Camera_activity.class));
+                        overridePendingTransition(0,0);
                         return true;
 
                     case R.id.tab4:

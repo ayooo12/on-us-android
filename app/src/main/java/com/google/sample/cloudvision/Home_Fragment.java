@@ -1,9 +1,11 @@
 package com.google.sample.cloudvision;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
@@ -55,7 +57,9 @@ public class Home_Fragment extends Fragment {
         frameLayout_camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                viewPager.setCurrentItem(2);
+                Intent intent = new Intent(getActivity(), Camera_activity.class);
+                startActivity(intent);
+
             }
         });
 
