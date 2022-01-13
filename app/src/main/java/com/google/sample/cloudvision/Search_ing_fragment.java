@@ -56,40 +56,51 @@ public class Search_ing_fragment extends Fragment {
 
         Search_ing_fragment.RetrofitAPI retrofitAPI = retrofit.create(Search_ing_fragment.RetrofitAPI.class);
 
-        // 검색창에 입력한 내용 문자열로 받아놓기
-        // onCreate 하면 검색한 내용 없어서 오류날듯.. 돋보기 모양 아이콘에 기능 추가하면 될듯?
-        EditText search_ing_editText = getActivity().findViewById(R.id.search_ing_editText);
-//        String editText1_str = String.valueOf(search_ing_editText.getText());
-
-        // getName('리') 부분에 검색창에 작성한 editText 내용 들어가야함
-        // 검색 내용 없음에 대한 예외처리 필요
-
-        retrofitAPI.getName("리").enqueue(new Callback<List<Search_ingredients>>() {
+        // 돋보기 모양 검색 버튼 클릭시 작동 코드
+        Button search_ing_btn = getView().findViewById(R.id.search_ing_btn);
+        search_ing_btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onResponse(Call<List<Search_ingredients>> call, Response<List<Search_ingredients>> response) {
-                if(response.isSuccessful()){
-                    List<Search_ingredients> data = response.body();
-                    Log.d("성분검색기능","구현 완료");
-                    Log.d("성분검색기능",data.get(0).getName());
+            public void onClick(View view) {
 
-                    //모든 이름 받아와서 리싸이클러뷰에 추가하고, 리스트 형태로 보여준다.
-                    for (int i =0; i<data.size(); i++){
-                        String name=data.get(i).getName();
-                        // 안맞아 제품은 따로 이미지 변경해야함.
-                        search_ing_recyvlerview item3 = new search_ing_recyvlerview(name,R.drawable.right_ing);
-                        adapter.addItem(item3);
+                // 검색창에 입력한 내용 문자열로 받아놓기
+                // 검색한 내용 없으면 오류남.
+                EditText search_ing_editText = getActivity().findViewById(R.id.search_ing_editText);
+                String editText1_str = String.valueOf(search_ing_editText.getText());
+
+                // getName('리') 부분에 검색창에 작성한 editText 내용 들어가야함
+                // 검색 내용 없음에 대한 예외처리 필요
+                retrofitAPI.getName("리").enqueue(new Callback<List<Search_ingredients>>() {
+                    @Override
+                    public void onResponse(Call<List<Search_ingredients>> call, Response<List<Search_ingredients>> response) {
+                        if(response.isSuccessful()){
+                            List<Search_ingredients> data = response.body();
+
+                            // 검색 내용 없음에 대한 처리
+                            if (data.isEmpty()){
+                                Log.d("성분검색기능","검색결과 없음");
+                            }
+
+                            Log.d("성분검색기능","구현 완료");
+                            Log.d("성분검색기능",data.get(0).getName());
+
+                            //모든 이름 받아와서 리싸이클러뷰에 추가하고, 리스트 형태로 보여준다.
+                            for (int i =0; i<data.size(); i++){
+                                String name=data.get(i).getName();
+                                // 안맞아 제품은 따로 이미지 변경해야함.
+                                search_ing_recyvlerview item3 = new search_ing_recyvlerview(name,R.drawable.right_ing);
+                                adapter.addItem(item3);
+                            }
+                        }
                     }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Search_ingredients>> call, Throwable t) {
-
-                t.printStackTrace();
-                Log.d("성분검색기능","실패");
-
+                    @Override
+                    public void onFailure(Call<List<Search_ingredients>> call, Throwable t) {
+                        t.printStackTrace();
+                        Log.d("성분검색기능","실패");
+                    }
+                });
             }
         });
+
 
 //        // 임시로 성분 리스트 만들어봄
 //        search_ing_recyvlerview item1 = new search_ing_recyvlerview("리날룰",R.drawable.right_ing);
