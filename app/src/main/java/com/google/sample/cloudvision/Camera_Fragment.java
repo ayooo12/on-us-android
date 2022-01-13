@@ -88,10 +88,11 @@ public class Camera_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_camera_, container, false);
+        View v = inflater.inflate(R.layout.fragment_camera_activity, container, false);
 
         Toolbar toolbar = v.findViewById(R.id.toolbar);
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+        //((AppCompatActivity)getActivity()).getSupportActionBar().setIcon(R.drawable.camera_result_back);
 
 
         FloatingActionButton fab = v.findViewById(R.id.fab);
