@@ -56,16 +56,16 @@ public class Search_ing_fragment extends Fragment {
 
         Search_ing_fragment.RetrofitAPI retrofitAPI = retrofit.create(Search_ing_fragment.RetrofitAPI.class);
 
-        // 돋보기 모양 검색 버튼 클릭시 작동 코드
-        Button search_ing_btn = getView().findViewById(R.id.search_ing_btn);
-        search_ing_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                // 검색창에 입력한 내용 문자열로 받아놓기
-                // 검색한 내용 없으면 오류남.
-                EditText search_ing_editText = getActivity().findViewById(R.id.search_ing_editText);
-                String editText1_str = String.valueOf(search_ing_editText.getText());
+//        // 돋보기 모양 검색 버튼 클릭시 작동 코드
+//        Button search_ing_btn = getView().findViewById(R.id.search_ing_btn);
+//        search_ing_btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                // 검색창에 입력한 내용 문자열로 받아놓기
+//                // 검색한 내용 없으면 오류남.
+//                EditText search_ing_editText = getActivity().findViewById(R.id.search_ing_editText);
+//                String editText1_str = String.valueOf(search_ing_editText.getText());
 
                 // getName('리') 부분에 검색창에 작성한 editText 내용 들어가야함
                 // 검색 내용 없음에 대한 예외처리 필요
@@ -98,8 +98,8 @@ public class Search_ing_fragment extends Fragment {
                         Log.d("성분검색기능","실패");
                     }
                 });
-            }
-        });
+//            }
+//        });
 
 
 //        // 임시로 성분 리스트 만들어봄
