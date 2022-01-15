@@ -9,6 +9,10 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
+    <!-- 앱 초기화면 설정 -->
+<!--    <style name="SplashTheme" parent="@android:style/Theme.Light.NoTitleBar">-->
+<!--        <item name="android:windowBackground">@drawable/splash</item>-->
+<!--    </style>-->
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
