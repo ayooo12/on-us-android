@@ -7,20 +7,20 @@
         app:showAsAction="always|withText"
         android:enabled="true"
         android:icon="@drawable/ic_navigation_home"
-        android:title="홈" />
+        android:title="" />
 
     <item
         android:id="@+id/tab2"
         android:enabled="true"
         android:icon="@drawable/ic_navigation_search"
-        android:title="검색"
+        android:title=""
         app:showAsAction="always|withText" />
 
     <item
         android:id="@+id/tab3"
         android:enabled="true"
         android:icon="@drawable/ic_navigation_camera"
-        android:title="전성분 촬영"
+        android:title=""
         app:showAsAction="always|withText" />
 
     <item
@@ -28,6 +28,6 @@
         app:showAsAction="always|withText"
         android:enabled="true"
         android:icon="@drawable/ic_navigation_my"
-        android:title="MY"/>
+        android:title=""/>
 
 </menu>
