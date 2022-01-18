@@ -44,8 +44,8 @@
                     android:layout_gravity="center"
                     android:text="TextView"
                     android:textColor="#444444"
-                    android:textStyle="bold"
-                    android:textSize="12dp" />
+                    android:textSize="14dp"
+                    android:textStyle="bold"/>
 
                 <View
                     android:layout_width="0dp"
@@ -54,8 +54,8 @@
 
                 <ImageView
                     android:id="@+id/button_x"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
                     android:layout_marginRight="8dp"
                     android:layout_gravity="center"
                     android:scaleType="fitXY"

@@ -27,8 +27,7 @@ public class Bookmark_prd_fragment extends Fragment {
 
         prddata = new ArrayList<>();
         prddata.add(new BookmarkPrdData(R.drawable.prd1, "드래곤펩타이드 앰플세럼",R.drawable.button_x, R.drawable.bad_water_1));
-        prddata.add(new BookmarkPrdData(R.drawable.prd1, "드래곤펩타이드 앰플세럼",R.drawable.button_x, R.drawable.bad_water_1));
-        prddata.add(new BookmarkPrdData(R.drawable.prd1, "드래곤펩타이드 앰플세럼",R.drawable.button_x, R.drawable.bad_water_1));
+        prddata.add(new BookmarkPrdData(R.drawable.search_prd_img, "어린 쑥 수분진정 토너",R.drawable.button_x, R.drawable.bad_water_3));
         mListView = (ListView) rootView.findViewById(R.id.listview_ing);
         mAdapter = new Bookmark_prd_adapter(getContext(), prddata);
         mListView.setAdapter(mAdapter);

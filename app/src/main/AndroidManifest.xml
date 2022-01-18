@@ -17,11 +17,7 @@
         android:usesCleartextTraffic="true">
 
         <activity android:name=".SplashActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity
@@ -33,6 +29,15 @@
 
         <activity android:name=".Bookmark_activity">
         </activity>
+
+        <activity android:name=".Prd_details_Fragment">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
 
 
 

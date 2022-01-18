@@ -9,7 +9,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="15dp"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -21,7 +21,6 @@
                     android:text="4.5"
                     android:textSize="60dp"
                     android:textColor="#000000"
-                    android:textStyle="bold"
                     android:gravity="center"
                     android:layout_marginLeft="40dp"/>
                 <TextView
@@ -44,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
                 android:background="#D6D6D6"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"/>
             <LinearLayout
@@ -52,97 +51,62 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal">
+
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="전체"
-                    android:textSize="15dp"
+                    android:text="· 전체"
+                    android:textSize="13dp"
                     android:textColor="#333333"
-                    android:layout_marginLeft="15dp"
-                    />
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="· 최신순"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    android:textColor="#ABABAB"
+                    android:layout_marginLeft="20dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="· 별점높은순"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    android:textColor="#ABABAB"
+                    android:layout_marginLeft="20dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="· 별점낮은순"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    android:textColor="#ABABAB"
+                    android:layout_marginLeft="20dp" />
             </LinearLayout>
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="10dp"/>
-            <LinearLayout
-                android:id="@+id/linearLayout3"
+                android:layout_height="2dp"/>
+            <FrameLayout
+                android:id="@+id/fragment_container"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:orientation="horizontal">
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/review_recycle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"/>
+                </ScrollView>
 
-                <ImageView
-                    android:id="@+id/water"
-                    android:layout_width="49dp"
-                    android:layout_height="49dp"
-                    android:layout_gravity="left"
-                    android:layout_marginLeft="5dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/review_11"/>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="110dp"
-                        android:layout_height="22dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="1dp"
-                        android:src="@drawable/prd_details_review_star" />
-
-                    <TextView
-                        android:id="@+id/review_Num"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="3dp"
-                        android:text="11번가"
-                        android:textColor="#333333"
-                        android:textSize="13dp"/>
-                </LinearLayout>
-
-
-                <TextView
-                    android:id="@+id/prdScore1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:text="4"
-                    android:textSize="18dp" />
-
-                <TextView
-                    android:id="@+id/writer1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginLeft="0dp"
-                    android:text="sale****"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/date1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginLeft="15dp"
-                    android:text="21.09.11"
-                    android:textSize="15dp" />
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/review1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_margin="15dp"
-                android:text="피부가 심각하게 뒤집어져서 이 제품으로 바꿔봤는데 나쁘지 않습니다. 다만 끈적이는 느낌이 별로여서 별 하나 뺐습니다. 리모넨 성분이 들어가 있어서 그런지 향이 정말 좋습니다. 그런데 알레르기가 있는 건지 자꾸 간지럽네요. 더 알아보..."
-                android:textSize="15dp" />
+            </FrameLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

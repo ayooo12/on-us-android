@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 public class MyPage_Fragment extends Fragment {
-    static ViewPager viewPager;
+
     ImageView imageStar;
     ImageView imagemyyoso;
 
