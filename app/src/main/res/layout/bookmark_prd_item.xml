@@ -3,51 +3,151 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="101dp"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/prd"
+            android:id="@+id/img_prd"
             android:layout_width="90dp"
             android:layout_height="90dp"
-            android:scaleType="fitXY"
-            android:layout_marginLeft="5dp">
-        </ImageView>
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"></ImageView>
 
-
-        <TextView
-            android:id="@+id/prdName"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="TextView"
-            android:layout_marginLeft="10dp"
-            >
+            android:orientation="vertical">
 
-        </TextView>
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/button_x"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:scaleType="fitXY"
-            android:layout_gravity="right"
-            android:src="@drawable/button_x"
-            >
-        </ImageView>
+                <TextView
+                    android:id="@+id/prdName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_gravity="center"
+                    android:text="TextView"
+                    android:textColor="#444444"
+                    android:textStyle="bold"
+                    android:textSize="12dp" />
 
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:id="@+id/button_x"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/button_x" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/prd_water1"
+                    android:layout_width="10dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/bad_water_1" />
+
+                <ImageView
+                    android:id="@+id/prd_water2"
+                    android:layout_width="10dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/bad_water_2" />
+
+                <ImageView
+                    android:id="@+id/prd_water3"
+                    android:layout_width="10dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/bad_water_3" />
+
+                <ImageView
+                    android:id="@+id/prd_water4"
+                    android:layout_width="10dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/bad_water_4" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="생식독성"
+                    android:textSize="10dp"
+                    android:textColor="#FF7979" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="알레르기"
+                    android:textSize="10dp"
+                    android:textColor="#FF7979" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="호흡기"
+                    android:textSize="10dp"
+                    android:textColor="#FF7979" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="피부자극"
+                    android:textSize="10dp"
+                    android:textColor="#FF7979" />
+            </LinearLayout>
+
+
+        </LinearLayout>
 
     </LinearLayout>
+
 </LinearLayout>

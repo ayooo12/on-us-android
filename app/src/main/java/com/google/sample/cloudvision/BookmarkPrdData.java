@@ -1,18 +1,20 @@
 package com.google.sample.cloudvision;
 
 public class BookmarkPrdData {
-    private int prd;
+    private int prdImage;
     private String prdName;
     private int delete;
+    private int water;
 
-    public BookmarkPrdData(int prd,String prdName,int delete) {
-        this.prd = prd;
+    public BookmarkPrdData(int prdImage,String prdName,int delete, int water) {
+        this.prdImage = prdImage;
         this.prdName = prdName;
         this.delete = delete;
+        this.water = water;
     }
-    public int getPrd()
+    public int getPrdImage()
     {
-        return this.prd;
+        return this.prdImage;
     }
 
     public String getPrdName()
@@ -24,4 +26,6 @@ public class BookmarkPrdData {
     {
         return this.delete;
     }
+
+    public int getWater() {return  this.water;}
 }

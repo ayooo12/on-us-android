@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,8 +12,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 public class MyPage_Fragment extends Fragment {
-
+    static ViewPager viewPager;
     ImageView imageStar;
+    ImageView imagemyyoso;
 
     public MyPage_Fragment() {
     }
@@ -39,8 +41,17 @@ public class MyPage_Fragment extends Fragment {
         imageStar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent Boomarkintent = new Intent(getActivity(), BookmarkActivity.class);
+                Intent Boomarkintent = new Intent(getActivity(), Bookmark_activity.class);
                 startActivity(Boomarkintent);
+            }
+        });
+
+        imagemyyoso = v.findViewById(R.id.image_myyoso);
+        imagemyyoso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent MyyosoIntent = new Intent(getActivity(), MyYoso.class);
+                startActivity(MyyosoIntent);
             }
         });
 

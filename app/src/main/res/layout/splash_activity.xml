@@ -18,8 +18,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="세상 모든"
+            android:fontFamily="@font/gmarket_medium"
             android:textSize="20sp"
-            android:textStyle="bold"
             android:textColor="#03E9A0">
         </TextView>
 
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="를 한눈에"
-            android:textStyle="bold"
+            android:fontFamily="@font/gmarket_medium"
             android:textColor="#03E9A0">
         </TextView>
 
