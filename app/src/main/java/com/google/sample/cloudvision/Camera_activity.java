@@ -290,10 +290,6 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
                 resulttext = result.toString();
 
                 ChangePage();
-
-
-
-
             }
         }
     }
