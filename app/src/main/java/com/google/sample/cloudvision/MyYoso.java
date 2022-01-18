@@ -39,7 +39,7 @@ public class MyYoso extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_my_yoso);
-        back = (ImageView) findViewById(R.id.mypage_back);
+        ImageView back = (ImageView) findViewById(R.id.mypage_back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

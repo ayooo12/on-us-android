@@ -38,10 +38,7 @@ import retrofit2.http.Query;
 
 
 public class Prd_details_review_Fragment extends Fragment {
-    TextView date[] = new TextView[4];
-    TextView writer[] = new TextView[4];
-    TextView review[] = new TextView[4];
-    TextView productRating[] = new TextView[4];
+    public static Prd_details_review_adapter adapter = new Prd_details_review_adapter();
 
 
     public Prd_details_review_Fragment() {
@@ -71,19 +68,22 @@ public class Prd_details_review_Fragment extends Fragment {
                                    Response<List<Prd_details_review_data>> response) {
                 if(response.isSuccessful()){
                     List<Prd_details_review_data> data = response.body();
-                    Log.d("제품리뷰기능","구현 완료");
-                    Log.d("제품리뷰기능",data.get(0).getTitle());
+
+                    if (data.isEmpty()){
+                        Log.d("리뷰기능","리뷰 없음");
+                    }
+
+                    Log.d("리뷰기능","구현 완료");
+                    Log.d("리뷰기능",data.get(0).getTitle());
 
                     //모든 이름 받아와서 리싸이클러뷰에 추가하고, 리스트 형태로 보여준다.
-                    for (int i =0; i<1; i++){
-                        date[i].setText(data.get(i).getDate());
-                        date[i].setVisibility(View.VISIBLE);
-                        writer[i].setText(data.get(i).getWriter());
-                        writer[i].setVisibility(View.VISIBLE);
-                        review[i].setText(data.get(i).getTitle());
-                        review[i].setVisibility(View.VISIBLE);
-                        productRating[i].setText(data.get(i).getProductRating());
-                        productRating[i].setVisibility(View.VISIBLE);
+                    for (int i =0; i<data.size(); i++){
+                        String date=data.get(i).getDate();
+                        String writer=data.get(i).getWriter();
+                        String review=data.get(i).getTitle();
+                        // 안맞아 제품은 따로 이미지 변경해야함.
+                        Prd_details_review_recyclerview item3 = new Prd_details_review_recyclerview(date,"11번가", writer, review, "4", R.drawable.review_11, R.drawable.prd_details_review_star);
+                        adapter.addItem(item3);
                     }
                 }
             }
@@ -115,10 +115,11 @@ public class Prd_details_review_Fragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.prd_details_review_fragment, container, false);
-        date[0] = v.findViewById(R.id.date1);
-        writer[0] = v.findViewById(R.id.writer1);
-        review[0] = v.findViewById(R.id.review1);
-        productRating[0] = v.findViewById(R.id.prdScore1);
+        RecyclerView recyclerView=v.findViewById(R.id.review_recycle);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        adapter.notifyDataSetChanged();
+        recyclerView.setAdapter(adapter);
 
         return v;
     }
