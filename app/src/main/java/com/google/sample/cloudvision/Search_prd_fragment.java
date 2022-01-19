@@ -1,5 +1,7 @@
 package com.google.sample.cloudvision;
 
+import static com.google.sample.cloudvision.Search_Fragment.is_Btn_click;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import java.util.HashMap;
 import java.util.List;
@@ -26,6 +29,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public class Search_prd_fragment extends Fragment {
+
     // 제품 검색 페이지
 
     // adapter 정의
@@ -58,7 +62,7 @@ public class Search_prd_fragment extends Fragment {
                 if(response.isSuccessful()){
                     List<search_prd_retrofit_Class> data = response.body();
                     Log.d("제품검색기능","구현 완료");
-                    Log.d("제품검색기능",data.get(0).getName());
+//                    Log.d("제품검색기능",data.get(0).getName());
 
                     if (data.isEmpty()){
                         Log.d("제품검색기능","검색 결과 없음");
@@ -71,8 +75,8 @@ public class Search_prd_fragment extends Fragment {
                             String name=data.get(i).getName();
 
                             //어댑터에 (제품)아이템 하나씩 올리기
-                            search_prd_recyclerview item3 = new search_prd_recyclerview(name);
-                            adapter.addItem(item3);
+                            adapter.addItem(new search_prd_recyclerview(name));
+                            adapter.notifyDataSetChanged();
 
                             Log.d("제품검색나열",name);
                         }
@@ -86,10 +90,6 @@ public class Search_prd_fragment extends Fragment {
                 Log.d("제품검색기능","실패");
             }
         });
-
-        search_prd_recyclerview item1 = new search_prd_recyclerview("샴푸A");
-        adapter.addItem(item1);
-
 
     }
 
@@ -113,9 +113,10 @@ public class Search_prd_fragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_search_prd, container, false);
 
         // 검색 창에서 text 뽑아옴
-//        EditText search_prd_editText = v.findViewById(R.id.search_prd_editText);
-//        String search_prd_editText_str = String.valueOf(search_prd_editText.getText());
+        EditText search_prd_editText = v.findViewById(R.id.search_prd_editText);
+        String search_prd_editText_str = String.valueOf(search_prd_editText.getText());
 
+        Log.d("dd",search_prd_editText_str);
 
         RecyclerView recyclerView=v.findViewById(R.id.pdt_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

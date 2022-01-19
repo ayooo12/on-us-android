@@ -43,7 +43,7 @@ public class search_prd_adapter extends RecyclerView.Adapter<search_prd_adapter.
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        static TextView prd_name;
+        public static TextView prd_name;
 
         public ViewHolder(final View itemView) {
             super(itemView);
