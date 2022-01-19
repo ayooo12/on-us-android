@@ -2,14 +2,12 @@ package com.google.sample.cloudvision;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 
 import java.util.HashMap;
 import java.util.List;
@@ -50,11 +48,11 @@ public class Search_prd_fragment extends Fragment {
 
         Search_prd_fragment.RetrofitAPI retrofitAPI = retrofit.create(Search_prd_fragment.RetrofitAPI.class);
 
-        retrofitAPI.getName("샴푸").enqueue(new Callback<List<Search_product>>() {
+        retrofitAPI.getName("샴푸").enqueue(new Callback<List<search_prd_retrofit_Class>>() {
             @Override
-            public void onResponse(Call<List<Search_product>> call, Response<List<Search_product>> response) {
+            public void onResponse(Call<List<search_prd_retrofit_Class>> call, Response<List<search_prd_retrofit_Class>> response) {
                 if(response.isSuccessful()){
-                    List<Search_product> data = response.body();
+                    List<search_prd_retrofit_Class> data = response.body();
                     Log.d("제품검색기능","구현 완료");
                     Log.d("제품검색기능",data.get(0).getName());
 
@@ -67,7 +65,7 @@ public class Search_prd_fragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<List<Search_product>> call, Throwable t) {
+            public void onFailure(Call<List<search_prd_retrofit_Class>> call, Throwable t) {
                 t.printStackTrace();
                 Log.d("제품검색기능","실패");
             }
@@ -76,10 +74,10 @@ public class Search_prd_fragment extends Fragment {
 
     public interface RetrofitAPI {
         @GET("/search-product?")
-        Call<List<Search_product>> getId(@Query("product") String name);
+        Call<List<search_prd_retrofit_Class>> getId(@Query("product") String name);
 
         @GET("/search-product?")
-        Call<List<Search_product>> getName(@Query("product") String name);
+        Call<List<search_prd_retrofit_Class>> getName(@Query("product") String name);
 
         @FormUrlEncoded
         @POST("/posts")

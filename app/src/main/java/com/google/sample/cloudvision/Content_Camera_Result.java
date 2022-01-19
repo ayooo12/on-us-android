@@ -48,7 +48,7 @@ public class Content_Camera_Result extends AppCompatActivity {
         ingfull = intent.getStringExtra("resulttext");
 
 
-        // 동적으로 textview 설정? 4개까지만 있는데 ing.length 까지 반복문 돌리면 오류 안나?
+        // 동적으로 textview 설정
         for(int j=0; j<ing.length; j++){
             int getID = getResources().getIdentifier("chem_item_"+(j+1),"id",getPackageName());
             ing[j] = (TextView)findViewById(getID);
@@ -75,18 +75,21 @@ public class Content_Camera_Result extends AppCompatActivity {
 
 
                     for(int i=0;i<data.size();i++){
+                        // 각 테이블레이아웃 textView에 성분명 넣기
                         ing[i].setText(data.get(i).getName());
                         ing[i].setVisibility(View.VISIBLE);
+
+                        // 성분명
                         String finalJ = data.get(i).getName();
+                        // 해당 성분명 인덱스   -> 왜 따로 변수 지정해서 썼어??
                         int finalI = i;
 
-                        //성분 클릭
+                        //각 성분 클릭 이벤트
                         ing[i].setOnClickListener(new View.OnClickListener(){
                             @Override
                             public void onClick(View view) {
                                 //custom dialog 띄우는 방식
-                                //dialog 띄울때 성분명 같이 보내기
-
+                                //dialog 띄울때 성분명 같이 보냄
                                 //유해성,기능성에 따른 각각의 다이얼로그 띄우기
                                     if (data.get(finalI).getType().equals("H")) {
                                         ComponentDlg_Fragment cptDlg = new ComponentDlg_Fragment(finalJ);
@@ -99,7 +102,6 @@ public class Content_Camera_Result extends AppCompatActivity {
                                 }
                         });
                     }
-
 
                     // 유해성 기능성에 따른 성분명 배경색 지정
                     for(int i=0;i<data.size();i++){

@@ -11,7 +11,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/rightOrwrong"
+            android:id="@+id/prd_img"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/search_prd_img"/>
