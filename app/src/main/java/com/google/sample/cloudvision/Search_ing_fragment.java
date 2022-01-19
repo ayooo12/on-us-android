@@ -67,6 +67,8 @@ public class Search_ing_fragment extends Fragment {
 //                EditText search_ing_editText = getActivity().findViewById(R.id.search_ing_editText);
 //                String editText1_str = String.valueOf(search_ing_editText.getText());
 
+
+
                 // getName('리') 부분에 검색창에 작성한 editText 내용 들어가야함
                 // 검색 내용 없음에 대한 예외처리 필요
                 retrofitAPI.getName("리").enqueue(new Callback<List<Search_ingredients>>() {
@@ -75,20 +77,21 @@ public class Search_ing_fragment extends Fragment {
                         if(response.isSuccessful()){
                             List<Search_ingredients> data = response.body();
 
-                            // 검색 내용 없음에 대한 처리
-                            if (data.isEmpty()){
-                                Log.d("성분검색기능","검색결과 없음");
-                            }
-
                             Log.d("성분검색기능","구현 완료");
                             Log.d("성분검색기능",data.get(0).getName());
 
-                            //모든 이름 받아와서 리싸이클러뷰에 추가하고, 리스트 형태로 보여준다.
-                            for (int i =0; i<data.size(); i++){
-                                String name=data.get(i).getName();
-                                // 안맞아 제품은 따로 이미지 변경해야함.
-                                search_ing_recyvlerview item3 = new search_ing_recyvlerview(name,R.drawable.right_ing);
-                                adapter.addItem(item3);
+                            // 검색 내용 없음에 대한 처리
+                            if (data.isEmpty() || data == null) {
+                                Log.d("성분검색기능", "검색결과 없음");
+                            } else{
+                                //데이터가 있어야만 adpater 에 item 추가 -> null data로 인한 오류 방지
+                                //모든 이름 받아와서 리싸이클러뷰에 추가하고, 리스트 형태로 보여준다.
+                                for (int i =0; i<data.size(); i++){
+                                    String name=data.get(i).getName();
+                                    // 안맞아 제품은 따로 이미지 변경해야함.
+                                    search_ing_recyvlerview item3 = new search_ing_recyvlerview(name,R.drawable.right_ing);
+                                    adapter.addItem(item3);
+                                }
                             }
                         }
                     }
@@ -102,11 +105,11 @@ public class Search_ing_fragment extends Fragment {
 //        });
 
 
-//        // 임시로 성분 리스트 만들어봄
+//        // 임시로 성분 리스트 만들어봄( 서버 연결 안될때 확인용 ) 지우지말아줘!
 //        search_ing_recyvlerview item1 = new search_ing_recyvlerview("리날룰",R.drawable.right_ing);
 //        search_ing_recyvlerview item2 = new search_ing_recyvlerview("트리머시기",R.drawable.wrong_ing);
 //
-//        //임실 데이터 추가해봄
+//        // 임시 데이터 추가해봄
 //        adapter.addItem(item1);
 //        adapter.addItem(item2);
 

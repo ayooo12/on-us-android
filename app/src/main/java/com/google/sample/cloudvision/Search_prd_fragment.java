@@ -3,6 +3,8 @@ package com.google.sample.cloudvision;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,8 +26,10 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public class Search_prd_fragment extends Fragment {
-
     // 제품 검색 페이지
+
+    // adapter 정의
+    public static search_prd_adapter adapter=new search_prd_adapter();
 
     public Search_prd_fragment() {
         // Required empty public constructor
@@ -56,10 +60,22 @@ public class Search_prd_fragment extends Fragment {
                     Log.d("제품검색기능","구현 완료");
                     Log.d("제품검색기능",data.get(0).getName());
 
-                    //모든 이름 받아와서 리싸이클러뷰에 추가하고, 리스트 형태로 보여준다.
-                    for (int i =0; i<data.size(); i++){
-                        String name=data.get(i).getName();
-                        Log.d("제품검색나열",name);
+                    if (data.isEmpty()){
+                        Log.d("제품검색기능","검색 결과 없음");
+                    }else{
+                        //데이터가 있어야만 adpater 에 item 추가 -> null data로 인한 오류 방지
+                        //모든 이름 받아와서 리싸이클러뷰에 추가하고, 리스트 형태로 보여준다.
+
+                        //모든 이름 받아와서 리싸이클러뷰에 추가하고, 리스트 형태로 보여준다.
+                        for (int i =0; i<data.size(); i++){
+                            String name=data.get(i).getName();
+
+                            //어댑터에 (제품)아이템 하나씩 올리기
+                            search_prd_recyclerview item3 = new search_prd_recyclerview(name);
+                            adapter.addItem(item3);
+
+                            Log.d("제품검색나열",name);
+                        }
                     }
                 }
             }
@@ -70,7 +86,13 @@ public class Search_prd_fragment extends Fragment {
                 Log.d("제품검색기능","실패");
             }
         });
+
+        search_prd_recyclerview item1 = new search_prd_recyclerview("샴푸A");
+        adapter.addItem(item1);
+
+
     }
+
 
     public interface RetrofitAPI {
         @GET("/search-product?")
@@ -88,12 +110,18 @@ public class Search_prd_fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_search_prd, container, false);
 
         // 검색 창에서 text 뽑아옴
 //        EditText search_prd_editText = v.findViewById(R.id.search_prd_editText);
 //        String search_prd_editText_str = String.valueOf(search_prd_editText.getText());
+
+
+        RecyclerView recyclerView=v.findViewById(R.id.pdt_recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        adapter.notifyDataSetChanged();
+        recyclerView.setAdapter(adapter);
 
         return v;
     }
