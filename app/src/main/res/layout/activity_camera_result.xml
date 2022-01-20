@@ -17,20 +17,16 @@
             android:layout_height="?attr/actionBarSize"
             android:background="#FFFFFF"
             app:popupTheme="@style/AppTheme.PopupOverlay">
-            <ImageView
-                android:layout_width="10dp"
-                android:layout_height="20dp"
-                android:src="@drawable/camera_result_back"
-                android:baselineAlignBottom="false"
-                android:layout_gravity = "left" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:gravity="left"
                 android:text="성분 정보"
-                android:textStyle="bold"
+                android:textColor="#7A7A7A"
                 android:textSize="16dp"
-                android:layout_marginLeft="30dp"
-                android:textColor="#7A7A7A"/>
+                android:textStyle="bold" />
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>

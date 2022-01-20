@@ -17,16 +17,22 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="#FFFFFF"
+            android:orientation="horizontal"
             app:popupTheme="@style/AppTheme.PopupOverlay">
+
+
             <ImageView
                 android:layout_width="35dp"
-                android:layout_height="wrap_content"
-                android:src="@drawable/logo"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_weight="8"
                 android:baselineAlignBottom="false"
-                android:layout_gravity = "center"
-                android:layout_weight="1"/>
+                android:src="@drawable/logo" />
+
 
         </androidx.appcompat.widget.Toolbar>
+
+
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -40,23 +46,5 @@
         android:layout_marginBottom="30dp"
         android:src="@drawable/ic_camera_button"
         app:backgroundTint="#1EE4A5" />
-
-    <ImageView
-        android:id="@+id/fab2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_gravity="bottom|right"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="30dp"
-        android:src="@drawable/activity_camera_reverse" />
-
-    <ImageView
-        android:id="@+id/fab3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_gravity="bottom|left"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="30dp"
-        android:src="@drawable/activity_camera_album" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

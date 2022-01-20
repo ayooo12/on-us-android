@@ -71,12 +71,13 @@
                     android:text="기능성"
                     android:textColor="#BEBEBE"/>
             </LinearLayout>
+
             <ScrollView
                 android:id="@+id/scrollView2"
-                android:layout_centerInParent="true"
-                android:layout_below="@+id/yumu"
                 android:layout_width="wrap_content"
                 android:layout_height="400dp"
+                android:layout_below="@+id/yumu"
+                android:layout_centerInParent="true"
                 android:layout_margin="20dp"
                 android:background="@drawable/camera_result_content_round">
 
@@ -124,6 +125,7 @@
                             android:text="성분명이 길게 들어갈때"
                             android:textColor="#4C4C4C" />
                     </TableRow>
+
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="266dp"
@@ -199,6 +201,7 @@
                             android:text="성분명이 길게 들어갈때"
                             android:textColor="#4C4C4C" />
                     </TableRow>
+
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="266dp"
@@ -276,23 +279,26 @@
                     </TableRow>
                 </TableLayout>
             </ScrollView>
+
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#FFFFFF"
                 android:layout_gravity="bottom"
+                android:background="#FFFFFF"
                 android:backgroundTint="#F7F7F7">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+
                     <TextView
                         android:id="@+id/textView4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="15dp"
                         android:layout_marginLeft="20dp"
+                        android:layout_marginTop="15dp"
                         android:layout_marginRight="20dp"
                         android:text="성분의 함량, 배합 방식, 개인별 특성에 따라 다르게 적용될 수 있습니다."
                         android:textColor="#7A7A7A"
@@ -303,8 +309,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="10dp"
                         android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
                         android:layout_marginRight="20dp"
                         android:text="출처"
                         android:textColor="#7A7A7A"
@@ -315,8 +321,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="10dp"
                         android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
                         android:layout_marginRight="20dp"
                         android:text="배합 한도: 국제향료협회(IFRA)"
                         android:textColor="#7A7A7A"
@@ -327,8 +333,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
                         android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
                         android:layout_marginRight="20dp"
                         android:text="배합 목적, 배합 금지, 기능성 성분: 식품의약품 안전처"
                         android:textColor="#7A7A7A"
@@ -339,8 +345,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
                         android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="15dp"
                         android:text="알레르기성, 피부자극성, 호흡기 과민성 성분, 유발 정도 : GHS, Saftey data sheets"
