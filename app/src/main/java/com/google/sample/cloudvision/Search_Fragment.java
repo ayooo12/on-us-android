@@ -21,6 +21,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 public class Search_Fragment extends Fragment {
+    public static int is_Btn_click = 0;
 
     //제품, 성분 검색 버튼 누르면 화면 다르게 보여주는 페이지
     public Search_Fragment() {
@@ -45,9 +46,11 @@ public class Search_Fragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_search, container, false);
 
         Button button3, button4;
+        //성분 검색 버튼
         button3 = (Button) v.findViewById(R.id.button3);
         button3.setOnClickListener(this::onClick);
 
+        //제품 검색 버튼
         button4 = (Button) v.findViewById(R.id.button4);
         button4.setOnClickListener(this::onClick);
 
@@ -92,9 +95,10 @@ public class Search_Fragment extends Fragment {
         switch (id) {
 
             // 성분검색 버튼 클릭시,
+            // 버튼 색상 변경
             case R.id.button3:
                 fg = Search_ing_fragment.newInstance();
-                setChildFragment(fg);
+                setChildFragment(fg);  //버튼에 따른 '검색창','recyclerview' 부분 fragment 새로 붙이
 
                 button3.setTextColor(Color.parseColor("#1EE4A5"));
                 button3.setBackgroundResource(R.drawable.left_btn_search);
@@ -105,6 +109,7 @@ public class Search_Fragment extends Fragment {
                 break;
 
             // 제품검색 버튼 클릭시,
+            // 버튼 색상 변경
             case R.id.button4:
                 fg = Search_prd_fragment.newInstance();
                 setChildFragment(fg);

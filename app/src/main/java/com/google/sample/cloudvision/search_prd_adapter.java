@@ -43,7 +43,7 @@ public class search_prd_adapter extends RecyclerView.Adapter<search_prd_adapter.
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        static TextView prd_name;
+        public static TextView prd_name;
 
         public ViewHolder(final View itemView) {
             super(itemView);
@@ -53,5 +53,9 @@ public class search_prd_adapter extends RecyclerView.Adapter<search_prd_adapter.
         public static void setItem(search_prd_recyclerview item){
             prd_name.setText(item.getPrd_name());
         }
+    }
+
+    public void clearAll(){
+        prdData.clear();
     }
 }
