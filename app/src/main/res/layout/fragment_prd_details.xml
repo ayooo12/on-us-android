@@ -60,14 +60,16 @@
                 android:layout_gravity="center"
                 android:text="제조회사"
                 android:layout_marginTop="10dp"/>
+
             <TextView
+                android:id="@+id/prd_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="7dp"
                 android:text="제품명"
                 android:textSize="20dp"
-                android:textStyle="bold"
-                android:layout_marginTop="7dp"/>
+                android:textStyle="bold" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="20dp"

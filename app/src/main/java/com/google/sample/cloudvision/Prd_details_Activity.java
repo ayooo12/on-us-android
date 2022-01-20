@@ -1,5 +1,6 @@
 package com.google.sample.cloudvision;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,15 +10,19 @@ import androidx.fragment.app.FragmentTransaction;
 
 
 
-public class Prd_details_Fragment extends AppCompatActivity {
+public class Prd_details_Activity extends AppCompatActivity {
     private final int Fragment_1 = 1;
     private final int Fragment_2 = 2;
+
     Button button1;
     Button button2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_prd_details);
+
+        Intent intent = getIntent();
+        intent.getStringExtra("name");
 
         button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
