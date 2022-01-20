@@ -51,20 +51,20 @@
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/prd_details_pictures"
+                android:src="@drawable/search_prd_img"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="제조회사"
+                android:text="한율"
                 android:layout_marginTop="10dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="제품명"
+                android:text="이브로쉐 라즈베리 헤어식초 린스"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:layout_marginTop="7dp"/>
@@ -99,7 +99,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_marginLeft="7dp"
-                    android:text="(3,023)"
+                    android:text="(2,678)"
                     android:textSize="14dp"/>
             </LinearLayout>
             <LinearLayout
@@ -118,7 +118,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_marginLeft="10dp"
-                    android:text="100ml"
+                    android:text="200ml"
                     android:textSize="14dp"
                     android:textStyle="bold"/>
                 <TextView
@@ -134,7 +134,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_marginLeft="10dp"
-                    android:text="10,000원"
+                    android:text="21,000원"
                     android:textSize="14dp"
                     android:textStyle="bold"/>
             </LinearLayout>
