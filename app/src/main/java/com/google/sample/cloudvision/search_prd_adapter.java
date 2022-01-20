@@ -46,9 +46,8 @@ Context context;
             public void onClick(View v) {
                 //String name = holder.prd_name.getText().toString();
                 String name = item.getPrd_name();
-                Toast.makeText(v.getContext(), name, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(v.getContext(), name, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, Prd_details_Activity.class);
-                intent.putExtra("name",name);
                 context.startActivity(intent);
             }
         });

@@ -62,7 +62,7 @@ public class Prd_details_review_Fragment extends Fragment {
 
         Prd_details_review_Fragment.RetrofitAPI retrofitAPI = retrofit.create(Prd_details_review_Fragment.RetrofitAPI.class);
 
-        retrofitAPI.getKeyword("shampoo").enqueue(new Callback<List<Prd_details_review_data>>() {
+        retrofitAPI.getKeyword("rinse").enqueue(new Callback<List<Prd_details_review_data>>() {
             @Override
             public void onResponse(Call<List<Prd_details_review_data>> call,
                                    Response<List<Prd_details_review_data>> response) {
