@@ -1,6 +1,6 @@
 package com.google.sample.cloudvision;
 
-import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +13,6 @@ import androidx.fragment.app.FragmentTransaction;
 public class Prd_details_Activity extends AppCompatActivity {
     private final int Fragment_1 = 1;
     private final int Fragment_2 = 2;
-
     Button button1;
     Button button2;
     @Override
@@ -21,21 +20,31 @@ public class Prd_details_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_prd_details);
 
-        Intent intent = getIntent();
-        intent.getStringExtra("name");
-
         button1 = (Button) findViewById(R.id.button1);
+        button2 = (Button) findViewById(R.id.button2);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 FragmentView(Fragment_1);
+                button1.setTextColor(Color.parseColor("#616161"));
+                button1.setBackgroundResource(R.drawable.border_bottom);
+
+                button2.setTextColor(Color.parseColor("#DADADA"));
+                button2.setBackgroundResource(R.drawable.border_bottom_no);
             }
         });
 
-        findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+        button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentView(Fragment_2);
+                button1.setTextColor(Color.parseColor("#DADADA"));
+                button1.setBackgroundResource(R.drawable.border_bottom_no);
+
+                button2.setTextColor(Color.parseColor("#616161"));
+                button2.setBackgroundResource(R.drawable.border_bottom);
+
 
             }
         });
