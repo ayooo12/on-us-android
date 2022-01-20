@@ -140,7 +140,7 @@ public class Search_prd_fragment extends Fragment {
         RecyclerView recyclerView=v.findViewById(R.id.pdt_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        adapter.notifyDataSetChanged();
+//        adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
 
         return v;

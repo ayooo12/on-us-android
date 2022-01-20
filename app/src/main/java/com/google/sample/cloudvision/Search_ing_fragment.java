@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import java.util.HashMap;
 import java.util.List;
@@ -32,7 +33,7 @@ import retrofit2.http.Query;
 
 public class Search_ing_fragment extends Fragment {
 
-    public static search_ing_adapter adapter=new search_ing_adapter();
+    public static search_ing_adapter ing_adapter=new search_ing_adapter();
 
     // 성분 검색 페이지
 
@@ -48,73 +49,6 @@ public class Search_ing_fragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        Retrofit.Builder builder = new Retrofit.Builder();
-        builder.baseUrl("http://3.34.218.223:8080");
-        builder.addConverterFactory(GsonConverterFactory.create());
-        Retrofit retrofit = builder
-                .build();
-
-        Search_ing_fragment.RetrofitAPI retrofitAPI = retrofit.create(Search_ing_fragment.RetrofitAPI.class);
-
-//        // 돋보기 모양 검색 버튼 클릭시 작동 코드
-//        ImageButton search_ing_btn = getActivity().findViewById(R.id.search_ing_btn);
-//
-//        search_ing_btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                // 검색창에 입력한 내용 문자열로 받아놓기
-//                // 검색한 내용 없으면 오류남.
-//                EditText search_ing_editText = getActivity().findViewById(R.id.search_ing_editText);
-//                String editText1_str = String.valueOf(search_ing_editText.getText());
-
-
-                // getName('리') 부분에 검색창에 작성한 editText 내용 들어가야함
-                // 검색 내용 없음에 대한 예외처리 필요
-                retrofitAPI.getName("리").enqueue(new Callback<List<Search_ingredients>>() {
-                    @Override
-                    public void onResponse(Call<List<Search_ingredients>> call, Response<List<Search_ingredients>> response) {
-                        if(response.isSuccessful()){
-                            List<Search_ingredients> data = response.body();
-
-                            Log.d("성분검색기능","구현 완료");
-                            Log.d("성분검색기능",data.get(0).getName());
-
-                            // 검색 내용 없음에 대한 처리
-                            if (data.isEmpty() || data == null) {
-                                Log.d("성분검색기능", "검색결과 없음");
-                            } else{
-                                //데이터가 있어야만 adpater 에 item 추가 -> null data로 인한 오류 방지
-                                //모든 이름 받아와서 리싸이클러뷰에 추가하고, 리스트 형태로 보여준다.
-                                for (int i =0; i<data.size(); i++){
-                                    String name=data.get(i).getName();
-                                    // 안맞아 제품은 따로 이미지 변경해야함.
-                                    search_ing_recyvlerview item3 = new search_ing_recyvlerview(name,R.drawable.right_ing);
-                                    adapter.addItem(item3);
-                                }
-                            }
-                        }
-                    }
-                    @Override
-                    public void onFailure(Call<List<Search_ingredients>> call, Throwable t) {
-                        t.printStackTrace();
-                        Log.d("성분검색기능","실패");
-                    }
-                });
-//            }
-//        });
-
-
-//        // 임시로 성분 리스트 만들어봄( 서버 연결 안될때 확인용 ) 지우지말아줘!
-//        search_ing_recyvlerview item1 = new search_ing_recyvlerview("리날룰",R.drawable.right_ing);
-//        search_ing_recyvlerview item2 = new search_ing_recyvlerview("트리머시기",R.drawable.wrong_ing);
-//
-//        // 임시 데이터 추가해봄
-//        adapter.addItem(item1);
-//        adapter.addItem(item2);
-
-
     }
 
     public interface RetrofitAPI {
@@ -137,11 +71,79 @@ public class Search_ing_fragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_search_ing, container, false);
 
+        // 검색 창에서 text 뽑아옴 -> search_ing_editText
+        EditText search_ing_editText = v.findViewById(R.id.search_ing_editText);
+
+        // 돋보기 모양 검색 버튼 클릭 이벤트
+        ImageView search_ing_btn = v.findViewById(R.id.search_ing_btn);
+        search_ing_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //recyclerview에 쌓인 아이템 배열 한번 전체 삭제 후 검색내용 reload
+                ing_adapter.clearAll();
+
+
+                // 검색 창에서 text 뽑아옴 -> search_prd_editText_str
+                String search_ing_editText_str = String.valueOf(search_ing_editText.getText());
+                Log.d("dd", search_ing_editText_str);
+
+                Retrofit.Builder builder = new Retrofit.Builder();
+                builder.baseUrl("http://3.34.218.223:8080");
+                builder.addConverterFactory(GsonConverterFactory.create());
+                Retrofit retrofit = builder
+                        .build();
+
+                Search_ing_fragment.RetrofitAPI retrofitAPI = retrofit.create(Search_ing_fragment.RetrofitAPI.class);
+
+                // 검색창에 작성한 내용 없으면 동작X
+                if (search_ing_editText_str.isEmpty() || search_ing_editText_str == null) {
+                    Log.d("search_ing_editText_str", "검색창에 작성한 내용 없음");
+
+                } else {
+                    // 검색할 내용 있을시 레트로핏 서버 연결 시작
+                    retrofitAPI.getName(search_ing_editText_str).enqueue(new Callback<List<Search_ingredients>>() {
+                        @Override
+                        public void onResponse(Call<List<Search_ingredients>> call, Response<List<Search_ingredients>> response) {
+                            if (response.isSuccessful()) {
+                                List<Search_ingredients> data = response.body();
+
+                                Log.d("성분검색기능", "구현 완료");
+
+                                // 검색 내용 없음에 대한 처리
+                                if (data.isEmpty() || data == null) {
+                                    Log.d("성분검색기능", "검색결과 없음");
+                                } else {
+                                    //데이터가 있어야만 adpater 에 item 추가 -> null data로 인한 오류 방지
+                                    //모든 이름 받아와서 리싸이클러뷰에 추가하고, 리스트 형태로 보여준다.
+                                    for (int i = 0; i < data.size(); i++) {
+                                        String name = data.get(i).getName();
+
+                                        // 안맞아 제품은 따로 이미지 변경해야함.
+                                        search_ing_recyvlerview item3 = new search_ing_recyvlerview(name, R.drawable.right_ing);
+                                        ing_adapter.addItem(item3);
+                                        ing_adapter.notifyDataSetChanged();
+
+                                    }
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<List<Search_ingredients>> call, Throwable t) {
+                            t.printStackTrace();
+                            Log.d("성분검색기능", "실패");
+                        }
+                    });
+                }
+            }
+        });
+
+
         RecyclerView recyclerView=v.findViewById(R.id.ing_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        adapter.notifyDataSetChanged();
-        recyclerView.setAdapter(adapter);
+//        ing_adapter.notifyDataSetChanged();
+        recyclerView.setAdapter(ing_adapter);
 
         return v;
     }
