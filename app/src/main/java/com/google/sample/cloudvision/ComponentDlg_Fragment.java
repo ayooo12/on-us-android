@@ -197,7 +197,7 @@ public class ComponentDlg_Fragment extends DialogFragment {
                 if (IG.equals("1")) IV.setImageResource(R.drawable.ic_2_1);
                 else if (IG.equals("2")) IV.setImageResource(R.drawable.ic_2_2);
                 break;
-            case "눈손상성":
+            case "심한 눈 손상성":
                 if (IG.equals("1")) IV.setImageResource(R.drawable.ic_0_1);
                 break;
             case "눈 자극성":

@@ -12,8 +12,8 @@
 
         <ImageView
             android:id="@+id/rightOrwrong"
-            android:layout_width="50dp"
-            android:layout_height="60dp" />
+            android:layout_width="35dp"
+            android:layout_height="45dp" />
 
         <TextView
             android:id="@+id/ing_name"

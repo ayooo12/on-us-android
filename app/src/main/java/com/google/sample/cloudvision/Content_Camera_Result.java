@@ -60,7 +60,7 @@ public class Content_Camera_Result extends AppCompatActivity {
         for(int j=0; j<ing.length; j++){
             int getID = getResources().getIdentifier("chem_item_"+(j+1),"id",getPackageName());
             ing[j] = (TextView)findViewById(getID);
-            ing[j].setText(String.valueOf(j));
+            //ing[j].setText(String.valueOf(j));
         }
 
         Retrofit.Builder builder = new Retrofit.Builder();

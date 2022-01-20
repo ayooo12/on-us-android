@@ -1,20 +1,28 @@
 package com.google.sample.cloudvision;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
 public class search_ing_adapter extends RecyclerView.Adapter<search_ing_adapter.ViewHolder> {
-
+    Context context;
     static ArrayList<search_ing_recyvlerview> ingData = new ArrayList<search_ing_recyvlerview>();
 
+    public interface OnItemClickListener{
+        void onItemClick(View v, int pos);
+    }
     //배열 리스트 items에 새로운 item 객체 추가하기기
     public final void addItem(search_ing_recyvlerview item) {
         ingData.add(item);
@@ -26,7 +34,7 @@ public class search_ing_adapter extends RecyclerView.Adapter<search_ing_adapter.
 
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View itemView = inflater.inflate(R.layout.search_ing_recyclerview, parent, false);
-
+        context = parent.getContext();
         return new ViewHolder(itemView);
 
     }
@@ -35,6 +43,17 @@ public class search_ing_adapter extends RecyclerView.Adapter<search_ing_adapter.
     public void onBindViewHolder(@NonNull search_ing_adapter.ViewHolder holder, int position) {
         search_ing_recyvlerview item = ingData.get(position);
         ViewHolder.setItem(item);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //String name = holder.prd_name.getText().toString();
+                String name = item.getIng_name();
+                Toast.makeText(v.getContext(), name, Toast.LENGTH_SHORT).show();
+                ComponentDlg2_Fragment cptDlg2 = new ComponentDlg2_Fragment(name);
+                cptDlg2.show(((AppCompatActivity) context).getSupportFragmentManager(),"show");
+            }
+        });
     }
 
     @Override
