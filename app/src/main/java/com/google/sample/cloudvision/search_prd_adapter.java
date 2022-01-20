@@ -54,4 +54,8 @@ public class search_prd_adapter extends RecyclerView.Adapter<search_prd_adapter.
             prd_name.setText(item.getPrd_name());
         }
     }
+
+    public void clearAll(){
+        prdData.clear();
+    }
 }

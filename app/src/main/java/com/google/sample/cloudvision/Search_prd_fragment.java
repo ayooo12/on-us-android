@@ -13,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import java.util.HashMap;
 import java.util.List;
@@ -48,51 +50,7 @@ public class Search_prd_fragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Retrofit.Builder builder = new Retrofit.Builder();
-        builder.baseUrl("http://3.34.218.223:8080");
-        builder.addConverterFactory(GsonConverterFactory.create());
-        Retrofit retrofit = builder
-                .build();
-
-        Search_prd_fragment.RetrofitAPI retrofitAPI = retrofit.create(Search_prd_fragment.RetrofitAPI.class);
-
-        retrofitAPI.getName("샴푸").enqueue(new Callback<List<search_prd_retrofit_Class>>() {
-            @Override
-            public void onResponse(Call<List<search_prd_retrofit_Class>> call, Response<List<search_prd_retrofit_Class>> response) {
-                if(response.isSuccessful()){
-                    List<search_prd_retrofit_Class> data = response.body();
-                    Log.d("제품검색기능","구현 완료");
-//                    Log.d("제품검색기능",data.get(0).getName());
-
-                    if (data.isEmpty()){
-                        Log.d("제품검색기능","검색 결과 없음");
-                    }else{
-                        //데이터가 있어야만 adpater 에 item 추가 -> null data로 인한 오류 방지
-                        //모든 이름 받아와서 리싸이클러뷰에 추가하고, 리스트 형태로 보여준다.
-
-                        //모든 이름 받아와서 리싸이클러뷰에 추가하고, 리스트 형태로 보여준다.
-                        for (int i =0; i<data.size(); i++){
-                            String name=data.get(i).getName();
-
-                            //어댑터에 (제품)아이템 하나씩 올리기
-                            adapter.addItem(new search_prd_recyclerview(name));
-                            adapter.notifyDataSetChanged();
-
-                            Log.d("제품검색나열",name);
-                        }
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<search_prd_retrofit_Class>> call, Throwable t) {
-                t.printStackTrace();
-                Log.d("제품검색기능","실패");
-            }
-        });
-
     }
-
 
     public interface RetrofitAPI {
         @GET("/search-product?")
@@ -112,11 +70,72 @@ public class Search_prd_fragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_search_prd, container, false);
 
-        // 검색 창에서 text 뽑아옴
+        // 검색 창에서 text 뽑아옴 -> search_prd_editText_str
         EditText search_prd_editText = v.findViewById(R.id.search_prd_editText);
-        String search_prd_editText_str = String.valueOf(search_prd_editText.getText());
 
-        Log.d("dd",search_prd_editText_str);
+        // 돋보기 모양 검색 버튼 클릭 이벤트
+        ImageView search_prd_btn = v.findViewById(R.id.search_prd_btn);
+        search_prd_btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                //recyclerview에 쌓인 아이템 배열 한번 전체 삭제 후 검색내용 reload
+                adapter.clearAll();
+
+                // 검색 창에서 text 뽑아옴 -> search_prd_editText_str
+                String search_prd_editText_str = String.valueOf(search_prd_editText.getText());
+                Log.d("dd",search_prd_editText_str);
+
+                Retrofit.Builder builder = new Retrofit.Builder();
+                builder.baseUrl("http://3.34.218.223:8080");
+                builder.addConverterFactory(GsonConverterFactory.create());
+                Retrofit retrofit = builder
+                        .build();
+
+                Search_prd_fragment.RetrofitAPI retrofitAPI = retrofit.create(Search_prd_fragment.RetrofitAPI.class);
+
+                // 검색창에 작성한 내용 없으면 동작x
+                if (search_prd_editText_str.isEmpty() || search_prd_editText_str == null){
+                    Log.d("search_prd_editText_str","검색창에 작성한 내용 없음");
+                }else{
+                    // 검색 내용 있을시 레트로핏 서버 연결 시작
+                    retrofitAPI.getName(search_prd_editText_str).enqueue(new Callback<List<search_prd_retrofit_Class>>() {
+                        @Override
+                        public void onResponse(Call<List<search_prd_retrofit_Class>> call, Response<List<search_prd_retrofit_Class>> response) {
+                            if(response.isSuccessful()){
+                                List<search_prd_retrofit_Class> data = response.body();
+                                Log.d("제품검색기능","구현 완료");
+//                    Log.d("제품검색기능",data.get(0).getName());
+
+                                // 검색 내용 없음에 대한 처리
+                                if (data.isEmpty() || data == null){
+                                    Log.d("제품검색기능","검색 결과 없음");
+                                }else{
+                                    //데이터가 있어야만 adpater 에 item 추가 -> null data로 인한 오류 방지
+                                    //모든 이름 받아와서 리싸이클러뷰에 추가하고, 리스트 형태로 보여준다.
+                                    for (int i =0; i<data.size(); i++){
+                                        String name=data.get(i).getName();
+
+                                        //어댑터에 (제품)아이템 하나씩 올리기
+                                        adapter.addItem(new search_prd_recyclerview(name));
+                                        adapter.notifyDataSetChanged();
+
+                                        Log.d("제품검색나열",name);
+                                    }
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<List<search_prd_retrofit_Class>> call, Throwable t) {
+                            t.printStackTrace();
+                            Log.d("제품검색기능","실패");
+                        }
+                    });
+                }
+
+            }
+        });
 
         RecyclerView recyclerView=v.findViewById(R.id.pdt_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
