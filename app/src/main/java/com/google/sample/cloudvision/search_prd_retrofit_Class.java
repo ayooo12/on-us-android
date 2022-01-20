@@ -2,7 +2,7 @@ package com.google.sample.cloudvision;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Search_product {
+public class search_prd_retrofit_Class {
 
     // 성분 검색 객체
 

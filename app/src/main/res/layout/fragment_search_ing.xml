@@ -24,7 +24,7 @@
 
         <EditText
             android:id="@+id/search_ing_editText"
-            android:layout_width="wrap_content"
+            android:layout_width="328dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="#01DA95"

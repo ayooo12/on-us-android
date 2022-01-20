@@ -75,10 +75,13 @@ public class ComponentDlg_Fragment extends DialogFragment {
                     for(int i=0;i<data.size();i++){
                         ingreName[i].setText(data.get(i).getcategory());
                         ingreName[i].setVisibility(View.VISIBLE);
+
                         String a = data.get(i).getcategory().toString();
                         String b = data.get(i).getghsClass().toString();
+
                         ingreGrade[i].setText(data.get(i).getghsClass());
                         ingreGrade[i].setVisibility(View.VISIBLE);
+
                         Tv[i].setVisibility(View.VISIBLE);
                         SelectPic(a,b,gradeCheck[i]);
                     }

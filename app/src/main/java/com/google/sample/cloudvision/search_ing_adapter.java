@@ -57,4 +57,6 @@ public class search_ing_adapter extends RecyclerView.Adapter<search_ing_adapter.
             rightOrwrong.setImageResource(item.getRightOrwrong());
         }
     }
+
+    public void clearAll() {ingData.clear();}
 }
