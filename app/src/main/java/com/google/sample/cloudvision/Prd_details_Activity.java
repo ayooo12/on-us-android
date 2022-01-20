@@ -10,7 +10,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 
 
-public class Prd_details_Fragment extends AppCompatActivity {
+public class Prd_details_Activity extends AppCompatActivity {
     private final int Fragment_1 = 1;
     private final int Fragment_2 = 2;
     Button button1;
