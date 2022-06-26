@@ -15,6 +15,7 @@ public class Prd_details_Activity extends AppCompatActivity {
     private final int Fragment_2 = 2;
     Button button1;
     Button button2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

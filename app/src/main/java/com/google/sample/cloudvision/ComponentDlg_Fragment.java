@@ -95,6 +95,10 @@ public class ComponentDlg_Fragment extends DialogFragment {
         });
     }
 
+    public void show() {
+
+    }
+
     public interface RetrofitAPI{
         @GET("/findGhsTest?")
         Call<List<frag>> getfrags(@Query("ingreName") String name);

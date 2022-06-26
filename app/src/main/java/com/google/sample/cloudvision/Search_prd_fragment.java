@@ -52,6 +52,7 @@ public class Search_prd_fragment extends Fragment {
 
     }
 
+    // get 요청에 따라 ID와 Name 을 불러온다.
     public interface RetrofitAPI {
         @GET("/search-product?")
         Call<List<search_prd_retrofit_Class>> getId(@Query("product") String name);
@@ -86,6 +87,7 @@ public class Search_prd_fragment extends Fragment {
                 String search_prd_editText_str = String.valueOf(search_prd_editText.getText());
                 Log.d("dd",search_prd_editText_str);
 
+                //Retrofit 연결 시작
                 Retrofit.Builder builder = new Retrofit.Builder();
                 builder.baseUrl("http://3.34.218.223:8080");
                 builder.addConverterFactory(GsonConverterFactory.create());
@@ -98,26 +100,26 @@ public class Search_prd_fragment extends Fragment {
                 if (search_prd_editText_str.isEmpty() || search_prd_editText_str == null){
                     Log.d("search_prd_editText_str","검색창에 작성한 내용 없음");
                 }else{
-                    // 검색 내용 있을시 레트로핏 서버 연결 시작
+                    // 검색창에 내용 있을시 레트로핏 서버 연결 시작
                     retrofitAPI.getName(search_prd_editText_str).enqueue(new Callback<List<search_prd_retrofit_Class>>() {
                         @Override
                         public void onResponse(Call<List<search_prd_retrofit_Class>> call, Response<List<search_prd_retrofit_Class>> response) {
                             if(response.isSuccessful()){
                                 List<search_prd_retrofit_Class> data = response.body();
                                 Log.d("제품검색기능","구현 완료");
-//                    Log.d("제품검색기능",data.get(0).getName());
 
-                                // 검색 내용 없음에 대한 처리
+                                // 서버에서 검색 내용 없음에 대한 처리
                                 if (data.isEmpty() || data == null){
                                     Log.d("제품검색기능","검색 결과 없음");
                                 }else{
-                                    //데이터가 있어야만 adpater 에 item 추가 -> null data로 인한 오류 방지
+                                    //서버에서 검색된 데이터가 있어야만 adpater 에 item 추가 -> null data로 인한 오류 방지
                                     //모든 이름 받아와서 리싸이클러뷰에 추가하고, 리스트 형태로 보여준다.
                                     for (int i =0; i<data.size(); i++){
                                         String name=data.get(i).getName();
 
-                                        //어댑터에 (제품)아이템 하나씩 올리기
+                                        //어댑터에 (제품)아이템 하나씩 추가하기
                                         adapter.addItem(new search_prd_recyclerview(name));
+                                        //어댑터에 아이템 변경 내용을 알리기
                                         adapter.notifyDataSetChanged();
 
                                         Log.d("제품검색나열",name);
@@ -137,10 +139,10 @@ public class Search_prd_fragment extends Fragment {
             }
         });
 
+        //RecyclerView 화면에 표시하기
         RecyclerView recyclerView=v.findViewById(R.id.pdt_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-//        adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
 
         return v;

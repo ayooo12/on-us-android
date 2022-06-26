@@ -89,11 +89,8 @@ public class Home_Fragment extends Fragment {
         frameLayout_search_prd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //성분 검새 페이지로 어떤 버튼인지 정보 주기 , 데이터 안넘어가는중
+                //성분 검색 페이지로 어떤 버튼인지 정보 주기 , (데이터 안넘어가는중)
                 sendData = 1;
-
-//                Log.d("sendData", String.valueOf(sendData));
-
                 viewPager.setCurrentItem(1);
             }
         });

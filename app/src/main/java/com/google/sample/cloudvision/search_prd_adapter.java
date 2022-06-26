@@ -44,9 +44,12 @@ Context context;
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //String name = holder.prd_name.getText().toString();
+                // 제품 클릭시 제품 이름 toast로 간단하게 띄우기
                 String name = item.getPrd_name();
                 Toast.makeText(v.getContext(), name, Toast.LENGTH_SHORT).show();
+
+                //제품 이름 데이터를 넣은 intent를 만든다.
+                //제품 설명 페이지로 이동
                 Intent intent = new Intent(context, Prd_details_Activity.class);
                 intent.putExtra("name",name);
                 context.startActivity(intent);

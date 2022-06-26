@@ -54,18 +54,6 @@ public class Search_Fragment extends Fragment {
         button4 = (Button) v.findViewById(R.id.button4);
         button4.setOnClickListener(this::onClick);
 
-
-        //-----------------작성한 사람이 지워도 되면 지워줘~~
-//        if (getArguments() != null)
-//        {
-//            String what_page_is = getArguments().getString("what_page_is"); // Home_Fragment 받아온 값 넣기
-//
-//            if (what_page_is.equals("ingredients")){
-//                onClick(button4);
-//
-//            }
-//        }
-
         return v;
     }
 
@@ -75,9 +63,10 @@ public class Search_Fragment extends Fragment {
     }
 
 
-    // fragmnet 내부의 fragment layout 변경
+    // fragmnet 내부의 fragment layout 변경하는 함수
     private void setChildFragment(Fragment child) {
         FragmentTransaction childFt = getChildFragmentManager().beginTransaction();
+
 
         if (!child.isAdded()) {
             childFt.replace(R.id.child_fragment_container, child);
@@ -95,10 +84,11 @@ public class Search_Fragment extends Fragment {
         switch (id) {
 
             // 성분검색 버튼 클릭시,
+            // 성분 검색하는 fragment가 해당 칸에 들어간다.
             // 버튼 색상 변경
             case R.id.button3:
                 fg = Search_ing_fragment.newInstance();
-                setChildFragment(fg);  //버튼에 따른 '검색창','recyclerview' 부분 fragment 새로 붙이
+                setChildFragment(fg);  //버튼에 따른 '검색창','recyclerview' 부분 fragment 새로 붙이기
 
                 button3.setTextColor(Color.parseColor("#1EE4A5"));
                 button3.setBackgroundResource(R.drawable.left_btn_search);
@@ -109,8 +99,10 @@ public class Search_Fragment extends Fragment {
                 break;
 
             // 제품검색 버튼 클릭시,
+            // 제품 검색하는 fragment가 해당 칸에 들어간다.
             // 버튼 색상 변경
             case R.id.button4:
+                //fg: child Fragment로 위에서 비워놓은 특정 레이아웃에 들어가게 할 자식 fragment
                 fg = Search_prd_fragment.newInstance();
                 setChildFragment(fg);
 

@@ -69,6 +69,21 @@ public class search_ing_adapter extends RecyclerView.Adapter<search_ing_adapter.
             super(itemView);
             ing_name = itemView.findViewById(R.id.ing_name);
             rightOrwrong = itemView.findViewById(R.id.rightOrwrong);
+
+             //일반 클릭 이벤트
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos = getBindingAdapterPosition() ;
+                    if (pos != RecyclerView.NO_POSITION) {
+                        // 데이터 리스트로부터 아이템 데이터 참조.
+//                        search_ing_recyvlerview item = ingData.get(pos) ;
+                        ComponentDlg_Fragment cptDlg = new ComponentDlg_Fragment("리날");
+//                        cptDlg.show(cptDlg.getParentFragmentManager(), "show");
+                    }
+                }
+            });
+
         }
 
         public static void setItem(search_ing_recyvlerview item){
@@ -76,6 +91,8 @@ public class search_ing_adapter extends RecyclerView.Adapter<search_ing_adapter.
             rightOrwrong.setImageResource(item.getRightOrwrong());
         }
     }
+
+
 
     public void clearAll() {ingData.clear();}
 }

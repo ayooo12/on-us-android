@@ -82,7 +82,6 @@ public class Search_ing_fragment extends Fragment {
                 //recyclerview에 쌓인 아이템 배열 한번 전체 삭제 후 검색내용 reload
                 ing_adapter.clearAll();
 
-
                 // 검색 창에서 text 뽑아옴 -> search_prd_editText_str
                 String search_ing_editText_str = String.valueOf(search_ing_editText.getText());
                 Log.d("dd", search_ing_editText_str);
@@ -122,6 +121,7 @@ public class Search_ing_fragment extends Fragment {
                                         search_ing_recyvlerview item3 = new search_ing_recyvlerview(name, R.drawable.right_ing);
                                         ing_adapter.addItem(item3);
                                         ing_adapter.notifyDataSetChanged();
+
 
                                     }
                                 }
