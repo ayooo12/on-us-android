@@ -118,7 +118,7 @@ public class Search_ing_fragment extends Fragment {
                                         String name = data.get(i).getName();
 
                                         // 안맞아 제품은 따로 이미지 변경해야함.
-                                        search_ing_recyvlerview item3 = new search_ing_recyvlerview(name, R.drawable.right_ing);
+                                        search_ing_recyvlerview item3 = new search_ing_recyvlerview(name, R.drawable.wrong_ing);
                                         ing_adapter.addItem(item3);
                                         ing_adapter.notifyDataSetChanged();
 

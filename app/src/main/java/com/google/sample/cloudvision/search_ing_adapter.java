@@ -49,9 +49,9 @@ public class search_ing_adapter extends RecyclerView.Adapter<search_ing_adapter.
             public void onClick(View v) {
                 //String name = holder.prd_name.getText().toString();
                 String name = item.getIng_name();
-                Toast.makeText(v.getContext(), name, Toast.LENGTH_SHORT).show();
-                ComponentDlg2_Fragment cptDlg2 = new ComponentDlg2_Fragment(name);
-                cptDlg2.show(((AppCompatActivity) context).getSupportFragmentManager(),"show");
+                //Toast.makeText(v.getContext(), name, Toast.LENGTH_SHORT).show();
+                ComponentDlg_Fragment cptDlg = new ComponentDlg_Fragment(name);
+                cptDlg.show(((AppCompatActivity) context).getSupportFragmentManager(),"show");
             }
         });
     }
