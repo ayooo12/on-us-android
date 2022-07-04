@@ -59,7 +59,7 @@ import java.util.List;
 
 
 public class Camera_activity extends AppCompatActivity {
-    private static final String CLOUD_VISION_API_KEY = "AIzaSyACQtqAXSi_Um1frC8-nyqS2mTY_1pqZeE";
+    private static final String CLOUD_VISION_API_KEY = "AIzaSyACQtqAXSi_Um1frC8-nyqS2mTY_1pqZeE"; //클라우드비전 키
     public static final String FILE_NAME = "temp.jpg";
     private static final String ANDROID_CERT_HEADER = "X-Android-Cert";
     private static final String ANDROID_PACKAGE_HEADER = "X-Android-Package";
@@ -71,7 +71,7 @@ public class Camera_activity extends AppCompatActivity {
     public static final int CAMERA_PERMISSIONS_REQUEST = 2;
     public static final int CAMERA_IMAGE_REQUEST = 3;
 
-    public  String resulttext;
+    public  String resulttext; //추출된 성분명 저장
 
 
     private TextView mImageDetails;
@@ -88,13 +88,7 @@ public class Camera_activity extends AppCompatActivity {
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_back);
 
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(view -> {/*
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-            builder
-                    .setMessage(R.string.dialog_select_prompt)
-                    .setPositiveButton(R.string.dialog_select_gallery, (dialog, which) -> startGalleryChooser())
-                    .setNegativeButton(R.string.dialog_select_camera, (dialog, which) -> startCamera());
-            builder.create().show();*/
+        fab.setOnClickListener(view -> {
             startGalleryChooser();
         });
 
@@ -116,30 +110,11 @@ public class Camera_activity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void startGalleryChooser() {/*
-        if (PermissionUtils.requestPermission(this, GALLERY_PERMISSIONS_REQUEST, Manifest.permission.READ_EXTERNAL_STORAGE)) {
-            Intent intent = new Intent();
-            intent.setType("image/*");
-            intent.setAction(Intent.ACTION_GET_CONTENT);
-            startActivityForResult(Intent.createChooser(intent, "Select a photo"),
-                    GALLERY_IMAGE_REQUEST);
-        }*/
+    public void startGalleryChooser() {
         CropImage.activity(null).setGuidelines(CropImageView.Guidelines.ON).start(this);
     }
 
 
-/*
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == GALLERY_IMAGE_REQUEST && resultCode == RESULT_OK && data != null) {
-            uploadImage(data.getData());
-        } else if (requestCode == CAMERA_IMAGE_REQUEST && resultCode == RESULT_OK) {
-            Uri photoUri = FileProvider.getUriForFile(this, getApplicationContext().getPackageName() + ".provider", getCameraFile());
-            uploadImage(photoUri);
-        }
-    }*/
 public void onActivityResult(int requestCode, int resultCode, Intent data) {
     super.onActivityResult(requestCode, resultCode, data);
 
@@ -289,15 +264,8 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
             if (activity != null && !activity.isFinishing()) {
                 TextView imageDetail = activity.findViewById(R.id.image_details);
 
-                //인식된 문자열 반점(,) 단위로 나눠준다.
-                String[] array = result.split(",");
-                //StringBuilder result2 = new StringBuilder();
-             /*for(int i =0;i<array.length;i++){
-                    array[i]=array[i].replaceAll("(\r\n|\r|\n|\n\r)", " ");
-                   array[i]=array[i].replaceAll(" ","");
 
-                }*/
-                result=result.replaceAll("\\s", "");
+                result=result.replaceAll("\\s", ""); //문자열 공백제거
 
                 //카메라로 찍고 인식된 성분들 나열
                 //imageDetail.setText(result);
@@ -310,7 +278,7 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
     protected void ChangePage(){
         Intent intent = new Intent(this, Content_Camera_Result.class);
-        intent.putExtra("resulttext",resulttext);
+        intent.putExtra("resulttext",resulttext); // 공백 제거한 문자열 전송
         startActivity(intent);
     }
 

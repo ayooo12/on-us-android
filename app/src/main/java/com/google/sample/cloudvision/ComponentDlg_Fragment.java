@@ -35,11 +35,10 @@ public class ComponentDlg_Fragment extends DialogFragment {
     ImageView back; //X 버튼(뒤로가기 버튼)
     static String componentNameData; //이전 페이지에서 성분명 받아오는 변수
 
-    String IG="";
 
     TextView ingreName[] = new TextView[4]; //팝업창 기능성이름 텍스트뷰
     TextView ingreGrade[] = new TextView[4]; //팝업창 기능성등급 텍스트뷰
-    TextView Tv[] = new TextView[4]; //팝업창 유발수준 글씨
+    TextView gradeText[] = new TextView[4]; //팝업창 유발수준 글씨
     ImageView gradeCheck[] = new ImageView[4]; //성분등급 이미지지
 
     public ComponentDlg_Fragment(String componentNameD) {
@@ -69,7 +68,6 @@ public class ComponentDlg_Fragment extends DialogFragment {
 
                     List<frag> data = response.body();
                     Log.d("TEST","성공성공");
-                    //Log.d("TEST", data.get(0).getghsClass());
 
                     //기능성 성분 이름이랑 등급 변경
                     for(int i=0;i<data.size();i++){
@@ -82,7 +80,7 @@ public class ComponentDlg_Fragment extends DialogFragment {
                         ingreGrade[i].setText(data.get(i).getghsClass());
                         ingreGrade[i].setVisibility(View.VISIBLE);
 
-                        Tv[i].setVisibility(View.VISIBLE);
+                        gradeText[i].setVisibility(View.VISIBLE);
                         SelectPic(a,b,gradeCheck[i]);
                     }
                 }
@@ -128,16 +126,16 @@ public class ComponentDlg_Fragment extends DialogFragment {
         ingreGrade[1] = v.findViewById(R.id.ingreGrade1);
         ingreGrade[2] = v.findViewById(R.id.ingreGrade2);
         ingreGrade[3] = v.findViewById(R.id.ingreGrade3);
-        Tv[0] = v.findViewById(R.id.Tv0);
-        Tv[1] = v.findViewById(R.id.Tv1);
-        Tv[2] = v.findViewById(R.id.Tv2);
-        Tv[3] = v.findViewById(R.id.Tv3);
+        gradeText[0] = v.findViewById(R.id.Tv0);
+        gradeText[1] = v.findViewById(R.id.Tv1);
+        gradeText[2] = v.findViewById(R.id.Tv2);
+        gradeText[3] = v.findViewById(R.id.Tv3);
         gradeCheck[0] = v.findViewById(R.id.gradeCheck0);
         gradeCheck[1] = v.findViewById(R.id.gradeCheck1);
         gradeCheck[2] = v.findViewById(R.id.gradeCheck2);
         gradeCheck[3] = v.findViewById(R.id.gradeCheck3);
 
-        //x 버튼 누르면 사라지
+        //x 버튼 누르면 사라지게
         back = v.findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override

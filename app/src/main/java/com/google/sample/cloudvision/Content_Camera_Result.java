@@ -36,7 +36,7 @@ import retrofit2.http.Query;
 public class Content_Camera_Result extends AppCompatActivity {
     TextView ing[] = new TextView[20];
 
-    String ingfull="";
+    String ingfull=""; //성분정보 문자열 받아오는 변수
 
 
     TextView chem_item_1;
@@ -47,7 +47,7 @@ public class Content_Camera_Result extends AppCompatActivity {
         setContentView(R.layout.activity_camera_result);
 
         Intent intent = getIntent();
-        ingfull = intent.getStringExtra("resulttext");
+        ingfull = intent.getStringExtra("resulttext"); //공백제거 문자열 받기
         Toolbar toolbar = findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
@@ -56,11 +56,10 @@ public class Content_Camera_Result extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
 
-        // 동적으로 textview 설정
+        // 동적으로 textview 설정... 추출된 성분 개수만큼
         for(int j=0; j<ing.length; j++){
             int getID = getResources().getIdentifier("chem_item_"+(j+1),"id",getPackageName());
             ing[j] = (TextView)findViewById(getID);
-            //ing[j].setText(String.valueOf(j));
         }
 
         Retrofit.Builder builder = new Retrofit.Builder();
@@ -74,16 +73,15 @@ public class Content_Camera_Result extends AppCompatActivity {
         retrofitAPI.getPosts(ingfull).enqueue(new Callback<List<Post>>() {
             @Override
             public void onResponse(@NonNull Call<List<Post>> call,
-                                   @NonNull Response<List<Post>> response) {
+                                   @NonNull Response<List<Post>> response) {//Post 형식 데이터를 서버에서 읽어오기
                 if(response.isSuccessful()) {
 
                     List<Post> data = response.body();
-                    Log.d("TEST","성공성공");
-                    //Log.d("TEST", data.get(0).getName());
+                    Log.d("TEST","성공성공"); //성공시 로그에 성공 메시지
 
 
                     for(int i=0;i<data.size();i++){
-                        // 각 테이블레이아웃 textView에 성분명 넣기
+                        // 각 테이블레이아웃 textView에 성분명 넣고 visible로 설정
                         ing[i].setText(data.get(i).getName());
                         ing[i].setVisibility(View.VISIBLE);
 

@@ -91,7 +91,6 @@ public class Prd_details_info_Fragment extends Fragment {
                     List<frag> data = response.body();
                     Log.d("TEST","성공성공");
                     Log.d("TEST", data.get(0).getghsClass());
-                    //bad_Ing.setText(data.get(0).getghsClass());
 
                 }
             }

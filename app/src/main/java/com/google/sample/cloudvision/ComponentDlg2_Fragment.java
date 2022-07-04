@@ -34,11 +34,7 @@ public class ComponentDlg2_Fragment extends DialogFragment {
     ImageView back; //X 버튼(뒤로가기 버튼)
     static String componentNameData; //이전 페이지에서 성분명 받아오는 변수
 
-    String IG="";
-
     TextView ingreName[] = new TextView[4]; //팝업창 기능성이름 텍스트뷰
-    TextView ingreGrade[] = new TextView[4]; //팝업창 기능성등급 텍스트뷰
-    TextView Tv[] = new TextView[4]; //팝업창 유발수준 글씨
     ImageView gradeCheck[] = new ImageView[4]; //성분등급 이미지지
 
     public ComponentDlg2_Fragment(String componentNameD) {
@@ -74,18 +70,16 @@ public class ComponentDlg2_Fragment extends DialogFragment {
         retrofitAPI.getfrags(componentNameData).enqueue(new Callback<List<Func>>() {
             @Override
             public void onResponse(@NonNull Call<List<Func>> call,
-                                   @NonNull Response<List<Func>> response) {
+                                   @NonNull Response<List<Func>> response) { //Func 형식 데이터를 서버에서 읽어오기
                 if(response.isSuccessful()) {
 
                     List<Func> data = response.body();
                     Log.d("TEST","성공성공");
-                    //Log.d("TEST", data.get(0).getElement());
 
                     //기능성 성분 이름이랑 등급 변경
                     for(int i=0;i<data.size();i++){
                         ingreName[i].setText(data.get(i).getElement());
                         ingreName[i].setVisibility(View.VISIBLE);
-                        String b = data.get(i).getElement();
                         gradeCheck[i].setImageResource(R.drawable.ic_func);
                     }
                 }
@@ -123,15 +117,6 @@ public class ComponentDlg2_Fragment extends DialogFragment {
         ingreName[1] = v.findViewById(R.id.ingreName1);
         ingreName[2] = v.findViewById(R.id.ingreName2);
         ingreName[3] = v.findViewById(R.id.ingreName3);
-/*
-        ingreGrade[0] = v.findViewById(R.id.ingreGrade0);
-        ingreGrade[1] = v.findViewById(R.id.ingreGrade1);
-        ingreGrade[2] = v.findViewById(R.id.ingreGrade2);
-        ingreGrade[3] = v.findViewById(R.id.ingreGrade3);
-        Tv[0] = v.findViewById(R.id.Tv0);
-        Tv[1] = v.findViewById(R.id.Tv1);
-        Tv[2] = v.findViewById(R.id.Tv2);
-        Tv[3] = v.findViewById(R.id.Tv3);*/
         gradeCheck[0] = v.findViewById(R.id.gradeCheck0);
         gradeCheck[1] = v.findViewById(R.id.gradeCheck1);
         gradeCheck[2] = v.findViewById(R.id.gradeCheck2);
